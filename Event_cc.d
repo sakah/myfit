@@ -37,7 +37,8 @@
 ./Event_cc.so: /usr/local/root_v5.34.18/include/TClass.h
 ./Event_cc.so: /usr/local/root_v5.34.18/include/TObjString.h
 ./Event_cc.so: /usr/local/root_v5.34.18/include/TVirtualTreePlayer.h
-./Event_cc.so: WireConfig.h /usr/local/root_v5.34.18/include/TCanvas.h
+./Event_cc.so: XTCurve.h WireConfig.h
+./Event_cc.so: /usr/local/root_v5.34.18/include/TCanvas.h
 ./Event_cc.so: /usr/local/root_v5.34.18/include/TPad.h
 ./Event_cc.so: /usr/local/root_v5.34.18/include/TVirtualPad.h
 ./Event_cc.so: /usr/local/root_v5.34.18/include/TAttPad.h
