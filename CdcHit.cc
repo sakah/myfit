@@ -6,8 +6,24 @@ void CdcHit::PrintHit(char* prefix)
 {
    printf("%s\n", prefix);
    for (int ihit=0; ihit<fNumHits; ihit++) {
-      printf("iturn %2d ilayer %2d icell %3d\n", fIturn[ihit], fIlayer[ihit], fIcell[ihit]);
+      printf("iturn %2d ilayer %2d icell %3d Pt %7.3f Pz %7.3f Pa %7.3f\n", fIturn[ihit], fIlayer[ihit], fIcell[ihit], GetPt(ihit), GetPz(ihit), GetPa(ihit));
    }
+}
+void CdcHit::AddHit(int ilayer, int icell, int iturn, double dist)
+{
+   int i = fNumHits;
+   fT[i]      = 0;
+   fX[i]      = 0;
+   fY[i]      = 0;
+   fZ[i]      = 0;
+   fPx[i]     = 0;
+   fPy[i]     = 0;
+   fPz[i]     = 0;
+   fIlayer[i] = ilayer;
+   fIcell[i]  = icell;
+   fIturn[i]  = iturn;
+   fDist[i]  = dist;
+   fNumHits++;
 }
 void CdcHit::AddHit(CdcHit& src, int ihit)
 {
@@ -25,12 +41,127 @@ void CdcHit::AddHit(CdcHit& src, int ihit)
    fDist[i]  = src.fDist[ihit];
    fNumHits++;
 }
+void CdcHit::MakeNoise(WireConfig& wireConfig, double noise_occupancy)
+{
+   for (int ilayer=0; ilayer<20; ilayer++) {
+      int numCells = wireConfig.GetCellSize(ilayer);
+      for (int icell=0; icell<numCells; icell++) {
+         double p = gRandom->Uniform(1.0);
+         if (p<noise_occupancy) {
+            double dist = gRandom->Uniform(1.6);
+            AddHit(ilayer, icell, -1, dist);
+         }
+      }
+   }
+}
+void CdcHit::Merge(CdcHit& cdc1, CdcHit& cdc2)
+{
+   fNumHits = 0;
+   for (int ihit=0; ihit<cdc1.GetNumHits(); ihit++) AddHit(cdc1, ihit);
+   for (int ihit=0; ihit<cdc2.GetNumHits(); ihit++) AddHit(cdc2, ihit);
+}
+void CdcHit::CopyByClusters(WireConfig& wireConfig, CdcHit& src)
+{
+   fNumHits = 0;
+
+   int nhits[20];
+   int hitIdx[20][500];
+   int icells[20][500];
+   bool single[20][500];
+   for (int ilayer=0; ilayer<20; ilayer++) {
+      nhits[ilayer] = 0;
+      for (int icell=0; icell<500; icell++) {
+         single[ilayer][icell] = false;
+      }
+   }
+   for (int ihit=0; ihit<src.GetNumHits(); ihit++) {
+      int ilayer = src.fIlayer[ihit];
+      int icell = src.fIcell[ihit];
+      int n = nhits[ilayer];
+      icells[ilayer][n] = icell;
+      hitIdx[ilayer][n] = ihit;
+      nhits[ilayer]++;
+   }
+   for (int ilayer=0; ilayer<20; ilayer++) {
+      int numCells = wireConfig.GetCellSize(ilayer);
+      for (int ihit=0; ihit<nhits[ilayer]; ihit++) {
+         int icell = icells[ilayer][ihit];
+         bool leftHit = false;
+         bool rightHit = false;
+         int icellL = icell - 1;
+         int icellR = icell + 1;
+         if (icellL<0) icellL = numCells-1;
+         if (icellR>=numCells) icellR = 0;
+         // check that left/right cell is empty or not
+         // If empty, skip it
+         for (int jhit=0; jhit<nhits[ilayer]; jhit++) {
+            int jcell = icells[ilayer][jhit];
+            if (jcell == icellL)  leftHit = true;
+            if (jcell == icellR)  rightHit = true;
+            //printf("ilayer %d icell %d jcell %d (icellL %d icellR %d)\n", ilayer, icell, jcell, icellL, icellR);
+         }
+         //printf("ilayer %d icell %d leftHit %d rightHit %d\n", ilayer, icell, leftHit, rightHit);
+         if (!leftHit && !rightHit) {
+            single[ilayer][ihit]=true;
+         } else {
+            single[ilayer][ihit]=false;
+         }
+      }
+      for (int ihit=0; ihit<nhits[ilayer]; ihit++) {
+         //printf("CopyByClusters: ilayer %d icell %d single %d\n", ilayer, icells[ilayer][ihit], single[ilayer][ihit]);
+         if (!single[ilayer][ihit]) {
+            AddHit(src, hitIdx[ilayer][ihit]);
+         }
+      }
+   }
+}
+void CdcHit::CopyByFirstArrivedHit(CdcHit& src, double trig_time)
+{
+   fNumHits = 0;
+
+   int nhits[20][500];
+   int hitIdx[20][500][10];
+   double timeFromTrig[20][500][10];
+   for (int ilayer=0; ilayer<20; ilayer++) {
+      for (int icell=0; icell<500; icell++) {
+         nhits[ilayer][icell] = 0;
+      }
+   }
+   for (int ihit=0; ihit<src.GetNumHits(); ihit++) {
+      int ilayer = src.fIlayer[ihit];
+      int icell = src.fIcell[ihit];
+      int n = nhits[ilayer][icell];
+      double my_time = src.GetT(ihit) + src.GetDriftTime(ihit) - trig_time;
+      hitIdx[ilayer][icell][n] = ihit;
+      timeFromTrig[ilayer][icell][n] = my_time;
+      nhits[ilayer][icell]++;
+   }
+   for (int ilayer=0; ilayer<20; ilayer++) {
+      for (int icell=0; icell<500; icell++) {
+         int n = nhits[ilayer][icell];
+         if (n==0) continue;
+         int min_ihit = 0;
+         double min_time=1e10;
+         for (int ihit=0; ihit<n; ihit++) {
+            double my_time = timeFromTrig[ilayer][icell][ihit];
+            if (my_time < min_time) {
+               min_time = my_time;
+               min_ihit = ihit;
+            }
+         }
+         int idx = hitIdx[ilayer][icell][min_ihit];
+         AddHit(src, idx);
+      }
+   }
+}
 void CdcHit::CopyByLayer(CdcHit& src, int odd_or_even)
 {
    fNumHits = 0;
    for (int ihit=0; ihit<src.GetNumHits(); ihit++) {
-      if (odd_or_even==CDC_ODD && src.fIlayer[ihit]%2==0) continue;
-      if (odd_or_even==CDC_EVEN && src.fIlayer[ihit]%2==1) continue;
+      int ilayer = src.fIlayer[ihit];
+      int iturn = src.fIturn[ihit];
+      if (odd_or_even==CDC_ODD && iturn!=-1 && ilayer%2==0) continue;
+      if (odd_or_even==CDC_EVEN && iturn!=-1 && ilayer%2==1) continue;
       AddHit(src, ihit);
    }
 }
@@ -95,6 +226,7 @@ int CdcHit::GetIcell(int ihit) { return fIcell[ihit]; }
 int CdcHit::GetIturn(int ihit) { return fIturn[ihit]; }
 double CdcHit::GetDist(int ihit) { return fDist[ihit]; }
 double CdcHit::GetDistSmeared(int ihit) { return fDist[ihit] + fRsmear[ihit]; }
+double CdcHit::GetDriftTime(int ihit) { return GetDist(ihit)/2e-3; /*cm/ns*/ }
 void CdcHit::GetUV(WireConfig& wireConfig, double* uhits, double* vhits)
 {
    for (int ihit=0; ihit<fNumHits; ihit++) {

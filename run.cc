@@ -20,9 +20,14 @@ TTree* t;
 InitialHit initial;
 CounterHit cheren;
 CounterHit scinti;
-CdcHit cdc;
-CdcHit cdc1;
-CdcHit cdc2;
+double noise_occupancy = 0.10;
+CdcHit cdcNoise;
+CdcHit cdcSig;
+CdcHit cdcSigNoise;
+CdcHit cdcFA;
+CdcHit cdcClus;
+CdcHit cdc1; // odd-layer
+CdcHit cdc2; // even-layer
 Hough hough1("odd ");
 Hough hough2("even");
 double threshold = 0.01;
@@ -43,18 +48,31 @@ void run(int iev)
    initial.SetBranchAddress(t, "ini_x_cm", "ini_y_cm", "ini_z_cm", "ini_px_GeV", "ini_py_GeV", "ini_pz_GeV");
    scinti.SetBranchAddressAll(t, "trig_scinti_nhits", "trig_scinti_time", "trig_scinti_posx", "trig_scinti_posy", "trig_scinti_posz", "trig_scinti_momx", "trig_scinti_momy", "trig_scinti_momz");
    cheren.SetBranchAddressAll(t, "trig_cherenkov_nhits", "trig_cherenkov_time", "trig_cherenkov_posx", "trig_cherenkov_posy", "trig_cherenkov_posz", "trig_cherenkov_momx", "trig_cherenkov_momy", "trig_cherenkov_momz");
-   cdc.SetBranchAddressAll(t, "nwirehit", "time", "minhit_x", "minhit_y", "minhit_z", "minhit_px", "minhit_py", "minhit_pz", "ilayer", "icell", "iturn", "dist");
+   cdcSig.SetBranchAddressAll(t, "nwirehit", "time", "minhit_x", "minhit_y", "minhit_z", "minhit_px", "minhit_py", "minhit_pz", "ilayer", "icell", "iturn", "dist");
 
    t->GetEntry(iev);
 
    if (cheren.GetNumHits()==0 || scinti.GetNumHits()==0) return;
+   double trig_time = scinti.GetT(0);
+
    printf("iev %d\n", iev);
    initial.PrintHit();
    scinti.PrintHit("==scinti==");
    cheren.PrintHit("==cherenkov==");
 
-   cdc1.CopyByLayer(cdc, 1);
-   cdc2.CopyByLayer(cdc, 0);
+   cdcNoise.MakeNoise(wireConfig, noise_occupancy);
+   cdcSigNoise.Merge(cdcSig, cdcNoise);
+   cdcFA.CopyByFirstArrivedHit(cdcSigNoise, trig_time);
+   cdcClus.CopyByClusters(wireConfig, cdcFA);
+
+   cdcSig.PrintHit("==CDC-Sig==");
+   cdcNoise.PrintHit("==CDC-Noise==");
+   cdcSigNoise.PrintHit("==CDC-SigNoise==");
+   cdcFA.PrintHit("==CDC (First Arrived Hit)==");
+   cdcClus.PrintHit("==CDC (Clusters)==");
+
+   cdc1.CopyByLayer(cdcClus, 1);
+   cdc2.CopyByLayer(cdcClus, 0);
    cdc1.PrintHit("==CDC-odd==");
    cdc2.PrintHit("==CDC-even==");
    cdc1.GetUV(wireConfig, u1, v1);

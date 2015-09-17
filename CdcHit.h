@@ -17,7 +17,12 @@ class CdcHit
 
       CdcHit();
       void PrintHit(char* prefix);
+      void AddHit(int ilayer, int icell, int iturn, double dist); // used for noise
       void AddHit(CdcHit& src, int ihit);
+      void MakeNoise(WireConfig& wireConfig, double noise_occupancy);
+      void Merge(CdcHit& cdc1, CdcHit& cdc2);
+      void CopyByClusters(WireConfig& wireConfig, CdcHit& src);
+      void CopyByFirstArrivedHit(CdcHit& src, double trig_time);
       void CopyByLayer(CdcHit& src, int odd_or_even);
       void CopyByHough(CdcHit& src, double a, double b, double* uhits, double* vhits, double threshold);
 
@@ -53,6 +58,7 @@ class CdcHit
       int GetIturn(int ihit);
       double GetDist(int ihit);
       double GetDistSmeared(int ihit);
+      double GetDriftTime(int ihit);
       void GetUV(WireConfig& wireConfig, double* uhits, double* vhits);
 
       int GetColorByTurn(int iturn);
