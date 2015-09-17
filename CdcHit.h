@@ -61,6 +61,7 @@ class CdcHit
       double GetDistSmeared(int ihit);
       double GetDriftTime(int ihit);
       void GetUV(WireConfig& wireConfig, double* uhits, double* vhits);
+      void GetXYend(WireConfig& wireConfig, double* xends, double* yends);
 
       int GetColorByTurn(int iturn);
       void DrawAny(double* u, double* v, int style);

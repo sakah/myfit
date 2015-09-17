@@ -76,6 +76,8 @@
 ./run_cc.so: /usr/local/root_v5.34.18/include/TVectorDfwd.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TFitResultPtr.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TMatrixFBasefwd.h
-./run_cc.so: /usr/local/root_v5.34.18/include/TMatrixDBasefwd.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TMatrixDBasefwd.h Circle.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TMinuit.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TMethodCall.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/cintdictversion.h /usr/local/root_v5.34.18/include/RVersion.h
 run_cc__ROOTBUILDVERSION= 5.34/18

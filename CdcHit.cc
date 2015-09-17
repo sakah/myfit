@@ -239,6 +239,15 @@ void CdcHit::GetUV(WireConfig& wireConfig, double* uhits, double* vhits)
       vhits[ihit] = 2.0*wy/r2;
    }
 }
+void CdcHit::GetXYend(WireConfig& wireConfig, double* xends, double* yends)
+{
+   for (int ihit=0; ihit<fNumHits; ihit++) {
+      double wx, wy;
+      wireConfig.GetWirePos(fIlayer[ihit], LAYER_TYPE_SENSE, fIcell[ihit], WIRE_TYPE_SENSE, 0, "up", &wx, &wy);
+      xends[ihit] = wx;
+      yends[ihit] = wy;
+   }
+}
 int CdcHit::GetColorByTurn(int iturn)
 {
    int col = kCyan; // noise

@@ -10,11 +10,17 @@
 #include "CounterHit.h"
 #include "CdcHit.h"
 #include "Hough.h"
+#include "Circle.h"
 
 double u1[MAX_CDC_HIT];
 double v1[MAX_CDC_HIT];
 double u2[MAX_CDC_HIT];
 double v2[MAX_CDC_HIT];
+
+double x1end[MAX_CDC_HIT];
+double y1end[MAX_CDC_HIT];
+double x2end[MAX_CDC_HIT];
+double y2end[MAX_CDC_HIT];
 
 TTree* t;
 InitialHit initial;
@@ -32,6 +38,8 @@ Hough hough1("odd ");
 Hough hough2("even");
 CdcHit cdc1hough;
 CdcHit cdc2hough;
+Circle circ1;
+Circle circ2;
 
 WireConfig wireConfig;
 TCanvas* c1 = NULL;
@@ -105,6 +113,14 @@ void run(int iev, double threshold=0.01)
    cdc1hough.CopyByHough(cdc1, hough1.GetA(), hough1.GetB(), u1, v1, threshold);
    cdc2hough.CopyByHough(cdc2, hough2.GetA(), hough2.GetB(), u2, v2, threshold);
 
+   cdc1hough.GetXYend(wireConfig, x1end, y1end);
+   cdc2hough.GetXYend(wireConfig, x2end, y2end);
+
+   circ1.FitCircle(cdc1hough.GetNumHits(), x1end, y1end);
+   circ2.FitCircle(cdc2hough.GetNumHits(), x2end, y2end);
+   circ1.PrintCircle("===circ1===");
+   circ2.PrintCircle("===circ2===");
+
    // Draw
    if (c1==NULL) {
       int nx = 2;
@@ -117,9 +133,9 @@ void run(int iev, double threshold=0.01)
    c1->cd(n++); wireConfig.DrawEndPlate("c2"); cdc2.DrawXYAt(wireConfig, "up");
    c1->cd(n++); draw_frame("uv1;u;v", 100, -0.05, 0.05, 100, -0.05, 0.05); cdc1.DrawAny(u1, v1, 5); draw_line(hough1.GetA(), hough1.GetB(), -0.05, 0.05, kRed);
    c1->cd(n++); draw_frame("uv2;u;v", 100, -0.05, 0.05, 100, -0.05, 0.05); cdc2.DrawAny(u2, v2, 5); draw_line(hough2.GetA(), hough2.GetB(), -0.05, 0.05, kRed);
-   c1->cd(n++); hough1.GetH2D_AB()->Draw("colz");
-   c1->cd(n++); hough2.GetH2D_AB()->Draw("colz");
-   c1->cd(n++); wireConfig.DrawEndPlate("c3"); cdc1hough.DrawXYAt(wireConfig, "up");
-   c1->cd(n++); wireConfig.DrawEndPlate("c4"); cdc2hough.DrawXYAt(wireConfig, "up");
+   c1->cd(n++); hough1.GetH2D_AB()->Draw("colz"); draw_marker(hough1.GetA(), hough1.GetB(), kRed, 29);
+   c1->cd(n++); hough2.GetH2D_AB()->Draw("colz"); draw_marker(hough1.GetA(), hough1.GetB(), kRed, 29);
+   c1->cd(n++); wireConfig.DrawEndPlate("c3"); cdc1hough.DrawXYAt(wireConfig, "up"); draw_ellipse(circ1.GetX0Fit(), circ1.GetY0Fit(), circ1.GetRFit(), kRed);
+   c1->cd(n++); wireConfig.DrawEndPlate("c4"); cdc2hough.DrawXYAt(wireConfig, "up"); draw_ellipse(circ2.GetX0Fit(), circ2.GetY0Fit(), circ2.GetRFit(), kBlue);
    c1->Print("a.pdf");
 }
