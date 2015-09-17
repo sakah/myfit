@@ -22,6 +22,7 @@ Hough::~Hough()
 }
 void Hough::FindLine(int nhits, double* uhits, double* vhits)
 {
+   fH2D_AB->Reset();
    for (int ihit=0; ihit<nhits; ihit++) {
       for (int ia=0; ia<fAnum; ia++) {
          double a = ia*fAstep + fAmin;

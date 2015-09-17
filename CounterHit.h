@@ -11,6 +11,7 @@ class CounterHit
    public:
 
       CounterHit();
+      void PrintHit(char* prefix);
       void SetBranchAddressNum(TTree* t, const char* name);
       void SetBranchAddressTime(TTree* t, const char* name);
       void SetBranchAddressX(TTree* t, const char* name);
@@ -22,16 +23,16 @@ class CounterHit
       void SetBranchAddressAll(TTree* t, const char* num, const char* time, const char* x, const char* y, const char* z, const char* px, const char* py, const char* pz);
 
       int GetNumHits();
-      double GetT(int ihit);
-      double GetX(int ihit);
-      double GetY(int ihit);
-      double GetR(int ihit);
-      double GetZ(int ihit);
-      double GetPx(int ihit);
-      double GetPy(int ihit);
-      double GetPz(int ihit);
-      double GetPt(int ihit);
-      double GetPa(int ihit);
+      double GetT(int ihit); // ns
+      double GetX(int ihit); // cm
+      double GetY(int ihit); // cm
+      double GetR(int ihit); // cm
+      double GetZ(int ihit); // cm
+      double GetPx(int ihit); // MeV
+      double GetPy(int ihit); // MeV
+      double GetPz(int ihit); // MeV
+      double GetPt(int ihit); // MeV
+      double GetPa(int ihit); // MeV
 
    private:
 

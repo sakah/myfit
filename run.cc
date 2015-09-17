@@ -6,6 +6,7 @@
 #include "Util.h"
 #include "XTCurve.h"
 #include "wireConfig.h"
+#include "InitialHit.h"
 #include "CounterHit.h"
 #include "CdcHit.h"
 #include "Hough.h"
@@ -16,6 +17,7 @@ double u2[MAX_CDC_HIT];
 double v2[MAX_CDC_HIT];
 
 TTree* t;
+InitialHit initial;
 CounterHit cheren;
 CounterHit scinti;
 CdcHit cdc;
@@ -38,6 +40,7 @@ void run(int iev)
    TFile* f = new TFile(root);
    t = (TTree*)f->Get("t");
 
+   initial.SetBranchAddress(t, "ini_x_cm", "ini_y_cm", "ini_z_cm", "ini_px_GeV", "ini_py_GeV", "ini_pz_GeV");
    scinti.SetBranchAddressAll(t, "trig_scinti_nhits", "trig_scinti_time", "trig_scinti_posx", "trig_scinti_posy", "trig_scinti_posz", "trig_scinti_momx", "trig_scinti_momy", "trig_scinti_momz");
    cheren.SetBranchAddressAll(t, "trig_cherenkov_nhits", "trig_cherenkov_time", "trig_cherenkov_posx", "trig_cherenkov_posy", "trig_cherenkov_posz", "trig_cherenkov_momx", "trig_cherenkov_momy", "trig_cherenkov_momz");
    cdc.SetBranchAddressAll(t, "nwirehit", "time", "minhit_x", "minhit_y", "minhit_z", "minhit_px", "minhit_py", "minhit_pz", "ilayer", "icell", "iturn", "dist");
@@ -46,11 +49,14 @@ void run(int iev)
 
    if (cheren.GetNumHits()==0 || scinti.GetNumHits()==0) return;
    printf("iev %d\n", iev);
+   initial.PrintHit();
+   scinti.PrintHit("==scinti==");
+   cheren.PrintHit("==cherenkov==");
 
    cdc1.CopyByLayer(cdc, 1);
    cdc2.CopyByLayer(cdc, 0);
-   cdc1.PrintHit("==odd==");
-   cdc2.PrintHit("==even==");
+   cdc1.PrintHit("==CDC-odd==");
+   cdc2.PrintHit("==CDC-even==");
    cdc1.GetUV(wireConfig, u1, v1);
    cdc2.GetUV(wireConfig, u2, v2);
 

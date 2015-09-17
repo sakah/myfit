@@ -62,8 +62,8 @@
 ./run_cc.so: /usr/local/root_v5.34.18/include/Buttons.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TAttCanvas.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TCanvasImp.h Util.h XTCurve.h
-./run_cc.so: wireConfig.h CounterHit.h CdcHit.h WireConfig.h Hough.h
-./run_cc.so: /usr/local/root_v5.34.18/include/TH2F.h
+./run_cc.so: wireConfig.h InitialHit.h CounterHit.h CdcHit.h WireConfig.h
+./run_cc.so: Hough.h /usr/local/root_v5.34.18/include/TH2F.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TH2.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TH1.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TAxis.h

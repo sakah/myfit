@@ -6,7 +6,7 @@ void CdcHit::PrintHit(char* prefix)
 {
    printf("%s\n", prefix);
    for (int ihit=0; ihit<fNumHits; ihit++) {
-      printf("iturn %d ilayer %d icell %d\n", fIturn[ihit], fIlayer[ihit], fIcell[ihit]);
+      printf("iturn %2d ilayer %2d icell %3d\n", fIturn[ihit], fIlayer[ihit], fIcell[ihit]);
    }
 }
 void CdcHit::AddHit(CdcHit& src, int ihit)
@@ -85,11 +85,11 @@ double CdcHit::GetX(int ihit) { return fX[ihit]; }
 double CdcHit::GetY(int ihit) { return fY[ihit]; }
 double CdcHit::GetR(int ihit) { return sqrt2(fX[ihit], fY[ihit]); }
 double CdcHit::GetZ(int ihit) { return fZ[ihit]; }
-double CdcHit::GetPx(int ihit) { return fPx[ihit]; }
-double CdcHit::GetPy(int ihit) { return fPy[ihit]; }
-double CdcHit::GetPz(int ihit) { return fPz[ihit]; }
-double CdcHit::GetPt(int ihit) { return sqrt2(fPx[ihit], fPy[ihit]); }
-double CdcHit::GetPa(int ihit) { return sqrt3(fPx[ihit], fPy[ihit], fPz[ihit]); }
+double CdcHit::GetPx(int ihit) { return fPx[ihit]*1e3; }
+double CdcHit::GetPy(int ihit) { return fPy[ihit]*1e3; }
+double CdcHit::GetPz(int ihit) { return fPz[ihit]*1e3; }
+double CdcHit::GetPt(int ihit) { return sqrt2(fPx[ihit], fPy[ihit])*1e3; }
+double CdcHit::GetPa(int ihit) { return sqrt3(fPx[ihit], fPy[ihit], fPz[ihit])*1e3; }
 int CdcHit::GetIlayer(int ihit) { return fIlayer[ihit]; }
 int CdcHit::GetIcell(int ihit) { return fIcell[ihit]; }
 int CdcHit::GetIturn(int ihit) { return fIturn[ihit]; }
