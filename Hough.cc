@@ -2,6 +2,8 @@
 
 Hough::Hough(const char* name)
 {
+   strcpy(fName, name);
+
    fAstep = 0.1;
    fAmin = -8;
    fAmax = 8;
@@ -10,7 +12,8 @@ Hough::Hough(const char* name)
    fBmax = 0.5;
    fAnum = static_cast<int>((fAmax-fAmin)/fAstep);
    fBnum = static_cast<int>((fBmax-fBmin)/fBstep);
-   fH2D_AB = new TH2F("h2ab",Form("%s A-B Space;a;b",name),fAnum, fAmin, fAmax, fBnum, fBmin, fBmax);
+   char* hname = Form("%s A-B Space;a;b",name);
+   fH2D_AB = new TH2F(hname, hname, fAnum, fAmin, fAmax, fBnum, fBmin, fBmax);
    fH2D_AB->SetStats(0);
 }
 Hough::~Hough()
@@ -35,7 +38,8 @@ void Hough::FindLine(int nhits, double* uhits, double* vhits)
 }
 void Hough::PrintHough()
 {
-   printf("fA %7.3f fB %7.3f\n", fA, fB);
+   printf("%s fA %7.3f fB %7.3f\n", fName, fA, fB);
 }
 double Hough::GetA() { return fA; }
 double Hough::GetB() { return fB; }
+TH2F* Hough::GetH2D_AB() { return fH2D_AB; }

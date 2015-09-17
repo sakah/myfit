@@ -13,8 +13,10 @@ class Hough
 
       double GetA();
       double GetB();
+      TH2F* GetH2D_AB();
 
    private:
+      char fName[32];
       int fAnum;
       double fAstep;
       double fAmin;

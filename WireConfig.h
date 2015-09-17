@@ -38,6 +38,8 @@ class WireConfig
       void GetWirePos(int cid, int layer_type, int icell, int wire_type, double dz, const char* z_origin, double* wx, double* wy);
       void GetSenseWirePosAndVector(int cid, int icell, double* px, double* py, double* pz, double* vx, double *vy, double* vz);
 
+      void DrawEndPlate(const char* frame_name);
+
    private:
       double fInnerWallRadius; // 2013/12/04 -> This is outside of inner wall (2014/01/05)
       double fOuterWallRadius; // 2013/12/04 -> This is inside of outer wall (2014/01/05)
@@ -55,7 +57,5 @@ class WireConfig
 
       bool fDebug;
 };
-
-
 
 #endif

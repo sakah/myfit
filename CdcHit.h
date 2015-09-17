@@ -16,6 +16,7 @@ class CdcHit
    public:
 
       CdcHit();
+      void PrintHit(char* prefix);
       void AddHit(CdcHit& src, int ihit);
       void CopyByLayer(CdcHit& src, int odd_or_even);
       void CopyByHough(CdcHit& src, double a, double b, double* uhits, double* vhits, double threshold);
@@ -31,7 +32,10 @@ class CdcHit
       void SetBranchAddressIlayer(TTree* t, const char* name);
       void SetBranchAddressIcell(TTree* t, const char* name);
       void SetBranchAddressIturn(TTree* t, const char* name);
-      void SetBranchAddressAll(TTree* t, const char* num, const char* time, const char* x, const char* y, const char* z, const char* px, const char* py, const char* pz, const char* ilayer, const char* icell, const char* iturn);
+      void SetBranchAddressDist(TTree* t, const char* name);
+      void SetBranchAddressAll(TTree* t, const char* num, const char* time, const char* x, const char* y, const char* z, const char* px, const char* py, const char* pz, 
+            const char* ilayer, const char* icell, const char* iturn, const char* dist);
+      void SetRsmear(double sigma);
 
       int GetNumHits();
       double GetT(int ihit);
@@ -47,7 +51,13 @@ class CdcHit
       int GetIlayer(int ihit);
       int GetIcell(int ihit);
       int GetIturn(int ihit);
-      void GetUV(WireConfig& wireconfig, double* uhits, double* vhits);
+      double GetDist(int ihit);
+      double GetDistSmeared(int ihit);
+      void GetUV(WireConfig& wireConfig, double* uhits, double* vhits);
+
+      int GetColorByTurn(int iturn);
+      void DrawAny(double* u, double* v, int style);
+      void DrawXYAt(WireConfig& wireConfig, const char* z_origin);
 
    private:
 
@@ -62,6 +72,9 @@ class CdcHit
       int fIlayer[MAX_CDC_HIT];
       int fIcell[MAX_CDC_HIT];
       int fIturn[MAX_CDC_HIT];
+      double fDist[MAX_CDC_HIT];
+
+      double fRsmear[MAX_CDC_HIT];
 };
 
 #endif

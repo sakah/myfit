@@ -51,8 +51,18 @@
 ./run_cc.so: /usr/local/root_v5.34.18/include/TArrayI.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TClass.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TObjString.h
-./run_cc.so: /usr/local/root_v5.34.18/include/TVirtualTreePlayer.h Util.h
-./run_cc.so: XTCurve.h WireConfig.h CounterHit.h CdcHit.h Hough.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TVirtualTreePlayer.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TCanvas.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TPad.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TVirtualPad.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TAttPad.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TVirtualX.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TAttText.h
+./run_cc.so: /usr/local/root_v5.34.18/include/GuiTypes.h
+./run_cc.so: /usr/local/root_v5.34.18/include/Buttons.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TAttCanvas.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TCanvasImp.h Util.h XTCurve.h
+./run_cc.so: wireConfig.h CounterHit.h CdcHit.h WireConfig.h Hough.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TH2F.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TH2.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TH1.h

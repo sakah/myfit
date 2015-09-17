@@ -1,8 +1,7 @@
 
 # DO NOT DELETE
 
-./CdcHit_cc.so: CdcHit.h Util.h /usr/local/root_v5.34.18/include/TTree.h
-./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TBranch.h
+./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TRandom.h
 ./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TNamed.h
 ./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TObject.h
 ./CdcHit_cc.so: /usr/local/root_v5.34.18/include/Rtypes.h
@@ -19,7 +18,9 @@
 ./CdcHit_cc.so: /usr/local/root_v5.34.18/include/Riosfwd.h
 ./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TBuffer.h
 ./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TString.h
-./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TMathBase.h
+./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TMathBase.h CdcHit.h Util.h
+./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TTree.h
+./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TBranch.h
 ./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TObjArray.h
 ./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TSeqCollection.h
 ./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TCollection.h

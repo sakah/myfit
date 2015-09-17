@@ -1,6 +1,14 @@
+#include "TRandom.h"
 #include "CdcHit.h"
 
-CdcHit::CdcHit() { fNumHits = 0; }
+CdcHit::CdcHit() { fNumHits = 0; SetRsmear(0.02/*200um*/); }
+void CdcHit::PrintHit(char* prefix)
+{
+   printf("%s\n", prefix);
+   for (int ihit=0; ihit<fNumHits; ihit++) {
+      printf("iturn %d ilayer %d icell %d\n", fIturn[ihit], fIlayer[ihit], fIcell[ihit]);
+   }
+}
 void CdcHit::AddHit(CdcHit& src, int ihit)
 {
    int i = fNumHits;
@@ -14,6 +22,7 @@ void CdcHit::AddHit(CdcHit& src, int ihit)
    fIlayer[i] = src.fIlayer[ihit];
    fIcell[i]  = src.fIcell[ihit];
    fIturn[i]  = src.fIturn[ihit];
+   fDist[i]  = src.fDist[ihit];
    fNumHits++;
 }
 void CdcHit::CopyByLayer(CdcHit& src, int odd_or_even)
@@ -47,7 +56,9 @@ void CdcHit::SetBranchAddressPz(TTree* t, const char* name)   { t->SetBranchAddr
 void CdcHit::SetBranchAddressIlayer(TTree* t, const char* name){ t->SetBranchAddress(name, fIlayer); }
 void CdcHit::SetBranchAddressIcell(TTree* t, const char* name) { t->SetBranchAddress(name, fIcell); }
 void CdcHit::SetBranchAddressIturn(TTree* t, const char* name) { t->SetBranchAddress(name, fIturn); }
-void CdcHit::SetBranchAddressAll(TTree* t, const char* num, const char* time, const char* x, const char* y, const char* z, const char* px, const char* py, const char* pz, const char* ilayer, const char* icell, const char* iturn)
+void CdcHit::SetBranchAddressDist(TTree* t, const char* name)  { t->SetBranchAddress(name, fDist); }
+void CdcHit::SetBranchAddressAll(TTree* t, const char* num, const char* time, const char* x, const char* y, const char* z, const char* px, const char* py, const char* pz, 
+      const char* ilayer, const char* icell, const char* iturn, const char* dist)
 {
    SetBranchAddressNum(t, num);
    SetBranchAddressTime(t, time);
@@ -60,6 +71,13 @@ void CdcHit::SetBranchAddressAll(TTree* t, const char* num, const char* time, co
    SetBranchAddressIlayer(t, ilayer);
    SetBranchAddressIcell(t, icell);
    SetBranchAddressIturn(t, iturn);
+   SetBranchAddressDist(t, dist);
+}
+void CdcHit::SetRsmear(double sigma)
+{
+   for (int ihit=0; ihit<MAX_CDC_HIT; ihit++) {
+      fRsmear[ihit] = gRandom->Gaus(0, sigma);
+   }
 }
 int    CdcHit::GetNumHits() { return fNumHits; }
 double CdcHit::GetT(int ihit) { return fT[ihit]; }
@@ -75,13 +93,46 @@ double CdcHit::GetPa(int ihit) { return sqrt3(fPx[ihit], fPy[ihit], fPz[ihit]); 
 int CdcHit::GetIlayer(int ihit) { return fIlayer[ihit]; }
 int CdcHit::GetIcell(int ihit) { return fIcell[ihit]; }
 int CdcHit::GetIturn(int ihit) { return fIturn[ihit]; }
-void CdcHit::GetUV(WireConfig& wireconfig, double* uhits, double* vhits)
+double CdcHit::GetDist(int ihit) { return fDist[ihit]; }
+double CdcHit::GetDistSmeared(int ihit) { return fDist[ihit] + fRsmear[ihit]; }
+void CdcHit::GetUV(WireConfig& wireConfig, double* uhits, double* vhits)
 {
    for (int ihit=0; ihit<fNumHits; ihit++) {
       double wx, wy;
-      wireconfig.GetWirePos(fIlayer[ihit], LAYER_TYPE_SENSE, fIcell[ihit], WIRE_TYPE_SENSE, 0, "up", &wx, &wy);
+      wireConfig.GetWirePos(fIlayer[ihit], LAYER_TYPE_SENSE, fIcell[ihit], WIRE_TYPE_SENSE, 0, "up", &wx, &wy);
       double r2 = pow2(wx, wy);
       uhits[ihit] = 2.0*wx/r2;
       vhits[ihit] = 2.0*wy/r2;
+   }
+}
+int CdcHit::GetColorByTurn(int iturn)
+{
+   int col = kCyan; // noise
+   if (iturn==0) col = kRed;
+   if (iturn==1) col = kBlue;
+   if (iturn==2) col = kGreen;
+   if (iturn==3) col = kMagenta;
+   if (iturn>=4) col = kGray;
+   return col;
+}
+void CdcHit::DrawXYAt(WireConfig& wireConfig, const char* z_origin)
+{
+   for (int ihit=0; ihit<fNumHits; ihit++) {
+      double wx, wy;
+      if (strcmp(z_origin,"MC")==0) {
+         wireConfig.GetWirePos(fIlayer[ihit], LAYER_TYPE_SENSE, fIcell[ihit], WIRE_TYPE_SENSE, fZ[ihit], "center", &wx, &wy);
+      } else {
+         wireConfig.GetWirePos(fIlayer[ihit], LAYER_TYPE_SENSE, fIcell[ihit], WIRE_TYPE_SENSE, 0, z_origin, &wx, &wy);
+      }
+      double r = GetDist(ihit);
+      int col = GetColorByTurn(fIturn[ihit]);
+      draw_ellipse(wx, wy, r, col);
+   }
+}
+void CdcHit::DrawAny(double* u, double* v, int style)
+{
+   for (int ihit=0; ihit<fNumHits; ihit++) {
+      int col = GetColorByTurn(fIturn[ihit]);
+      draw_marker(u[ihit], v[ihit], col, style);
    }
 }

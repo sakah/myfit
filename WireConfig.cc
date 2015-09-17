@@ -4,7 +4,9 @@
 #include <math.h>
 
 #include "TMath.h"
+#include "TH2F.h"
 
+#include "Util.h"
 #include "WireConfig.h"
 
 WireConfig::WireConfig()
@@ -348,4 +350,16 @@ void WireConfig::GetSenseWirePosAndVector(int cid, int icell_z0, double* px, dou
    *vy = y2-y1;
    *vz = z2-z1;
    //printf("shift %d *vx %lf *vy %lf *vz %lf deg %lf\n",shift, *vx, *vy, *vz, rad1/3.14159*180.0);
+}
+void WireConfig::DrawEndPlate(const char* frame_name)
+{
+   TH2F* hframe = new TH2F(frame_name, "", 100, -100, 100, 100, -100, 100);
+   hframe->SetStats(0);
+   hframe->Draw();
+
+   for (int ilayer=0; ilayer<20; ilayer++) {
+      if (ilayer%2==0) continue;
+      double r = GetLayerRadius(ilayer, LAYER_TYPE_SENSE, 0);
+      draw_ellipse(0, 0, r, kGray);
+   }
 }
