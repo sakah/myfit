@@ -43,6 +43,7 @@ class CdcHit
             const char* ilayer, const char* icell, const char* iturn, const char* dist);
       void SetRsmear(double sigma);
 
+      int GetNumTurns();
       int GetNumHits();
       double GetT(int ihit);
       double GetX(int ihit);

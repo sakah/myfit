@@ -2,6 +2,8 @@
 #include "TFile.h"
 #include "TTree.h"
 #include "TCanvas.h"
+#include "TPad.h"
+#include "TPaveText.h"
 
 #include "Util.h"
 #include "XTCurve.h"
@@ -43,6 +45,9 @@ Circle circ2;
 
 WireConfig wireConfig;
 TCanvas* c1 = NULL;
+TPad* pad1 = NULL;
+TPad* pad2 = NULL;
+
 bool opened=false;
 void open()
 {
@@ -55,7 +60,7 @@ void open()
 
    opened=true;
 }
-void run(int iev, double threshold=0.01)
+int run(int iev, double threshold=0.01, int checking_num_turns=-1)
 {
    if (!opened) open();
 
@@ -78,7 +83,9 @@ void run(int iev, double threshold=0.01)
 
    t->GetEntry(iev);
 
-   if (cheren.GetNumHits()==0 || scinti.GetNumHits()==0) return;
+   if (cheren.GetNumHits()==0 || scinti.GetNumHits()==0) return - 1;
+   if (checking_num_turns !=-1 && cdcSig.GetNumTurns() != checking_num_turns) return -1;
+
    double trig_time = scinti.GetT(0);
 
    printf("iev %d\n", iev);
@@ -126,16 +133,33 @@ void run(int iev, double threshold=0.01)
       int nx = 2;
       int ny = 4;
       c1 = new TCanvas("c1","", 500*nx, 500*ny);
-      c1->Divide(nx,ny);
+      pad1 = new TPad("pad2","pad2", 0.00, 0.95, 1.00, 1.00); // title
+      pad2 = new TPad("pad1","pad1", 0.00, 0.00, 1.00, 0.95); // body
+      pad1->Draw();
+      pad2->Draw();
+      pad2->Divide(nx,ny);
    }
+   pad1->cd(); TPaveText* pt = new TPaveText(0,0,1,1); pt->SetFillColor(0); pt->SetBorderSize(0); pt->AddText(Form("iev %d", iev)); pt->Draw();
    int n=1;
-   c1->cd(n++); wireConfig.DrawEndPlate("c1"); cdc1.DrawXYAt(wireConfig, "up");
-   c1->cd(n++); wireConfig.DrawEndPlate("c2"); cdc2.DrawXYAt(wireConfig, "up");
-   c1->cd(n++); draw_frame("uv1;u;v", 100, -0.05, 0.05, 100, -0.05, 0.05); cdc1.DrawAny(u1, v1, 5); draw_line(hough1.GetA(), hough1.GetB(), -0.05, 0.05, kRed);
-   c1->cd(n++); draw_frame("uv2;u;v", 100, -0.05, 0.05, 100, -0.05, 0.05); cdc2.DrawAny(u2, v2, 5); draw_line(hough2.GetA(), hough2.GetB(), -0.05, 0.05, kRed);
-   c1->cd(n++); hough1.GetH2D_AB()->Draw("colz"); draw_marker(hough1.GetA(), hough1.GetB(), kRed, 29);
-   c1->cd(n++); hough2.GetH2D_AB()->Draw("colz"); draw_marker(hough1.GetA(), hough1.GetB(), kRed, 29);
-   c1->cd(n++); wireConfig.DrawEndPlate("c3"); cdc1hough.DrawXYAt(wireConfig, "up"); draw_ellipse(circ1.GetX0Fit(), circ1.GetY0Fit(), circ1.GetRFit(), kRed);
-   c1->cd(n++); wireConfig.DrawEndPlate("c4"); cdc2hough.DrawXYAt(wireConfig, "up"); draw_ellipse(circ2.GetX0Fit(), circ2.GetY0Fit(), circ2.GetRFit(), kBlue);
+   pad2->cd(n++); wireConfig.DrawEndPlate("c1"); cdc1.DrawXYAt(wireConfig, "up");
+   pad2->cd(n++); wireConfig.DrawEndPlate("c2"); cdc2.DrawXYAt(wireConfig, "up");
+   pad2->cd(n++); draw_frame("uv1;u;v", 100, -0.05, 0.05, 100, -0.05, 0.05); cdc1.DrawAny(u1, v1, 5); draw_line(hough1.GetA(), hough1.GetB(), -0.05, 0.05, kRed);
+   pad2->cd(n++); draw_frame("uv2;u;v", 100, -0.05, 0.05, 100, -0.05, 0.05); cdc2.DrawAny(u2, v2, 5); draw_line(hough2.GetA(), hough2.GetB(), -0.05, 0.05, kRed);
+   pad2->cd(n++); hough1.GetH2D_AB()->Draw("colz"); draw_marker(hough1.GetA(), hough1.GetB(), kRed, 34);
+   pad2->cd(n++); hough2.GetH2D_AB()->Draw("colz"); draw_marker(hough1.GetA(), hough1.GetB(), kRed, 34);
+   pad2->cd(n++); wireConfig.DrawEndPlate("c3"); cdc1hough.DrawXYAt(wireConfig, "up"); draw_ellipse(circ1.GetX0Fit(), circ1.GetY0Fit(), circ1.GetRFit(), kRed);
+   pad2->cd(n++); wireConfig.DrawEndPlate("c4"); cdc2hough.DrawXYAt(wireConfig, "up"); draw_ellipse(circ2.GetX0Fit(), circ2.GetY0Fit(), circ2.GetRFit(), kBlue);
    c1->Print("a.pdf");
+
+   return 0;
+}
+void loop(int checking_num_turns, double threshold)
+{
+   for (int iev=0; ;iev++) {
+      int ret = run(iev, threshold, checking_num_turns);
+      if (ret==-1) continue;
+      printf("Type q to quit");
+      char c = getchar();
+      if (c=='q') break;
+   }
 }

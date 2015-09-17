@@ -161,9 +161,8 @@ void CdcHit::CopyByLayer(CdcHit& src, int odd_or_even)
    fNumHits = 0;
    for (int ihit=0; ihit<src.GetNumHits(); ihit++) {
       int ilayer = src.fIlayer[ihit];
-      int iturn = src.fIturn[ihit];
-      if (odd_or_even==CDC_ODD && iturn!=-1 && ilayer%2==0) continue;
-      if (odd_or_even==CDC_EVEN && iturn!=-1 && ilayer%2==1) continue;
+      if (odd_or_even==CDC_ODD && ilayer%2==0) continue;
+      if (odd_or_even==CDC_EVEN && ilayer%2==1) continue;
       AddHit(src, ihit);
    }
 }
@@ -212,6 +211,7 @@ void CdcHit::SetRsmear(double sigma)
       fRsmear[ihit] = gRandom->Gaus(0, sigma);
    }
 }
+int    CdcHit::GetNumTurns() { return fIturn[fNumHits-1]+1; }
 int    CdcHit::GetNumHits() { return fNumHits; }
 double CdcHit::GetT(int ihit) { return fT[ihit]; }
 double CdcHit::GetX(int ihit) { return fX[ihit]; }
