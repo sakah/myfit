@@ -5,6 +5,7 @@
 #include "TEllipse.h"
 #include "TH2F.h"
 #include "TGraph.h"
+#include "TF1.h"
 
 double pow2(double a, double b) { return a*a + b*b; }
 double sqrt2(double a, double b) { return TMath::Sqrt(a*a+b*b); }
@@ -35,4 +36,11 @@ void draw_graph(char* title, double xmin, double xmax, double ymin, double ymax,
    gr->SetMarkerColor(col);
    gr->SetMarkerStyle(style);
    gr->Draw("p same");
+}
+void draw_line(double a, double b, double xmin, double xmax, int col)
+{
+   TF1* f1 = new TF1("line", "[0]*x+[1]", xmin, xmax);
+   f1->SetLineColor(col);
+   f1->SetParameters(a, b);
+   f1->Draw("same");
 }

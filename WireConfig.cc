@@ -353,7 +353,7 @@ void WireConfig::GetSenseWirePosAndVector(int cid, int icell_z0, double* px, dou
 }
 void WireConfig::DrawEndPlate(const char* frame_name)
 {
-   TH2F* hframe = new TH2F(frame_name, "", 100, -100, 100, 100, -100, 100);
+   TH2F* hframe = new TH2F(frame_name, ";X(cm);Y(cm)", 100, -100, 100, 100, -100, 100);
    hframe->SetStats(0);
    hframe->Draw();
 

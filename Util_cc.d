@@ -43,5 +43,13 @@
 ./Util_cc.so: /usr/local/root_v5.34.18/include/TMatrixFBasefwd.h
 ./Util_cc.so: /usr/local/root_v5.34.18/include/TMatrixDBasefwd.h
 ./Util_cc.so: /usr/local/root_v5.34.18/include/TGraph.h
+./Util_cc.so: /usr/local/root_v5.34.18/include/TF1.h
+./Util_cc.so: /usr/local/root_v5.34.18/include/TFormula.h
+./Util_cc.so: /usr/local/root_v5.34.18/include/TBits.h
+./Util_cc.so: /usr/local/root_v5.34.18/include/TObjArray.h
+./Util_cc.so: /usr/local/root_v5.34.18/include/TSeqCollection.h
+./Util_cc.so: /usr/local/root_v5.34.18/include/TCollection.h
+./Util_cc.so: /usr/local/root_v5.34.18/include/TIterator.h
+./Util_cc.so: /usr/local/root_v5.34.18/include/Math/ParamFunctor.h
 ./Util_cc.so: /usr/local/root_v5.34.18/include/cintdictversion.h /usr/local/root_v5.34.18/include/RVersion.h
 Util_cc__ROOTBUILDVERSION= 5.34/18
