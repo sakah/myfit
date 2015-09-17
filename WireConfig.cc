@@ -7,6 +7,9 @@
 
 #include "WireConfig.h"
 
+WireConfig::WireConfig()
+{
+}
 void WireConfig::Init(char* fname)
 {
     FILE* fp = fopen(fname,"r");

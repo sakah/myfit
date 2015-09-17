@@ -1,5 +1,5 @@
-#ifndef COUNTHIT_H
-#define COUNTHIT_H
+#ifndef COUNTERHIT_H
+#define COUNTERHIT_H
 
 #define MAX_COUNTER_HIT 100
 

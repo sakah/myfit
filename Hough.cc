@@ -1,6 +1,6 @@
 #include "Hough.h"
 
-Hough::Hough(char* name)
+Hough::Hough(const char* name)
 {
    fAstep = 0.1;
    fAmin = -8;
@@ -37,3 +37,5 @@ void Hough::PrintHough()
 {
    printf("fA %7.3f fB %7.3f\n", fA, fB);
 }
+double Hough::GetA() { return fA; }
+double Hough::GetB() { return fB; }

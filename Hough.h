@@ -6,10 +6,13 @@
 class Hough
 {
    public:
-      Hough(char* name);
+      Hough(const char* name);
       ~Hough();
       void FindLine(int nhits, double* uhits, double* vhits);
       void PrintHough();
+
+      double GetA();
+      double GetB();
 
    private:
       int fAnum;

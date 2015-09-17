@@ -31,4 +31,3 @@ double CounterHit::GetPy(int ihit) { return fPy[ihit]; }
 double CounterHit::GetPz(int ihit) { return fPz[ihit]; }
 double CounterHit::GetPt(int ihit) { return sqrt2(fPx[ihit], fPy[ihit]); }
 double CounterHit::GetPa(int ihit) { return sqrt3(fPx[ihit], fPy[ihit], fPz[ihit]); }
-

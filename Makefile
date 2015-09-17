@@ -1,3 +1,6 @@
+load.so:
+	g++ -dynamiclib -fPIC `root-config --cflags --libs` Util.cc WireConfig.cc XTCurve.cc CounterHit.cc CdcHit.cc Hough.cc -o load.so
+
 util.so:
 	g++ -dynamiclib -fPIC `root-config --cflags` `root-config --libs` util.cc -o util.so
 
