@@ -1,7 +1,8 @@
 #include "TRandom.h"
 #include "CdcHit.h"
 
-CdcHit::CdcHit() { fNumHits = 0; SetRsmear(0.02/*200um*/); }
+CdcHit::CdcHit() { Clear(); SetRsmear(0.02/*200um*/); }
+void CdcHit::Clear() { fNumHits = 0; }
 void CdcHit::PrintHit(char* prefix)
 {
    printf("%s\n", prefix);
@@ -41,8 +42,9 @@ void CdcHit::AddHit(CdcHit& src, int ihit)
    fDist[i]  = src.fDist[ihit];
    fNumHits++;
 }
-void CdcHit::MakeNoise(WireConfig& wireConfig, double noise_occupancy)
+void CdcHit::MakeNoise(WireConfig& wireConfig, double noise_occupancy, int seed)
 {
+   gRandom->SetSeed(seed);
    for (int ilayer=0; ilayer<20; ilayer++) {
       int numCells = wireConfig.GetCellSize(ilayer);
       for (int icell=0; icell<numCells; icell++) {

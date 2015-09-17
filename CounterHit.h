@@ -11,6 +11,7 @@ class CounterHit
    public:
 
       CounterHit();
+      void Clear();
       void PrintHit(char* prefix);
       void SetBranchAddressNum(TTree* t, const char* name);
       void SetBranchAddressTime(TTree* t, const char* name);

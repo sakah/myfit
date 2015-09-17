@@ -1,6 +1,7 @@
 #include "CounterHit.h"
 
-CounterHit::CounterHit() { fNumHits = 0; }
+CounterHit::CounterHit() { Clear(); }
+void CounterHit::Clear() { fNumHits = 0; }
 void CounterHit::PrintHit(char* prefix)
 {
    printf("%s\n", prefix);

@@ -34,16 +34,36 @@ double threshold = 0.01;
 CdcHit cdc1hough;
 CdcHit cdc2hough;
 
+WireConfig wireConfig;
 TCanvas* c1 = NULL;
-void run(int iev)
+bool opened=false;
+void open()
 {
    char* wire_config = "B1T_square_1.5m_ver_2014_03_28.txt";
-   WireConfig wireConfig;
    wireConfig.Init(wire_config);
 
    char* root = "root/hoge1-0.root";
    TFile* f = new TFile(root);
    t = (TTree*)f->Get("t");
+
+   opened=true;
+}
+void run(int iev)
+{
+   if (!opened) open();
+
+   cheren.Clear();
+   scinti.Clear();
+   cdcNoise.Clear();
+   cdcSig.Clear();
+   cdcSigNoise.Clear();
+   cdcFA.Clear();
+   cdcClus.Clear();
+   cdc1.Clear();
+   cdc2.Clear();
+   cdc1hough.Clear();
+   cdc2hough.Clear();
+
 
    initial.SetBranchAddress(t, "ini_x_cm", "ini_y_cm", "ini_z_cm", "ini_px_GeV", "ini_py_GeV", "ini_pz_GeV");
    scinti.SetBranchAddressAll(t, "trig_scinti_nhits", "trig_scinti_time", "trig_scinti_posx", "trig_scinti_posy", "trig_scinti_posz", "trig_scinti_momx", "trig_scinti_momy", "trig_scinti_momz");
@@ -60,7 +80,8 @@ void run(int iev)
    scinti.PrintHit("==scinti==");
    cheren.PrintHit("==cherenkov==");
 
-   cdcNoise.MakeNoise(wireConfig, noise_occupancy);
+   int seed = 1;
+   cdcNoise.MakeNoise(wireConfig, noise_occupancy, seed);
    cdcSigNoise.Merge(cdcSig, cdcNoise);
    cdcFA.CopyByFirstArrivedHit(cdcSigNoise, trig_time);
    cdcClus.CopyByClusters(wireConfig, cdcFA);

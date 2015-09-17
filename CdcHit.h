@@ -16,10 +16,11 @@ class CdcHit
    public:
 
       CdcHit();
+      void Clear();
       void PrintHit(char* prefix);
       void AddHit(int ilayer, int icell, int iturn, double dist); // used for noise
       void AddHit(CdcHit& src, int ihit);
-      void MakeNoise(WireConfig& wireConfig, double noise_occupancy);
+      void MakeNoise(WireConfig& wireConfig, double noise_occupancy, int seed);
       void Merge(CdcHit& cdc1, CdcHit& cdc2);
       void CopyByClusters(WireConfig& wireConfig, CdcHit& src);
       void CopyByFirstArrivedHit(CdcHit& src, double trig_time);
