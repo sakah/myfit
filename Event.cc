@@ -4,6 +4,7 @@
 #include "TFile.h"
 #include "TTree.h"
 #include "TEllipse.h"
+static double pow2(double a, double b) { return a*b+b*b; }
 
 Event::Event(char* wire_config, char* root)
 {
@@ -316,6 +317,92 @@ void Event::SetDriftTimeWithTOF(int ihit, double dtime)
 {
    fWire_DriftTimeWithTOF[ihit] = dtime;
 }
+
+void Event::Hough()
+{
+   double astep = 0.1;
+   double amin = -8;
+   double amax = 8;
+   double bstep = 0.001;
+   double bmin = -0.5;
+   double bmax = 0.5;
+   int anum = static_cast<int>((amax-amin)/astep);
+   int bnum = static_cast<int>((bmax-bmin)/bstep);
+   //printf("anum %d %f %f bnum %d %f %f\n", anum, amin, amax, bnum, bmin, bmax);
+   if (fH2D_AB==NULL) {
+      fH2D_AB = new TH2F("h2ab",Form("%s A-B Space;a;b",name),anum, amin, amax, bnum, bmin, bmax);
+      fH2D_AB->SetStats(0);
+   }
+   fH2D_AB->Reset();
+
+   for (int ihit=0; ihit<fWire_Nhits; ihit++) {
+      double r2 = pow2(fWire_Xhits[ihit], fWire_Yhits[ihit]);
+      fWire_Uhits[ihit] = 2.0*fWire_Xhits[ihit]/r2;
+      fWire_Vhits[ihit] = 2.0*fWire_Yhits[ihit]/r2;
+   }
+
+   fGraph_UV = new TGraph(fWire_Nhits, fWire_Uhits, fWire_Vhits);
+   fGraph_UV->SetTitle(Form("%s U-V Space;u;v",name));
+
+   for (int i=0; i<fNum_Hits; i++) {
+      for (int ia=0; ia<anum; ia++) {
+
+         double a = ia*astep + amin;
+         double b = -fUhits[i]*a + fVhits[i];
+
+         //printf("i %d a %lf b %lf\n", i, a, b);
+         fH2D_AB->Fill(a, b, 1);
+      }
+   }
+   int ia_min;
+   int ib_min;
+   int tmp;
+   fH2D_AB->GetMaximumBin(ia_min, ib_min, tmp);
+   fHough_A = fH2D_AB->GetXaxis()->GetBinCenter(ia_min);
+   fHough_B = fH2D_AB->GetYaxis()->GetBinCenter(ib_min);
+};
+void Event::CalcHoughDiff(double threshold)
+{
+   if (fHough_H1D_Diff==NULL) {
+      fHough_H1D_Diff = new TH1F("hdiff",Form("%s Residual; Residual;",fName), 100, -0.03, 0.03);
+      gStyle->SetOptStat(1111111);
+      fHough_H1D_Diff->SetStats(1);
+   }
+   fHough_H1D_Diff->Reset();
+
+   fHough_Num_Signal_Inside=0;
+   fHough_Num_Signal_Outside=0;
+
+   fHough_Num_Inside=0;
+   fHough_Num_Inside_Signal=0;
+   fHough_Num_Inside_Noise=0;
+
+   for (int ihit=0; ihit<fWire_Nhits; ihit++) {
+      if (fWire_Iturns[ihit]!=-1) fHough_Num_Signal++;
+
+      double v = fHough_A * fWire_Uhits[ihit] + fHough_B;
+      fHough_Diff[ihit] = v - fHough_Vhits[ihit];
+      fHough_H1D_Diff->Fill(fHough_Diff[ihit]);
+      //printf("ihit %d vcalc %f vhits %f diff %f\n", ihit, v, hits.vhits[ihit], diff);
+      if (TMath::Abs(fHough_Diff[ihit]) < threshold) {
+         fWire_Uhits_Inside[fHough_Num_Inside] = fWire_Uhits[ihit];
+         fWire_Vhits_Inside[fHough_Num_Inside] = fWire_Vhits[ihit];
+         fHough_Num_Inside++;
+         if (iturns[ihit]!=-1) {
+            fHough_Num_Signal_Inside++;
+            fHough_Num_Inside_Signal++;
+         } else {
+            fHough_Num_Inside_Noise++;
+         }
+      } else {
+         if (fWire_Iturns[ihit]!=-1) fNum_Signal_Outside++;
+      }
+   }
+   //printf("DEBUG: num_inside %d (sig %d noise %d)\n", num_inside, num_inside_signal, num_inside_noise);
+   gr_uv_inside = new TGraph(num_inside, uhits_inside, vhits_inside);
+   gr_uv_inside->SetMarkerColor(kBlue);
+   gr_uv_inside->SetTitle(Form("%s U-V Space(Inside);u;v",name));
+};
 
 // private
 void Event::GetWirePos(int cid, int icell, double zpos_from_center, const char* zorigin, double& xwire, double& ywire)

@@ -37,6 +37,8 @@ class Event
 
       void CopyEventInfo(Event& oe);
       void AddWireHit(int ihit, Event& oe);
+      void Hough();
+      void CalcHoughDiff(double threshold);
 
    private:
       TTree* fTree;
@@ -84,6 +86,25 @@ class Event
       double fWire_Pxhits[MAX_HIT];
       double fWire_Pyhits[MAX_HIT];
       double fWire_Pzhits[MAX_HIT];
+
+      // Hough Transformation
+      TH2F* fHough_H2D_AB;
+      TGraph* fHough_Graph_UV;
+      double fHough_Uhits[MAX_HIT];
+      double fHough_Vhits[MAX_HIT];
+      double fHough_A;
+      double fHough_B;
+      TH1F* fHough_H1D_Diff;
+      int fHough_Num_Signal_Inside;
+      int fHough_Num_Signal_Outside;
+      int fHough_Num_Inside;
+      int fHough_Num_Inside_Signal;
+      int fHough_Num_Inside_Noise;
+      double fHough_Diff[MAX_HIT];
+      double fHough_Uhits_Inside[MAX_HIT];
+      double fHough_Vhits_Inside[MAX_HIT];
+      TGraph* GetHoughUV();
+      TGraph* GetHoughUVInside();
 
       WireConfig fWireConfig;
       void GetWirePos(int cid, int icell, double zpos_from_center, const char* zorigin, double& xwire, double& ywire);
