@@ -7,6 +7,7 @@ void CdcHit::Clear() { fNumHits = 0; }
 void CdcHit::PrintHit(char* prefix)
 {
    printf("%s\n", prefix);
+   printf("%d\n", fNumHits);
    for (int ihit=0; ihit<fNumHits; ihit++) {
       printf("iturn %2d ilayer %2d icell %3d Pt %7.3f Pz %7.3f Pa %7.3f\n", fIturn[ihit], fIlayer[ihit], fIcell[ihit], GetPt(ihit), GetPz(ihit), GetPa(ihit));
    }
@@ -241,6 +242,7 @@ void CdcHit::GetUV(WireConfig& wireConfig, double* uhits, double* vhits)
       double r2 = pow2(wx, wy);
       uhits[ihit] = 2.0*wx/r2;
       vhits[ihit] = 2.0*wy/r2;
+      printf("GetUV: ihit %d wx %f wy %f u %f v %f\n", ihit, wx, wy, uhits[ihit], vhits[ihit]);
    }
 }
 void CdcHit::GetXYend(WireConfig& wireConfig, double* xends, double* yends)

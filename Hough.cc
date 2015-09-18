@@ -5,11 +5,11 @@ Hough::Hough(const char* name)
 {
    strcpy(fName, name);
 
-   fTstep = 0.01;
+   fTstep = 0.05;
    fTmin = 0.0;
-   fTmax = TMath::Pi();
+   fTmax = 2.0*TMath::Pi();
    fRstep = 0.001;
-   fRmin = -0.05;
+   fRmin =  0.00;
    fRmax =  0.05;
    fTnum = static_cast<int>((fTmax-fTmin)/fTstep);
    fRnum = static_cast<int>((fRmax-fRmin)/fRstep);
@@ -28,16 +28,16 @@ void Hough::FindLine(int nhits, double* uhits, double* vhits)
       for (int it=0; it<fTnum; it++) {
          double theta = it*fTstep + fTmin;
          double rho = uhits[ihit]*TMath::Cos(theta) + vhits[ihit]*TMath::Sin(theta);
-         //printf("u %f v %f theta %f rho %f\n", uhits[ihit], vhits[ihit], theta, rho);
-         fH2D_TR->Fill(theta, rho, 1);
+         //printf("ihit %d u %f v %f theta %f rho %f\n", ihit, uhits[ihit], vhits[ihit], theta, rho);
+         fH2D_TR->Fill(theta, rho);
       }
    }
-   int it_min;
-   int ir_min;
+   int it_max;
+   int ir_max;
    int tmp;
-   fH2D_TR->GetMaximumBin(it_min, ir_min, tmp);
-   fT = fH2D_TR->GetXaxis()->GetBinCenter(it_min);
-   fR = fH2D_TR->GetYaxis()->GetBinCenter(ir_min);
+   fH2D_TR->GetMaximumBin(it_max, ir_max, tmp);
+   fT = fH2D_TR->GetXaxis()->GetBinCenter(it_max);
+   fR = fH2D_TR->GetYaxis()->GetBinCenter(ir_max);
 }
 void Hough::PrintHough()
 {

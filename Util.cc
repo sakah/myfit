@@ -49,5 +49,6 @@ void draw_line_TR(double theta, double rho, double xmin, double xmax, int col)
 {
    double a = -1.0/TMath::Tan(theta);
    double b = rho/TMath::Sin(theta);
+   //printf("theta %f a %f rho %f b %f\n", theta, a, rho, b);
    draw_line_AB(a, b, xmin, xmax, col);
 }

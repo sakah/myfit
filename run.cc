@@ -84,7 +84,7 @@ int run(int iev, double threshold=0.01, int checking_num_turns=-1)
 
    t->GetEntry(iev);
 
-   if (cheren.GetNumHits()==0 || scinti.GetNumHits()==0) return - 1;
+   if (cheren.GetNumHits()==0 || scinti.GetNumHits()==0 || cdcSig.GetNumHits()==0) return - 1;
    if (checking_num_turns !=-1 && cdcSig.GetNumTurns() != checking_num_turns) return -1;
 
    double trig_time = scinti.GetT(0);
@@ -144,10 +144,10 @@ int run(int iev, double threshold=0.01, int checking_num_turns=-1)
    int n=1;
    pad2->cd(n++); wireConfig.DrawEndPlate("c1"); cdc1.DrawXYAt(wireConfig, "up");
    pad2->cd(n++); wireConfig.DrawEndPlate("c2"); cdc2.DrawXYAt(wireConfig, "up");
-   pad2->cd(n++); draw_frame("uv1;u;v", 100, -0.05, 0.05, 100, -0.05, 0.05); cdc1.DrawAny(u1, v1, 5); draw_line_TR(hough1.GetT(), hough1.GetR(), 0.0, TMath::Pi(), kRed);
-   pad2->cd(n++); draw_frame("uv2;u;v", 100, -0.05, 0.05, 100, -0.05, 0.05); cdc2.DrawAny(u2, v2, 5); draw_line_TR(hough2.GetT(), hough2.GetR(), 0.0, TMath::Pi(), kRed);
-   pad2->cd(n++); hough1.GetH2D_TR()->Draw("colz"); draw_marker(hough1.GetT(), hough1.GetR(), kRed, 34);
-   pad2->cd(n++); hough2.GetH2D_TR()->Draw("colz"); draw_marker(hough2.GetT(), hough2.GetR(), kRed, 34);
+   pad2->cd(n++); draw_frame("uv1;u;v", 100, -0.05, 0.05, 100, -0.05, 0.05); cdc1.DrawAny(u1, v1, 5); draw_line_TR(hough1.GetT(), hough1.GetR(), -0.05, 0.05, kRed);
+   pad2->cd(n++); draw_frame("uv2;u;v", 100, -0.05, 0.05, 100, -0.05, 0.05); cdc2.DrawAny(u2, v2, 5); draw_line_TR(hough2.GetT(), hough2.GetR(), -0.05, 0.05, kRed);
+   pad2->cd(n++); hough1.GetH2D_TR()->Draw("colz"); draw_marker(hough1.GetT(), hough1.GetR(), kRed, 24);
+   pad2->cd(n++); hough2.GetH2D_TR()->Draw("colz"); draw_marker(hough2.GetT(), hough2.GetR(), kRed, 24);
    pad2->cd(n++); wireConfig.DrawEndPlate("c3"); cdc1hough.DrawXYAt(wireConfig, "up"); draw_ellipse(circ1.GetX0Fit(), circ1.GetY0Fit(), circ1.GetRFit(), kRed);
    pad2->cd(n++); wireConfig.DrawEndPlate("c4"); cdc2hough.DrawXYAt(wireConfig, "up"); draw_ellipse(circ2.GetX0Fit(), circ2.GetY0Fit(), circ2.GetRFit(), kBlue);
    c1->Print("a.pdf");
