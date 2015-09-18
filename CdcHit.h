@@ -25,7 +25,7 @@ class CdcHit
       void CopyByClusters(WireConfig& wireConfig, CdcHit& src);
       void CopyByFirstArrivedHit(CdcHit& src, double trig_time);
       void CopyByLayer(CdcHit& src, int odd_or_even);
-      void CopyByHough(CdcHit& src, double a, double b, double* uhits, double* vhits, double threshold);
+      void CopyByHough(CdcHit& src, double rho, double* uhits, double* vhits, double threshold);
 
       void SetBranchAddressNum(TTree* t, const char* name);
       void SetBranchAddressTime(TTree* t, const char* name);
@@ -43,6 +43,7 @@ class CdcHit
             const char* ilayer, const char* icell, const char* iturn, const char* dist);
       void SetRsmear(double sigma);
 
+      int GetMaxLayer();
       int GetNumTurns();
       int GetNumHits();
       double GetT(int ihit);

@@ -168,17 +168,23 @@ void CdcHit::CopyByLayer(CdcHit& src, int odd_or_even)
       AddHit(src, ihit);
    }
 }
-void CdcHit::CopyByHough(CdcHit& src, double theta, double rho, double* uhits, double* vhits, double threshold)
+void CdcHit::CopyByHough(CdcHit& src, double rho, double* uhits, double* vhits, double threshold)
 {
+   /*
+    * Assume that (uhits, vhits) are rotated so that y=ax+b -> y = b
+    */
    fNumHits = 0;
-   double a = -1.0/TMath::Tan(theta);
-   double b = rho/TMath::Sin(theta);
    for (int ihit=0; ihit<src.GetNumHits(); ihit++) {
-      double v = a*uhits[ihit] + b;
-      double res = v - vhits[ihit];
-      //printf("u %f v %f v %f res %f\n", uhits[ihit], vhits[ihit], v, res);
+      int ilayer = src.fIlayer[ihit];
+      int icell = src.fIcell[ihit];
+      int iturn = src.fIturn[ihit];
+      double res =vhits[ihit] - rho;
+      printf("iturn %d ilayer %d icell %d u %f v %f rho %f res %f ", iturn, ilayer, icell, uhits[ihit], vhits[ihit], rho, res);
       if (TMath::Abs(res)<threshold) {
+         printf("--> included\n");
          AddHit(src, ihit);
+      } else {
+         printf("--> excluded\n");
       }
    }
 }
@@ -215,6 +221,16 @@ void CdcHit::SetRsmear(double sigma)
    for (int ihit=0; ihit<MAX_CDC_HIT; ihit++) {
       fRsmear[ihit] = gRandom->Gaus(0, sigma);
    }
+}
+int CdcHit::GetMaxLayer()
+{ 
+   int max_ilayer = -1;
+   for (int ihit=0; ihit<fNumHits; ihit++) {
+      if (max_ilayer < fIlayer[ihit]) {
+         max_ilayer = fIlayer[ihit];
+      }
+   }
+   return max_ilayer;
 }
 int    CdcHit::GetNumTurns() { return fIturn[fNumHits-1]+1; }
 int    CdcHit::GetNumHits() { return fNumHits; }

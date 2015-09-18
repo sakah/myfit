@@ -11,6 +11,13 @@
 double pow2(double a, double b) { return a*a + b*b; }
 double sqrt2(double a, double b) { return TMath::Sqrt(a*a+b*b); }
 double sqrt3(double a, double b, double c) { return TMath::Sqrt(a*a+b*b+c*c); };
+void rotate_by(double x0, double y0, double angle, int num, double* x1, double* y1, double *x2, double* y2)
+{
+   for (int i=0; i<num; i++) {
+      x2[i]=+(x1[i]-x0)*TMath::Cos(angle)-(y1[i]-y0)*TMath::Sin(angle)+x0;
+      y2[i]=+(x1[i]-x0)*TMath::Sin(angle)+(y1[i]-y0)*TMath::Cos(angle)+y0;
+   }
+}
 void draw_ellipse(double x, double y, double r, int col)
 {
    TEllipse* e1 = new TEllipse(x, y, r);
@@ -38,17 +45,26 @@ void draw_graph(char* title, double xmin, double xmax, double ymin, double ymax,
    gr->SetMarkerStyle(style);
    gr->Draw("p same");
 }
-void draw_line_AB(double a, double b, double xmin, double xmax, int col)
+void draw_line_AB(double a, double b, double xmin, double xmax, int col, int style)
 {
    TF1* f1 = new TF1("line", "[0]*x+[1]", xmin, xmax);
    f1->SetLineColor(col);
+   f1->SetLineStyle(style);
+   //if (TMath::Abs(a)>100) {
+   //   f1->SetNpx(100000);
+   //}
    f1->SetParameters(a, b);
    f1->Draw("same");
 }
-void draw_line_TR(double theta, double rho, double xmin, double xmax, int col)
+void draw_line_AB2(double a, double b, double xmin, double xmax, int col, double threshold)
+{
+   draw_line_AB(a, b, xmin, xmax, col, 1);
+   draw_line_AB(a, b+threshold, xmin, xmax, col, 2);
+   draw_line_AB(a, b-threshold, xmin, xmax, col, 2);
+}
+void draw_line_TR(double theta, double rho, double xmin, double xmax, int col, int style)
 {
    double a = -1.0/TMath::Tan(theta);
    double b = rho/TMath::Sin(theta);
-   //printf("theta %f a %f rho %f b %f\n", theta, a, rho, b);
-   draw_line_AB(a, b, xmin, xmax, col);
+   draw_line_AB(a, b, xmin, xmax, col, style);
 }

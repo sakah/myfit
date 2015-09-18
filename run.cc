@@ -20,6 +20,11 @@ double v1[MAX_CDC_HIT];
 double u2[MAX_CDC_HIT];
 double v2[MAX_CDC_HIT];
 
+double u1rot[MAX_CDC_HIT];
+double v1rot[MAX_CDC_HIT];
+double u2rot[MAX_CDC_HIT];
+double v2rot[MAX_CDC_HIT];
+
 double x1end[MAX_CDC_HIT];
 double y1end[MAX_CDC_HIT];
 double x2end[MAX_CDC_HIT];
@@ -86,6 +91,7 @@ int run(int iev, double threshold=0.01, int checking_num_turns=-1)
 
    if (cheren.GetNumHits()==0 || scinti.GetNumHits()==0 || cdcSig.GetNumHits()==0) return - 1;
    if (checking_num_turns !=-1 && cdcSig.GetNumTurns() != checking_num_turns) return -1;
+   if (cdcSig.GetMaxLayer()<8) return -1;
 
    double trig_time = scinti.GetT(0);
 
@@ -115,11 +121,13 @@ int run(int iev, double threshold=0.01, int checking_num_turns=-1)
 
    hough1.FindLine(cdc1.GetNumHits(), u1, v1);
    hough2.FindLine(cdc2.GetNumHits(), u2, v2);
+   rotate_by(0, 0, -hough1.GetT()+TMath::Pi()/2.0, cdc1.GetNumHits(), u1, v1, u1rot, v1rot);
+   rotate_by(0, 0, -hough2.GetT()+TMath::Pi()/2.0, cdc2.GetNumHits(), u2, v2, u2rot, v2rot);
    hough1.PrintHough();
    hough2.PrintHough();
 
-   cdc1hough.CopyByHough(cdc1, hough1.GetT(), hough1.GetR(), u1, v1, threshold);
-   cdc2hough.CopyByHough(cdc2, hough2.GetT(), hough2.GetR(), u2, v2, threshold);
+   cdc1hough.CopyByHough(cdc1, hough1.GetR(), u1rot, v1rot, threshold);
+   cdc2hough.CopyByHough(cdc2, hough2.GetR(), u2rot, v2rot, threshold);
 
    cdc1hough.GetXYend(wireConfig, x1end, y1end);
    cdc2hough.GetXYend(wireConfig, x2end, y2end);
@@ -132,7 +140,7 @@ int run(int iev, double threshold=0.01, int checking_num_turns=-1)
    // Draw
    if (c1==NULL) {
       int nx = 2;
-      int ny = 4;
+      int ny = 5;
       c1 = new TCanvas("c1","", 500*nx, 500*ny);
       pad1 = new TPad("pad2","pad2", 0.00, 0.95, 1.00, 1.00); // title
       pad2 = new TPad("pad1","pad1", 0.00, 0.00, 1.00, 0.95); // body
@@ -144,8 +152,10 @@ int run(int iev, double threshold=0.01, int checking_num_turns=-1)
    int n=1;
    pad2->cd(n++); wireConfig.DrawEndPlate("c1"); cdc1.DrawXYAt(wireConfig, "up");
    pad2->cd(n++); wireConfig.DrawEndPlate("c2"); cdc2.DrawXYAt(wireConfig, "up");
-   pad2->cd(n++); draw_frame("uv1;u;v", 100, -0.05, 0.05, 100, -0.05, 0.05); cdc1.DrawAny(u1, v1, 5); draw_line_TR(hough1.GetT(), hough1.GetR(), -0.05, 0.05, kRed);
-   pad2->cd(n++); draw_frame("uv2;u;v", 100, -0.05, 0.05, 100, -0.05, 0.05); cdc2.DrawAny(u2, v2, 5); draw_line_TR(hough2.GetT(), hough2.GetR(), -0.05, 0.05, kRed);
+   pad2->cd(n++); draw_frame("uv1;u;v", 100, -0.05, 0.05, 100, -0.05, 0.05); cdc1.DrawAny(u1, v1, 5); draw_line_TR(hough1.GetT(), hough1.GetR(), -0.05, 0.05, kRed, 1);
+   pad2->cd(n++); draw_frame("uv2;u;v", 100, -0.05, 0.05, 100, -0.05, 0.05); cdc2.DrawAny(u2, v2, 5); draw_line_TR(hough2.GetT(), hough2.GetR(), -0.05, 0.05, kRed, 1);
+   pad2->cd(n++); draw_frame("uv1rot;urot;vrot", 100, -0.05, 0.05, 100, -0.05, 0.05); cdc1.DrawAny(u1rot, v1rot, 5); draw_line_AB2(0, hough1.GetR(), -0.05, 0.05, kRed, threshold);
+   pad2->cd(n++); draw_frame("uv2rot;urot;vrot", 100, -0.05, 0.05, 100, -0.05, 0.05); cdc2.DrawAny(u2rot, v2rot, 5); draw_line_AB2(0, hough2.GetR(), -0.05, 0.05, kRed, threshold);
    pad2->cd(n++); hough1.GetH2D_TR()->Draw("colz"); draw_marker(hough1.GetT(), hough1.GetR(), kRed, 24);
    pad2->cd(n++); hough2.GetH2D_TR()->Draw("colz"); draw_marker(hough2.GetT(), hough2.GetR(), kRed, 24);
    pad2->cd(n++); wireConfig.DrawEndPlate("c3"); cdc1hough.DrawXYAt(wireConfig, "up"); draw_ellipse(circ1.GetX0Fit(), circ1.GetY0Fit(), circ1.GetRFit(), kRed);
