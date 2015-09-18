@@ -66,7 +66,9 @@
 ./run_cc.so: /usr/local/root_v5.34.18/include/TPave.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TBox.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TText.h
-./run_cc.so: /usr/local/root_v5.34.18/include/TLine.h Util.h XTCurve.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TLine.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TMath.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TError.h Util.h XTCurve.h
 ./run_cc.so: wireConfig.h InitialHit.h CounterHit.h CdcHit.h WireConfig.h
 ./run_cc.so: Hough.h /usr/local/root_v5.34.18/include/TH2F.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TH2.h

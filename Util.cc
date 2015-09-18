@@ -6,6 +6,7 @@
 #include "TH2F.h"
 #include "TGraph.h"
 #include "TF1.h"
+#include "TLine.h"
 
 double pow2(double a, double b) { return a*a + b*b; }
 double sqrt2(double a, double b) { return TMath::Sqrt(a*a+b*b); }
@@ -37,10 +38,16 @@ void draw_graph(char* title, double xmin, double xmax, double ymin, double ymax,
    gr->SetMarkerStyle(style);
    gr->Draw("p same");
 }
-void draw_line(double a, double b, double xmin, double xmax, int col)
+void draw_line_AB(double a, double b, double xmin, double xmax, int col)
 {
    TF1* f1 = new TF1("line", "[0]*x+[1]", xmin, xmax);
    f1->SetLineColor(col);
    f1->SetParameters(a, b);
    f1->Draw("same");
+}
+void draw_line_TR(double theta, double rho, double xmin, double xmax, int col)
+{
+   double a = -1.0/TMath::Tan(theta);
+   double b = rho/TMath::Sin(theta);
+   draw_line_AB(a, b, xmin, xmax, col);
 }

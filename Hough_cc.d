@@ -38,5 +38,7 @@
 ./Hough_cc.so: /usr/local/root_v5.34.18/include/TFitResultPtr.h
 ./Hough_cc.so: /usr/local/root_v5.34.18/include/TMatrixFBasefwd.h
 ./Hough_cc.so: /usr/local/root_v5.34.18/include/TMatrixDBasefwd.h
+./Hough_cc.so: /usr/local/root_v5.34.18/include/TMath.h
+./Hough_cc.so: /usr/local/root_v5.34.18/include/TError.h
 ./Hough_cc.so: /usr/local/root_v5.34.18/include/cintdictversion.h /usr/local/root_v5.34.18/include/RVersion.h
 Hough_cc__ROOTBUILDVERSION= 5.34/18

@@ -11,22 +11,22 @@ class Hough
       void FindLine(int nhits, double* uhits, double* vhits);
       void PrintHough();
 
-      double GetA();
-      double GetB();
-      TH2F* GetH2D_AB();
+      double GetT();
+      double GetR();
+      TH2F* GetH2D_TR();
 
    private:
       char fName[32];
-      int fAnum;
-      double fAstep;
-      double fAmin;
-      double fAmax;
-      double fBstep;
-      int fBnum;
-      double fBmin;
-      double fBmax;
-      TH2F* fH2D_AB;
-      double fA;
-      double fB;
+      int fTnum;
+      double fTstep;
+      double fTmin;
+      double fTmax;
+      int fRnum;
+      double fRstep;
+      double fRmin;
+      double fRmax;
+      TH2F* fH2D_TR;
+      double fT;
+      double fR;
 };
 #endif

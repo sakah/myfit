@@ -1,46 +1,48 @@
 #include "Hough.h"
+#include "TMath.h"
 
 Hough::Hough(const char* name)
 {
    strcpy(fName, name);
 
-   fAstep = 0.1;
-   fAmin = -8;
-   fAmax = 8;
-   fBstep = 0.001;
-   fBmin = -0.5;
-   fBmax = 0.5;
-   fAnum = static_cast<int>((fAmax-fAmin)/fAstep);
-   fBnum = static_cast<int>((fBmax-fBmin)/fBstep);
-   char* hname = Form("%s A-B Space;a;b",name);
-   fH2D_AB = new TH2F(hname, hname, fAnum, fAmin, fAmax, fBnum, fBmin, fBmax);
-   fH2D_AB->SetStats(0);
+   fTstep = 0.01;
+   fTmin = 0.0;
+   fTmax = TMath::Pi();
+   fRstep = 0.001;
+   fRmin = -0.05;
+   fRmax =  0.05;
+   fTnum = static_cast<int>((fTmax-fTmin)/fTstep);
+   fRnum = static_cast<int>((fRmax-fRmin)/fRstep);
+   char* hname = Form("%s Rho-Theta Space;Theta (rad); Rho (cm)",name);
+   fH2D_TR = new TH2F(hname, hname, fTnum, fTmin, fTmax, fRnum, fRmin, fRmax);
+   fH2D_TR->SetStats(0);
 }
 Hough::~Hough()
 {
-   delete fH2D_AB;
+   delete fH2D_TR;
 }
 void Hough::FindLine(int nhits, double* uhits, double* vhits)
 {
-   fH2D_AB->Reset();
+   fH2D_TR->Reset();
    for (int ihit=0; ihit<nhits; ihit++) {
-      for (int ia=0; ia<fAnum; ia++) {
-         double a = ia*fAstep + fAmin;
-         double b = -uhits[ihit]*a + vhits[ihit];
-         fH2D_AB->Fill(a, b, 1);
+      for (int it=0; it<fTnum; it++) {
+         double theta = it*fTstep + fTmin;
+         double rho = uhits[ihit]*TMath::Cos(theta) + vhits[ihit]*TMath::Sin(theta);
+         //printf("u %f v %f theta %f rho %f\n", uhits[ihit], vhits[ihit], theta, rho);
+         fH2D_TR->Fill(theta, rho, 1);
       }
    }
-   int ia_min;
-   int ib_min;
+   int it_min;
+   int ir_min;
    int tmp;
-   fH2D_AB->GetMaximumBin(ia_min, ib_min, tmp);
-   fA = fH2D_AB->GetXaxis()->GetBinCenter(ia_min);
-   fB = fH2D_AB->GetYaxis()->GetBinCenter(ib_min);
+   fH2D_TR->GetMaximumBin(it_min, ir_min, tmp);
+   fT = fH2D_TR->GetXaxis()->GetBinCenter(it_min);
+   fR = fH2D_TR->GetYaxis()->GetBinCenter(ir_min);
 }
 void Hough::PrintHough()
 {
-   printf("%s fA %7.3f fB %7.3f\n", fName, fA, fB);
+   printf("%s fT %7.3f fR %7.3f\n", fName, fT, fR);
 }
-double Hough::GetA() { return fA; }
-double Hough::GetB() { return fB; }
-TH2F* Hough::GetH2D_AB() { return fH2D_AB; }
+double Hough::GetT() { return fT; }
+double Hough::GetR() { return fR; }
+TH2F* Hough::GetH2D_TR() { return fH2D_TR; }

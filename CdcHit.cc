@@ -1,4 +1,5 @@
 #include "TRandom.h"
+#include "TMath.h"
 #include "CdcHit.h"
 
 CdcHit::CdcHit() { Clear(); SetRsmear(0.02/*200um*/); }
@@ -166,12 +167,15 @@ void CdcHit::CopyByLayer(CdcHit& src, int odd_or_even)
       AddHit(src, ihit);
    }
 }
-void CdcHit::CopyByHough(CdcHit& src, double a, double b, double* uhits, double* vhits, double threshold)
+void CdcHit::CopyByHough(CdcHit& src, double theta, double rho, double* uhits, double* vhits, double threshold)
 {
    fNumHits = 0;
+   double a = -1.0/TMath::Tan(theta);
+   double b = rho/TMath::Sin(theta);
    for (int ihit=0; ihit<src.GetNumHits(); ihit++) {
-      double v = a * uhits[ihit] + b;
+      double v = a*uhits[ihit] + b;
       double res = v - vhits[ihit];
+      //printf("u %f v %f v %f res %f\n", uhits[ihit], vhits[ihit], v, res);
       if (TMath::Abs(res)<threshold) {
          AddHit(src, ihit);
       }
