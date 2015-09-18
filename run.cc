@@ -88,6 +88,7 @@ int event(int iev, double threshold=0.01, int checking_num_turns=-1)
    cdcSig.SetBranchAddressAll(t, "nwirehit", "time", "minhit_x", "minhit_y", "minhit_z", "minhit_px", "minhit_py", "minhit_pz", "ilayer", "icell", "iturn", "dist");
 
    t->GetEntry(iev);
+   if (iev>=t->GetEntries()) return -2;
 
    if (cheren.GetNumHits()==0 || scinti.GetNumHits()==0 || cdcSig.GetNumHits()==0) return - 1;
    if (checking_num_turns !=-1 && cdcSig.GetNumTurns() != checking_num_turns) return -1;
@@ -169,6 +170,7 @@ void run(int checking_num_turns, double threshold)
    for (int iev=0; ;iev++) {
       int ret = event(iev, threshold, checking_num_turns);
       if (ret==-1) continue;
+      if (ret==-2) break;
       printf("Type q to quit");
       char c = getchar();
       if (c=='q') break;
