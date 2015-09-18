@@ -66,7 +66,7 @@ void open()
 
    opened=true;
 }
-int run(int iev, double threshold=0.01, int checking_num_turns=-1)
+int event(int iev, double threshold=0.01, int checking_num_turns=-1)
 {
    if (!opened) open();
 
@@ -164,10 +164,10 @@ int run(int iev, double threshold=0.01, int checking_num_turns=-1)
 
    return 0;
 }
-void loop(int checking_num_turns, double threshold)
+void run(int checking_num_turns, double threshold)
 {
    for (int iev=0; ;iev++) {
-      int ret = run(iev, threshold, checking_num_turns);
+      int ret = event(iev, threshold, checking_num_turns);
       if (ret==-1) continue;
       printf("Type q to quit");
       char c = getchar();

@@ -5,10 +5,10 @@ Hough::Hough(const char* name)
 {
    strcpy(fName, name);
 
-   fTstep = 0.0001;
+   fTstep = 5e-3;
    fTmin = 0.0;
    fTmax = 2.0*TMath::Pi();
-   fRstep = 0.0005;
+   fRstep = 8e-4;
    fRmin =  0.00;
    fRmax =  0.05;
    fTnum = static_cast<int>((fTmax-fTmin)/fTstep);
