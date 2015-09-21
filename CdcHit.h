@@ -18,9 +18,10 @@ class CdcHit
       CdcHit();
       void Clear();
       void PrintHit(char* prefix);
-      void AddHit(int ilayer, int icell, int iturn, double dist); // used for noise
+      void PrintHit(char* prefix, CdcHit& other);
+      void AddHit(int ilayer, int icell, int iturn, double dist, double t, double x, double y, double z, double px, double py, double pz);
       void AddHit(CdcHit& src, int ihit);
-      void MakeNoise(WireConfig& wireConfig, double noise_occupancy, int seed);
+      void MakeNoise(WireConfig& wireConfig, double noise_occupancy);
       void Merge(CdcHit& cdc1, CdcHit& cdc2);
       void CopyByClusters(WireConfig& wireConfig, CdcHit& src);
       void CopyByFirstArrivedHit(CdcHit& src, double trig_time);
@@ -60,14 +61,13 @@ class CdcHit
       int GetIcell(int ihit);
       int GetIturn(int ihit);
       double GetDist(int ihit);
-      double GetDistSmeared(int ihit);
       double GetDriftTime(int ihit);
       void GetUV(WireConfig& wireConfig, double* uhits, double* vhits);
       void GetXYend(WireConfig& wireConfig, double* xends, double* yends);
 
       int GetColorByTurn(int iturn);
       void DrawAny(double* u, double* v, int style);
-      void DrawXYAt(WireConfig& wireConfig, const char* z_origin);
+      void DrawDriftCircles(WireConfig& wireConfig, const char* z_origin, int fill_style, int fill_color);
 
    private:
 

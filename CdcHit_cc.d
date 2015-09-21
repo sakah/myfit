@@ -40,6 +40,19 @@
 ./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TClass.h
 ./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TObjString.h
 ./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TVirtualTreePlayer.h
-./CdcHit_cc.so: WireConfig.h
+./CdcHit_cc.so: WireConfig.h /usr/local/root_v5.34.18/include/TVector3.h
+./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TVector2.h
+./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TMatrix.h
+./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TMatrixF.h
+./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TMatrixT.h
+./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TMatrixTBase.h
+./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TMatrixFBasefwd.h
+./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TMatrixDBasefwd.h
+./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TVectorFfwd.h
+./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TVectorDfwd.h
+./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TMatrixTUtils.h
+./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TMatrixFfwd.h
+./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TMatrixFUtils.h
+./CdcHit_cc.so: /usr/local/root_v5.34.18/include/TMatrixFUtilsfwd.h
 ./CdcHit_cc.so: /usr/local/root_v5.34.18/include/cintdictversion.h /usr/local/root_v5.34.18/include/RVersion.h
 CdcHit_cc__ROOTBUILDVERSION= 5.34/18

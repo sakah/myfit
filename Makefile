@@ -13,3 +13,6 @@ config.o:
 
 all:
 	g++ `root-config --cflags` `root-config --libs` config.cc Event.cc -o Event.o
+
+run.so:
+	g++ -dynamiclib -fPIC `root-config --cflags --libs` -lMinuit Util.cc XTCurve.cc InitialHit.cc CounterHit.cc WireConfig.cc Circle.cc CdcHit.cc Hough.cc run.cc -o run.so

@@ -40,6 +40,15 @@
 ./WireConfig_cc.so: /usr/local/root_v5.34.18/include/TFitResultPtr.h
 ./WireConfig_cc.so: /usr/local/root_v5.34.18/include/TMatrixFBasefwd.h
 ./WireConfig_cc.so: /usr/local/root_v5.34.18/include/TMatrixDBasefwd.h Util.h
-./WireConfig_cc.so: WireConfig.h
+./WireConfig_cc.so: WireConfig.h /usr/local/root_v5.34.18/include/TVector3.h
+./WireConfig_cc.so: /usr/local/root_v5.34.18/include/TVector2.h
+./WireConfig_cc.so: /usr/local/root_v5.34.18/include/TMatrix.h
+./WireConfig_cc.so: /usr/local/root_v5.34.18/include/TMatrixF.h
+./WireConfig_cc.so: /usr/local/root_v5.34.18/include/TMatrixT.h
+./WireConfig_cc.so: /usr/local/root_v5.34.18/include/TMatrixTBase.h
+./WireConfig_cc.so: /usr/local/root_v5.34.18/include/TMatrixTUtils.h
+./WireConfig_cc.so: /usr/local/root_v5.34.18/include/TMatrixFfwd.h
+./WireConfig_cc.so: /usr/local/root_v5.34.18/include/TMatrixFUtils.h
+./WireConfig_cc.so: /usr/local/root_v5.34.18/include/TMatrixFUtilsfwd.h
 ./WireConfig_cc.so: /usr/local/root_v5.34.18/include/cintdictversion.h /usr/local/root_v5.34.18/include/RVersion.h
 WireConfig_cc__ROOTBUILDVERSION= 5.34/18

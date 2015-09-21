@@ -12,20 +12,34 @@ void CdcHit::PrintHit(char* prefix)
       printf("iturn %2d ilayer %2d icell %3d Pt %7.3f Pz %7.3f Pa %7.3f\n", fIturn[ihit], fIlayer[ihit], fIcell[ihit], GetPt(ihit), GetPz(ihit), GetPa(ihit));
    }
 }
-void CdcHit::AddHit(int ilayer, int icell, int iturn, double dist)
+void CdcHit::PrintHit(char* prefix, CdcHit& other)
+{
+   printf("%s\n", prefix);
+   printf("%d\n", fNumHits);
+   for (int ihit=0; ihit<fNumHits; ihit++) {
+      printf("iturn %2d ilayer %2d icell %3d | Pt ( %7.3f %7.3f ) Pz ( %7.3f  %7.3f ) Pa ( %7.3f %7.3f ) zpos ( %7.3f %7.3f ) dist ( %7.3f %7.3f )\n", 
+            fIturn[ihit], fIlayer[ihit], fIcell[ihit], 
+            GetPt(ihit), other.GetPt(ihit), 
+            GetPz(ihit), other.GetPz(ihit), 
+            GetPa(ihit), other.GetPa(ihit),
+            GetZ(ihit) , other.GetZ(ihit),
+            GetDist(ihit), other.GetDist(ihit));
+   }
+}
+void CdcHit::AddHit(int ilayer, int icell, int iturn, double dist, double t, double x, double y, double z, double px, double py, double pz)
 {
    int i = fNumHits;
-   fT[i]      = 0;
-   fX[i]      = 0;
-   fY[i]      = 0;
-   fZ[i]      = 0;
-   fPx[i]     = 0;
-   fPy[i]     = 0;
-   fPz[i]     = 0;
+   fT[i]      = t; // tof
+   fX[i]      = x;
+   fY[i]      = y;
+   fZ[i]      = z;
+   fPx[i]     = px;
+   fPy[i]     = py;
+   fPz[i]     = pz;
    fIlayer[i] = ilayer;
    fIcell[i]  = icell;
    fIturn[i]  = iturn;
-   fDist[i]  = dist;
+   fDist[i]   = dist;
    fNumHits++;
 }
 void CdcHit::AddHit(CdcHit& src, int ihit)
@@ -41,19 +55,18 @@ void CdcHit::AddHit(CdcHit& src, int ihit)
    fIlayer[i] = src.fIlayer[ihit];
    fIcell[i]  = src.fIcell[ihit];
    fIturn[i]  = src.fIturn[ihit];
-   fDist[i]  = src.fDist[ihit];
+   fDist[i]   = src.fDist[ihit];
    fNumHits++;
 }
-void CdcHit::MakeNoise(WireConfig& wireConfig, double noise_occupancy, int seed)
+void CdcHit::MakeNoise(WireConfig& wireConfig, double noise_occupancy)
 {
-   gRandom->SetSeed(seed);
    for (int ilayer=0; ilayer<20; ilayer++) {
       int numCells = wireConfig.GetCellSize(ilayer);
       for (int icell=0; icell<numCells; icell++) {
          double p = gRandom->Uniform(1.0);
          if (p<noise_occupancy) {
             double dist = gRandom->Uniform(1.6);
-            AddHit(ilayer, icell, -1, dist);
+            AddHit(ilayer, icell, -1, dist, 0, 0, 0, 0, 0, 0, 0);
          }
       }
    }
@@ -221,6 +234,9 @@ void CdcHit::SetRsmear(double sigma)
    for (int ihit=0; ihit<MAX_CDC_HIT; ihit++) {
       fRsmear[ihit] = gRandom->Gaus(0, sigma);
    }
+   for (int ihit=0; ihit<fNumHits; ihit++) {
+      fDist[ihit] += fRsmear[ihit]; // could be negative 
+   }
 }
 int CdcHit::GetMaxLayer()
 { 
@@ -248,7 +264,6 @@ int CdcHit::GetIlayer(int ihit) { return fIlayer[ihit]; }
 int CdcHit::GetIcell(int ihit) { return fIcell[ihit]; }
 int CdcHit::GetIturn(int ihit) { return fIturn[ihit]; }
 double CdcHit::GetDist(int ihit) { return fDist[ihit]; }
-double CdcHit::GetDistSmeared(int ihit) { return fDist[ihit] + fRsmear[ihit]; }
 double CdcHit::GetDriftTime(int ihit) { return GetDist(ihit)/2e-3; /*cm/ns*/ }
 void CdcHit::GetUV(WireConfig& wireConfig, double* uhits, double* vhits)
 {
@@ -280,18 +295,21 @@ int CdcHit::GetColorByTurn(int iturn)
    if (iturn>=4) col = kGray;
    return col;
 }
-void CdcHit::DrawXYAt(WireConfig& wireConfig, const char* z_origin)
+void CdcHit::DrawDriftCircles(WireConfig& wireConfig, const char* z_origin, int fill_style, int fill_color)
 {
    for (int ihit=0; ihit<fNumHits; ihit++) {
       double wx, wy;
-      if (strcmp(z_origin,"MC")==0) {
+      if (strcmp(z_origin,"hitz")==0) {
          wireConfig.GetWirePos(fIlayer[ihit], LAYER_TYPE_SENSE, fIcell[ihit], WIRE_TYPE_SENSE, fZ[ihit], "center", &wx, &wy);
+      } else if (strcmp(z_origin, "endplate")==0) {
+         wireConfig.GetWirePos(fIlayer[ihit], LAYER_TYPE_SENSE, fIcell[ihit], WIRE_TYPE_SENSE, 0, "up", &wx, &wy);
       } else {
-         wireConfig.GetWirePos(fIlayer[ihit], LAYER_TYPE_SENSE, fIcell[ihit], WIRE_TYPE_SENSE, 0, z_origin, &wx, &wy);
+         fprintf(stderr,"ERROR: unknown z_origin (%s) ->  hitz | endplate\n", z_origin);
+         return;
       }
       double r = GetDist(ihit);
       int col = GetColorByTurn(fIturn[ihit]);
-      draw_ellipse(wx, wy, r, col);
+      draw_circle(wx, wy, r, col, fill_style, fill_color);
    }
 }
 void CdcHit::DrawAny(double* u, double* v, int style)

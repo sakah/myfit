@@ -6,6 +6,8 @@
 #define WIRE_TYPE_SENSE 1
 #define WIRE_TYPE_FIELD 0
 
+#include "TVector3.h"
+
 class WireConfig
 {
    public:
@@ -37,6 +39,7 @@ class WireConfig
       void GetWirePos(int wid, int icell, int wire_type, double dz, const char* z_origin, double* wx, double* wy);
       void GetWirePos(int cid, int layer_type, int icell, int wire_type, double dz, const char* z_origin, double* wx, double* wy);
       void GetSenseWirePosAndVector(int cid, int icell, double* px, double* py, double* pz, double* vx, double *vy, double* vz);
+      void GetWirePosAtEndplate(int cid, int icell, TVector3& w1, TVector3& w2);
 
       void DrawEndPlate(const char* frame_name);
 

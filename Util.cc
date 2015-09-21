@@ -18,11 +18,12 @@ void rotate_by(double x0, double y0, double angle, int num, double* x1, double* 
       y2[i]=+(x1[i]-x0)*TMath::Sin(angle)+(y1[i]-y0)*TMath::Cos(angle)+y0;
    }
 }
-void draw_ellipse(double x, double y, double r, int col)
+void draw_circle(double x, double y, double r, int line_color, int fill_style, int fill_color)
 {
    TEllipse* e1 = new TEllipse(x, y, r);
-   e1->SetFillStyle(0);
-   e1->SetLineColor(col);
+   e1->SetFillStyle(fill_style);
+   e1->SetFillColor(fill_color);
+   e1->SetLineColor(line_color);
    e1->Draw();
 }
 void draw_marker(double x, double y, int col, int style)

@@ -69,8 +69,22 @@
 ./run_cc.so: /usr/local/root_v5.34.18/include/TLine.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TMath.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TError.h Util.h XTCurve.h
-./run_cc.so: wireConfig.h InitialHit.h CounterHit.h CdcHit.h WireConfig.h
-./run_cc.so: Hough.h /usr/local/root_v5.34.18/include/TH2F.h
+./run_cc.so: wireConfig.h /usr/local/root_v5.34.18/include/TVector3.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TVector2.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TMatrix.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TMatrixF.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TMatrixT.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TMatrixTBase.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TMatrixFBasefwd.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TMatrixDBasefwd.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TVectorFfwd.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TVectorDfwd.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TMatrixTUtils.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TMatrixFfwd.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TMatrixFUtils.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TMatrixFUtilsfwd.h InitialHit.h
+./run_cc.so: CounterHit.h CdcHit.h WireConfig.h Hough.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TH2F.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TH2.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TH1.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TAxis.h
@@ -79,11 +93,7 @@
 ./run_cc.so: /usr/local/root_v5.34.18/include/TArrayS.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TArrayF.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/Foption.h
-./run_cc.so: /usr/local/root_v5.34.18/include/TVectorFfwd.h
-./run_cc.so: /usr/local/root_v5.34.18/include/TVectorDfwd.h
-./run_cc.so: /usr/local/root_v5.34.18/include/TFitResultPtr.h
-./run_cc.so: /usr/local/root_v5.34.18/include/TMatrixFBasefwd.h
-./run_cc.so: /usr/local/root_v5.34.18/include/TMatrixDBasefwd.h Circle.h
+./run_cc.so: /usr/local/root_v5.34.18/include/TFitResultPtr.h Circle.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TMinuit.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/TMethodCall.h
 ./run_cc.so: /usr/local/root_v5.34.18/include/cintdictversion.h /usr/local/root_v5.34.18/include/RVersion.h

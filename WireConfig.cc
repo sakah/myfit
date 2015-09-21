@@ -351,6 +351,16 @@ void WireConfig::GetSenseWirePosAndVector(int cid, int icell_z0, double* px, dou
    *vz = z2-z1;
    //printf("shift %d *vx %lf *vy %lf *vz %lf deg %lf\n",shift, *vx, *vy, *vz, rad1/3.14159*180.0);
 }
+void WireConfig::GetWirePosAtEndplate(int cid, int icell, TVector3& w1, TVector3& w2)
+{
+   int wid = GetWid(cid, LAYER_TYPE_SENSE);
+   double x1,y1, z1=-fLength[wid]/2.0; // upstream
+   double x2,y2, z2=+fLength[wid]/2.0; // downstream
+   GetWirePos(wid, icell, WIRE_TYPE_SENSE, z1, "center", &x1, &y1);
+   GetWirePos(wid, icell, WIRE_TYPE_SENSE, z2, "center", &x2, &y2);
+   w1.SetXYZ(x1, y1, z1);
+   w2.SetXYZ(x2, y2, z2);
+}
 void WireConfig::DrawEndPlate(const char* frame_name)
 {
    TH2F* hframe = new TH2F(frame_name, ";X(cm);Y(cm)", 100, -100, 100, 100, -100, 100);
@@ -360,6 +370,6 @@ void WireConfig::DrawEndPlate(const char* frame_name)
    for (int ilayer=0; ilayer<20; ilayer++) {
       if (ilayer%2==0) continue;
       double r = GetLayerRadius(ilayer, LAYER_TYPE_SENSE, 0);
-      draw_ellipse(0, 0, r, kGray);
+      draw_circle(0, 0, r, kGray, 0, 0);
    }
 }

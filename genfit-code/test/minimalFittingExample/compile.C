@@ -1,0 +1,9 @@
+{
+   gInterpreter->AddIncludePath("../../fileds/include/");
+   gInterpreter->AddIncludePath("../../core/include/");
+   gInterpreter->AddIncludePath("../../trackReps/include/");
+   gInterpreter->AddIncludePath("../../fitters/include/");
+   gInterpreter->AddIncludePath("../../eventDisplay/include/");
+   gInterpreter->AddIncludePath("../../utilities/include/");
+   gSystem->AddLinkedLibs("../../build/lib/libgenfit2.2.0.0.dylib");
+}

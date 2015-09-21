@@ -39,7 +39,20 @@
 ./Circle_cc.so: /usr/local/root_v5.34.18/include/TClass.h
 ./Circle_cc.so: /usr/local/root_v5.34.18/include/TObjString.h
 ./Circle_cc.so: /usr/local/root_v5.34.18/include/TVirtualTreePlayer.h
-./Circle_cc.so: WireConfig.h Circle.h
+./Circle_cc.so: WireConfig.h /usr/local/root_v5.34.18/include/TVector3.h
+./Circle_cc.so: /usr/local/root_v5.34.18/include/TVector2.h
+./Circle_cc.so: /usr/local/root_v5.34.18/include/TMatrix.h
+./Circle_cc.so: /usr/local/root_v5.34.18/include/TMatrixF.h
+./Circle_cc.so: /usr/local/root_v5.34.18/include/TMatrixT.h
+./Circle_cc.so: /usr/local/root_v5.34.18/include/TMatrixTBase.h
+./Circle_cc.so: /usr/local/root_v5.34.18/include/TMatrixFBasefwd.h
+./Circle_cc.so: /usr/local/root_v5.34.18/include/TMatrixDBasefwd.h
+./Circle_cc.so: /usr/local/root_v5.34.18/include/TVectorFfwd.h
+./Circle_cc.so: /usr/local/root_v5.34.18/include/TVectorDfwd.h
+./Circle_cc.so: /usr/local/root_v5.34.18/include/TMatrixTUtils.h
+./Circle_cc.so: /usr/local/root_v5.34.18/include/TMatrixFfwd.h
+./Circle_cc.so: /usr/local/root_v5.34.18/include/TMatrixFUtils.h
+./Circle_cc.so: /usr/local/root_v5.34.18/include/TMatrixFUtilsfwd.h Circle.h
 ./Circle_cc.so: /usr/local/root_v5.34.18/include/TMinuit.h
 ./Circle_cc.so: /usr/local/root_v5.34.18/include/TMethodCall.h
 ./Circle_cc.so: /usr/local/root_v5.34.18/include/cintdictversion.h /usr/local/root_v5.34.18/include/RVersion.h
