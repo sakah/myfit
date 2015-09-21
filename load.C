@@ -10,7 +10,7 @@
    gSystem->AddLinkedLibs("./genfit-code/build/lib/libgenfit2.2.0.0.dylib");
 
    gROOT->ProcessLine(".L Util.cc+");
-   gROOT->ProcessLine(".L XTCurve.cc+");
+   gROOT->ProcessLine(".L MyCanvas.cc+");
    gROOT->ProcessLine(".L WireConfig.cc+");
    gROOT->ProcessLine(".L InitialHit.cc+");
    gROOT->ProcessLine(".L CounterHit.cc+");

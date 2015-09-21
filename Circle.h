@@ -7,10 +7,10 @@ class Circle
 {
    public:
 
-      Circle();
+      Circle(const char* name);
       void SetFitIniPar();
       void FitCircle(int nhits, double* xhits, double* yhits);
-      void PrintCircle(char* prefix);
+      void PrintCircle();
 
       double GetX0Ini();
       double GetY0Ini();
@@ -24,6 +24,7 @@ class Circle
 
    private:
 
+      char fName[32];
       TMinuit* fMinuit;
       int fNumHits;
       double fChi2;

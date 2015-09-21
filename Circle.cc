@@ -10,6 +10,11 @@ static double circ_ysig;
 
 static void func_circ(Int_t &npar, Double_t *gin, Double_t &f, Double_t *x, Int_t iflag)
 {
+   // To suppress warning messages.
+   (void)npar;
+   (void)gin;
+   (void)iflag;
+
    double x0 = x[0];
    double y0 = x[1];
    double R  = x[2];
@@ -27,8 +32,9 @@ static void func_circ(Int_t &npar, Double_t *gin, Double_t &f, Double_t *x, Int_
    f = chi2;
 }
 
-Circle::Circle()
+Circle::Circle(const char*name)
 {
+   strcpy(fName, name);
    fMinuit = new TMinuit(3);
    fMinuit->SetFCN(func_circ);
 
@@ -104,9 +110,9 @@ void Circle::FitCircle(int nhits, double* xhits, double* yhits)
    fRFit  = var[2]; // cm
 }
 
-void Circle::PrintCircle(char* prefix)
+void Circle::PrintCircle()
 {
-   printf("%s\n", prefix);
+   printf("%s\n", fName);
    printf("X0 %7.3f Y0 %7.3f R %7.3f Pt %7.3f (MeV/c) chi2/ndf %7.3f/%d (%7.3f)\n", GetX0Fit(), GetY0Fit(), GetRFit(), GetRFit()*3.0*1.0, fChi2, fNumHits-3, GetRedChi2());
 }
 

@@ -15,10 +15,10 @@ class CdcHit
 {
    public:
 
-      CdcHit();
+      CdcHit(const char* name);
       void Clear();
-      void PrintHit(char* prefix);
-      void PrintHit(char* prefix, CdcHit& other);
+      void PrintHit();
+      void PrintHit(CdcHit& other);
       void AddHit(int ilayer, int icell, int iturn, double dist, double t, double x, double y, double z, double px, double py, double pz);
       void AddHit(CdcHit& src, int ihit);
       void MakeNoise(WireConfig& wireConfig, double noise_occupancy);
@@ -26,7 +26,7 @@ class CdcHit
       void CopyByClusters(WireConfig& wireConfig, CdcHit& src);
       void CopyByFirstArrivedHit(CdcHit& src, double trig_time);
       void CopyByLayer(CdcHit& src, int odd_or_even);
-      void CopyByHough(CdcHit& src, double rho, double* uhits, double* vhits, double threshold);
+      void CopyByHough(CdcHit& src, double rho, double* uhits, double* vhits, double threshold, bool debug);
 
       void SetBranchAddressNum(TTree* t, const char* name);
       void SetBranchAddressTime(TTree* t, const char* name);
@@ -47,6 +47,7 @@ class CdcHit
       int GetMaxLayer();
       int GetNumTurns();
       int GetNumHits();
+      int GetNumHitsByTurn(int iturn_min, int iturn_max); // iturn: -1(noise), 0(1st-turn), 1(2nd-turn), ...
       double GetT(int ihit);
       double GetX(int ihit);
       double GetY(int ihit);
@@ -68,9 +69,11 @@ class CdcHit
       int GetColorByTurn(int iturn);
       void DrawAny(double* u, double* v, int style);
       void DrawDriftCircles(WireConfig& wireConfig, const char* z_origin, int fill_style, int fill_color);
+      
 
    private:
 
+      char fName[32];
       int fNumHits;
       double fT[MAX_CDC_HIT];
       double fX[MAX_CDC_HIT];

@@ -2,19 +2,19 @@
 #include "TMath.h"
 #include "CdcHit.h"
 
-CdcHit::CdcHit() { Clear(); SetRsmear(0.02/*200um*/); }
+CdcHit::CdcHit(const char* name) { strcpy(fName, name); Clear(); SetRsmear(0.02/*200um*/); }
 void CdcHit::Clear() { fNumHits = 0; }
-void CdcHit::PrintHit(char* prefix)
+void CdcHit::PrintHit()
 {
-   printf("%s\n", prefix);
+   printf("%s\n", fName);
    printf("%d\n", fNumHits);
    for (int ihit=0; ihit<fNumHits; ihit++) {
       printf("iturn %2d ilayer %2d icell %3d Pt %7.3f Pz %7.3f Pa %7.3f\n", fIturn[ihit], fIlayer[ihit], fIcell[ihit], GetPt(ihit), GetPz(ihit), GetPa(ihit));
    }
 }
-void CdcHit::PrintHit(char* prefix, CdcHit& other)
+void CdcHit::PrintHit(CdcHit& other)
 {
-   printf("%s\n", prefix);
+   printf("%s\n", fName);
    printf("%d\n", fNumHits);
    for (int ihit=0; ihit<fNumHits; ihit++) {
       printf("iturn %2d ilayer %2d icell %3d | Pt ( %7.3f %7.3f ) Pz ( %7.3f  %7.3f ) Pa ( %7.3f %7.3f ) zpos ( %7.3f %7.3f ) dist ( %7.3f %7.3f )\n", 
@@ -181,7 +181,7 @@ void CdcHit::CopyByLayer(CdcHit& src, int odd_or_even)
       AddHit(src, ihit);
    }
 }
-void CdcHit::CopyByHough(CdcHit& src, double rho, double* uhits, double* vhits, double threshold)
+void CdcHit::CopyByHough(CdcHit& src, double rho, double* uhits, double* vhits, double threshold, bool debug)
 {
    /*
     * Assume that (uhits, vhits) are rotated so that y=ax+b -> y = b
@@ -192,12 +192,12 @@ void CdcHit::CopyByHough(CdcHit& src, double rho, double* uhits, double* vhits, 
       int icell = src.fIcell[ihit];
       int iturn = src.fIturn[ihit];
       double res =vhits[ihit] - rho;
-      printf("iturn %d ilayer %d icell %d u %f v %f rho %f res %f ", iturn, ilayer, icell, uhits[ihit], vhits[ihit], rho, res);
+      if (debug) printf("iturn %d ilayer %d icell %d u %f v %f rho %f res %f ", iturn, ilayer, icell, uhits[ihit], vhits[ihit], rho, res);
       if (TMath::Abs(res)<threshold) {
-         printf("--> included\n");
+         if (debug) printf("--> included\n");
          AddHit(src, ihit);
       } else {
-         printf("--> excluded\n");
+         if (debug) printf("--> excluded\n");
       }
    }
 }
@@ -248,8 +248,16 @@ int CdcHit::GetMaxLayer()
    }
    return max_ilayer;
 }
-int    CdcHit::GetNumTurns() { return fIturn[fNumHits-1]+1; }
-int    CdcHit::GetNumHits() { return fNumHits; }
+int CdcHit::GetNumTurns() { return fIturn[fNumHits-1]+1; }
+int CdcHit::GetNumHits()  { return fNumHits; }
+int CdcHit::GetNumHitsByTurn(int iturn_min, int iturn_max)
+{
+   int num=0;
+   for (int ihit=0; ihit<fNumHits; ihit++) {
+      if (GetIturn(ihit)>=iturn_min && GetIturn(ihit)<=iturn_max) num++;
+   }
+   return num;
+}
 double CdcHit::GetT(int ihit) { return fT[ihit]; }
 double CdcHit::GetX(int ihit) { return fX[ihit]; }
 double CdcHit::GetY(int ihit) { return fY[ihit]; }
@@ -273,7 +281,7 @@ void CdcHit::GetUV(WireConfig& wireConfig, double* uhits, double* vhits)
       double r2 = pow2(wx, wy);
       uhits[ihit] = 2.0*wx/r2;
       vhits[ihit] = 2.0*wy/r2;
-      printf("GetUV: ihit %d wx %f wy %f u %f v %f\n", ihit, wx, wy, uhits[ihit], vhits[ihit]);
+      //printf("GetUV: ihit %d wx %f wy %f u %f v %f\n", ihit, wx, wy, uhits[ihit], vhits[ihit]);
    }
 }
 void CdcHit::GetXYend(WireConfig& wireConfig, double* xends, double* yends)

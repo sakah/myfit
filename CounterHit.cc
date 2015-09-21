@@ -1,10 +1,10 @@
 #include "CounterHit.h"
 
-CounterHit::CounterHit() { Clear(); }
+CounterHit::CounterHit(const char* name) { strcpy(fName, name); Clear(); }
 void CounterHit::Clear() { fNumHits = 0; }
-void CounterHit::PrintHit(char* prefix)
+void CounterHit::PrintHit()
 {
-   printf("%s\n", prefix);
+   printf("%s\n", fName);
    for (int ihit=0; ihit<fNumHits; ihit++) {
       printf("Time %7.3f X %7.2f Y %7.2f R %7.2f Z %7.2f Px %7.3f Py %7.3f Pz %7.3f Pa %7.3f\n", GetT(ihit), GetX(ihit), GetY(ihit), GetR(ihit), GetZ(ihit), GetPx(ihit), GetPy(ihit), GetPz(ihit), GetPa(ihit));
    }

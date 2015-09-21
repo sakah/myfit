@@ -5,7 +5,7 @@ class InitialHit
 {
    public:
       InitialHit();
-      void SetBranchAddress(TTree*t, char* x, char* y, char*z, char* px, char* py, char* pz);
+      void SetBranchAddress(TTree*t, const char* x, const char* y, const char*z, const char* px, const char* py, const char* pz);
       double GetX();
       double GetY();
       double GetR();

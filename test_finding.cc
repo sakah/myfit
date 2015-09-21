@@ -1,4 +1,5 @@
 #include "TSystem.h"
+#include "TRandom.h"
 #include "TFile.h"
 #include "TTree.h"
 #include "TCanvas.h"
@@ -30,6 +31,7 @@ double y1end[MAX_CDC_HIT];
 double x2end[MAX_CDC_HIT];
 double y2end[MAX_CDC_HIT];
 
+bool debug=false;
 TTree* t;
 InitialHit initial;
 CounterHit cheren;
@@ -90,6 +92,7 @@ int event(int iev, double threshold=0.01, int checking_num_turns=-1)
    cdc2hough.Clear();
 
    t->GetEntry(iev);
+   printf("iev %d nhits %d nturns %d nscinti %d nchren %d\n", iev, cdcSig.GetNumHits(), cdcSig.GetNumTurns(), scinti.GetNumHits(), cheren.GetNumHits());
    if (iev>=t->GetEntries()) return -2;
    if (cheren.GetNumHits()==0 || scinti.GetNumHits()==0 || cdcSig.GetNumHits()==0) return - 1;
    if (checking_num_turns !=-1 && cdcSig.GetNumTurns() != checking_num_turns) return -1;
@@ -98,26 +101,31 @@ int event(int iev, double threshold=0.01, int checking_num_turns=-1)
    cdcSig.SetRsmear(0.02);
    double trig_time = scinti.GetT(0);
 
-   printf("iev %d\n", iev);
-   initial.PrintHit();
-   scinti.PrintHit("==scinti==");
-   cheren.PrintHit("==cherenkov==");
+   if (debug) {
+      initial.PrintHit();
+      scinti.PrintHit("==scinti==");
+      cheren.PrintHit("==cherenkov==");
+   }
 
    cdcNoise.MakeNoise(wireConfig, noise_occupancy);
    cdcSigNoise.Merge(cdcSig, cdcNoise);
    cdcFA.CopyByFirstArrivedHit(cdcSigNoise, trig_time);
    cdcClus.CopyByClusters(wireConfig, cdcFA);
 
-   cdcSig.PrintHit("==CDC(Sig)==");
-   cdcNoise.PrintHit("==CDC(Noise)==");
-   cdcSigNoise.PrintHit("==CDC(SigNoise)==");
-   cdcFA.PrintHit("==CDC(First Arrived Hit)==");
-   cdcClus.PrintHit("==CDC(Clusters)==");
+   if (debug) {
+      cdcSig.PrintHit("==CDC(Sig)==");
+      cdcNoise.PrintHit("==CDC(Noise)==");
+      cdcSigNoise.PrintHit("==CDC(SigNoise)==");
+      cdcFA.PrintHit("==CDC(First Arrived Hit)==");
+      cdcClus.PrintHit("==CDC(Clusters)==");
+   }
 
    cdc1.CopyByLayer(cdcClus, 1);
    cdc2.CopyByLayer(cdcClus, 0);
-   cdc1.PrintHit("==CDC(odd-layer)==");
-   cdc2.PrintHit("==CDC(even-layer)==");
+   if (debug) {
+      cdc1.PrintHit("==CDC(odd-layer)==");
+      cdc2.PrintHit("==CDC(even-layer)==");
+   }
    cdc1.GetUV(wireConfig, u1, v1);
    cdc2.GetUV(wireConfig, u2, v2);
 
@@ -125,19 +133,23 @@ int event(int iev, double threshold=0.01, int checking_num_turns=-1)
    hough2.FindLine(cdc2.GetNumHits(), u2, v2);
    rotate_by(0, 0, -hough1.GetT()+TMath::Pi()/2.0, cdc1.GetNumHits(), u1, v1, u1rot, v1rot);
    rotate_by(0, 0, -hough2.GetT()+TMath::Pi()/2.0, cdc2.GetNumHits(), u2, v2, u2rot, v2rot);
-   hough1.PrintHough();
-   hough2.PrintHough();
+   if (debug) {
+      hough1.PrintHough();
+      hough2.PrintHough();
+   }
 
-   cdc1hough.CopyByHough(cdc1, hough1.GetR(), u1rot, v1rot, threshold);
-   cdc2hough.CopyByHough(cdc2, hough2.GetR(), u2rot, v2rot, threshold);
+   cdc1hough.CopyByHough(cdc1, hough1.GetR(), u1rot, v1rot, threshold, debug);
+   cdc2hough.CopyByHough(cdc2, hough2.GetR(), u2rot, v2rot, threshold, debug);
 
    cdc1hough.GetXYend(wireConfig, x1end, y1end);
    cdc2hough.GetXYend(wireConfig, x2end, y2end);
 
    circ1.FitCircle(cdc1hough.GetNumHits(), x1end, y1end);
    circ2.FitCircle(cdc2hough.GetNumHits(), x2end, y2end);
-   circ1.PrintCircle("===circ1===");
-   circ2.PrintCircle("===circ2===");
+   if (debug) {
+      circ1.PrintCircle("===circ1===");
+      circ2.PrintCircle("===circ2===");
+   }
 
    // Draw
    if (c1==NULL) {
@@ -160,8 +172,8 @@ int event(int iev, double threshold=0.01, int checking_num_turns=-1)
    pad2->cd(n++); draw_frame("uv2rot;urot;vrot", 100, -0.05, 0.05, 100, -0.05, 0.05); cdc2.DrawAny(u2rot, v2rot, 5); draw_line_AB2(0, hough2.GetR(), -0.05, 0.05, kRed, threshold);
    pad2->cd(n++); hough1.GetH2D_TR()->Draw("colz"); draw_marker(hough1.GetT(), hough1.GetR(), kRed, 24);
    pad2->cd(n++); hough2.GetH2D_TR()->Draw("colz"); draw_marker(hough2.GetT(), hough2.GetR(), kRed, 24);
-   pad2->cd(n++); wireConfig.DrawEndPlate("c3"); cdc1hough.DrawDriftCircles(wireConfig, "endplate", 0, 0); draw_circle(circ1.GetX0Fit(), circ1.GetY0Fit(), circ1.GetRFit(), kRed);
-   pad2->cd(n++); wireConfig.DrawEndPlate("c4"); cdc2hough.DrawDriftCircles(wireConfig, "endplate", 0, 0); draw_circle(circ2.GetX0Fit(), circ2.GetY0Fit(), circ2.GetRFit(), kBlue);
+   pad2->cd(n++); wireConfig.DrawEndPlate("c3"); cdc1hough.DrawDriftCircles(wireConfig, "endplate", 0, 0); draw_circle(circ1.GetX0Fit(), circ1.GetY0Fit(), circ1.GetRFit(), kRed, 0, 0);
+   pad2->cd(n++); wireConfig.DrawEndPlate("c4"); cdc2hough.DrawDriftCircles(wireConfig, "endplate", 0, 0); draw_circle(circ2.GetX0Fit(), circ2.GetY0Fit(), circ2.GetRFit(), kBlue, 0, 0);
    c1->Print("a.pdf");
 
    return 0;

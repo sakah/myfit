@@ -9,10 +9,9 @@
 class CounterHit
 {
    public:
-
-      CounterHit();
+      CounterHit(const char* name);
       void Clear();
-      void PrintHit(char* prefix);
+      void PrintHit();
       void SetBranchAddressNum(TTree* t, const char* name);
       void SetBranchAddressTime(TTree* t, const char* name);
       void SetBranchAddressX(TTree* t, const char* name);
@@ -37,6 +36,7 @@ class CounterHit
 
    private:
 
+      char fName[32];
       int fNumHits;
       double fT[MAX_COUNTER_HIT];
       double fX[MAX_COUNTER_HIT];
