@@ -192,7 +192,7 @@ void Run::BookHist()
    fNumAll1 = new TH1F("NumAll1", "All Raw;#/Hits;Entries", 50, 400, 600);
    fNumSig1 = new TH1F("NumSig1", "Signal Raw;#/Signal;Entries", 50, 0, 100);
    fNumNoi1 = new TH1F("NumNoi1", "Noise Raw;#/Noise;Entries", 50, 400, 500);
-   fNumRem1 = new TH1F("NumNoi1", "Signal Removed Raw;#/Signal Removed;Entries", 20, 0, 20);
+   fNumRem1 = new TH1F("NumRem1", "Signal Removed Raw;#/Signal Removed;Entries", 20, 0, 20);
    fNumAll2 = new TH1F("NumAll2", "All After Clustering;#/Hits;Entries", 50, 0, 200);
    fNumSig2 = new TH1F("NumSig2", "Signal After Clustering;#/Signal;Entries", 50, 0, 100);
    fNumNoi2 = new TH1F("NumNoi2", "Noise After Clustering;#/Noise;Entries", 50, 0, 200);
