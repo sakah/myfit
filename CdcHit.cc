@@ -258,6 +258,8 @@ int CdcHit::GetNumHitsByTurn(int iturn_min, int iturn_max)
    }
    return num;
 }
+int CdcHit::GetNumNoise() { return GetNumHitsByTurn(-1,-1); }
+int CdcHit::GetNumSignal() { return GetNumHitsByTurn(0,1000); }
 double CdcHit::GetT(int ihit) { return fT[ihit]; }
 double CdcHit::GetX(int ihit) { return fX[ihit]; }
 double CdcHit::GetY(int ihit) { return fY[ihit]; }

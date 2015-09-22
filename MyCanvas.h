@@ -8,13 +8,16 @@
 class MyCanvas
 {
    public:
+      MyCanvas();
       MyCanvas(const char* name, const char* title, double wtopx, double wtopy, double ww, double wh);
       void Divide(int nx, int ny);
       void SetTitle(char* title);
       void cd(int pos);
       void Update();
       void Print(char* name);
+
    private:
+      void Setup(const char* name, const char* title, double wtopx, double wtopy, double ww, double wh);
       TCanvas* fCanvas;
       TPad* fPad1;
       TPad* fPad2;

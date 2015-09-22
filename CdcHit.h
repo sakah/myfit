@@ -48,6 +48,8 @@ class CdcHit
       int GetNumTurns();
       int GetNumHits();
       int GetNumHitsByTurn(int iturn_min, int iturn_max); // iturn: -1(noise), 0(1st-turn), 1(2nd-turn), ...
+      int GetNumNoise();
+      int GetNumSignal();
       double GetT(int ihit);
       double GetX(int ihit);
       double GetY(int ihit);

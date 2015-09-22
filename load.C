@@ -18,6 +18,7 @@
    gROOT->ProcessLine(".L Hough.cc+");
    gROOT->ProcessLine(".L Circle.cc+");
    gROOT->ProcessLine(".L Fitter.cc+");
+   gROOT->ProcessLine(".L Run.cc+");
    //gROOT->ProcessLine(".L run.cc+");
    //gROOT->ProcessLine(".L test_genfit.cc+");
 }
