@@ -8,6 +8,7 @@ void CdcHit::PrintHit()
 {
    printf("%s\n", fName);
    printf("%d\n", fNumHits);
+   printf("FindMaxLayer %d\n", FindMaxLayer());
    for (int ihit=0; ihit<fNumHits; ihit++) {
       printf("iturn %2d ilayer %2d icell %3d Pt %7.3f Pz %7.3f Pa %7.3f\n", fIturn[ihit], fIlayer[ihit], fIcell[ihit], GetPt(ihit), GetPz(ihit), GetPa(ihit));
    }
@@ -76,6 +77,16 @@ void CdcHit::Merge(CdcHit& cdc1, CdcHit& cdc2)
    fNumHits = 0;
    for (int ihit=0; ihit<cdc1.GetNumHits(); ihit++) AddHit(cdc1, ihit);
    for (int ihit=0; ihit<cdc2.GetNumHits(); ihit++) AddHit(cdc2, ihit);
+}
+void CdcHit::CopyByMaxLayer(CdcHit& src)
+{
+   fNumHits = 0;
+   int max_ilayer = src.FindMaxLayer();
+   for (int ihit=0; ihit<src.GetNumHits(); ihit++) {
+      if (src.GetIlayer(ihit)<=max_ilayer) {
+         AddHit(src, ihit);
+      }
+   }
 }
 void CdcHit::CopyByClusters(WireConfig& wireConfig, CdcHit& src)
 {
@@ -305,9 +316,13 @@ int CdcHit::GetColorByTurn(int iturn)
    if (iturn>=4) col = kGray;
    return col;
 }
-void CdcHit::DrawDriftCircles(WireConfig& wireConfig, const char* z_origin, int fill_style, int fill_color)
+void CdcHit::DrawDriftCircles(int odd_or_even_layer, WireConfig& wireConfig, const char* z_origin, int fill_style, int fill_color)
 {
    for (int ihit=0; ihit<fNumHits; ihit++) {
+      int ilayer = GetIlayer(ihit);
+      if (odd_or_even_layer!=-1 && odd_or_even_layer==1 && ilayer%2==0) continue;
+      if (odd_or_even_layer!=-1 && odd_or_even_layer==0 && ilayer%2==2) continue;
+
       double wx, wy;
       if (strcmp(z_origin,"hitz")==0) {
          wireConfig.GetWirePos(fIlayer[ihit], LAYER_TYPE_SENSE, fIcell[ihit], WIRE_TYPE_SENSE, fZ[ihit], "center", &wx, &wy);
@@ -328,4 +343,24 @@ void CdcHit::DrawAny(double* u, double* v, int style)
       int col = GetColorByTurn(fIturn[ihit]);
       draw_marker(u[ihit], v[ihit], col, style);
    }
+}
+
+int CdcHit::FindMaxLayer()
+{
+   int max_num=-1;
+   int max_ilayer=-1;
+   int nhits[20];
+   for (int ilayer=0; ilayer<20; ilayer++) {
+      nhits[ilayer]=0;
+   }
+   for (int ihit=0; ihit<fNumHits; ihit++) {
+      nhits[GetIlayer(ihit)]++;
+   }
+   for (int ilayer=0; ilayer<20; ilayer++) {
+      if (max_num<nhits[ilayer]) {
+         max_num = nhits[ilayer];
+         max_ilayer = ilayer;
+      }
+   }
+   return max_ilayer;
 }

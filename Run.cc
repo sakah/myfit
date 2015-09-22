@@ -25,16 +25,15 @@ Run::Run(const char* name):
    fCdcNoise("CDC Noise"),
    fCdcSig("CDC Signal"),
    fCdcSigNoise("CDC Signal with Noise"),
-   fCdcSigNoise1("CDC Signal with Noise (odd layers)"),
-   fCdcSigNoise2("CDC Signal with Noise (even layers)"),
-   fCdcFA1("CDC FirstArrived Hits (odd layers)"),
-   fCdcFA2("CDC FirstArrived Hits (even layers)"),
-   fCdcClus1("CDC Clusters (odd layers)"),
-   fCdcClus2("CDC Clusters (even layers)"),
+   fCdcFA("CDC Hits FirstArrived"),
+   fCdcCL("CDC Hits making clusters"),
+   fCdcCL1("CDC Hits making (odd-layer)"),
+   fCdcCL2("CDC Hits making (even-layer)"),
    fHough1("Hough (odd layers)"),
    fHough2("Hough (even layers)"),
-   fCdcHough1("CDC after Hough (odd layers)"),
-   fCdcHough2("CDC after Hough (even layers)"),
+   fCdcHO("CDC after Hough"),
+   fCdcHO1("CDC after Hough (odd layers)"),
+   fCdcHO2("CDC after Hough (even layers)"),
    fCirc1("Circle (odd layers)"),
    fCirc2("Circle (even layers)"),
    fCdcFit("CDC Fit"),
@@ -42,18 +41,9 @@ Run::Run(const char* name):
    fEvtCanOpened(false),
    fEvtCan1(),
    fEvtCan2(),
-   fNumAll1(NULL),
-   fNumSig1(NULL),
-   fNumNoi1(NULL),
-   fNumRem1(NULL),
-   fNumAll2(NULL),
-   fNumSig2(NULL),
-   fNumNoi2(NULL),
-   fNumRem2(NULL),
-   fNumAll3(NULL),
-   fNumSig3(NULL),
-   fNumNoi3(NULL),
-   fNumRem3(NULL),
+   fNumAll1(NULL), fNumSig1(NULL), fNumNoi1(NULL), fNumRem1(NULL),
+   fNumAll2(NULL), fNumSig2(NULL), fNumNoi2(NULL), fNumRem2(NULL),
+   fNumAll3(NULL), fNumSig3(NULL), fNumNoi3(NULL), fNumRem3(NULL),
    fPtResid1(NULL),
    fPtResid2(NULL),
    fPtResol1(NULL),
@@ -92,48 +82,40 @@ int Run::ProcessEvent(int iev, int checking_num_turns, double threshold, bool sh
    fCdcSig.SetRsmear(0.02);
    fCdcNoise.MakeNoise(fWireConfig, fNoiseOccupancy);
    fCdcSigNoise.Merge(fCdcSig, fCdcNoise);
-   fCdcSigNoise1.CopyByLayer(fCdcSigNoise, 1);
-   fCdcSigNoise2.CopyByLayer(fCdcSigNoise, 0);
+   fCdcFA.CopyByFirstArrivedHit(fCdcSigNoise, fScinti.GetT(0));
+   fCdcCL.CopyByClusters(fWireConfig, fCdcFA);
    if (debug) {
       fCdcSig.PrintHit();
       fCdcNoise.PrintHit();
       fCdcSigNoise.PrintHit();
-      fCdcSigNoise1.PrintHit();
-      fCdcSigNoise2.PrintHit();
+      fCdcFA.PrintHit();
+      fCdcCL.PrintHit();
    }
 
-   fCdcFA1.CopyByFirstArrivedHit(fCdcSigNoise1, fScinti.GetT(0));
-   fCdcFA2.CopyByFirstArrivedHit(fCdcSigNoise2, fScinti.GetT(0));
-   fCdcClus1.CopyByClusters(fWireConfig, fCdcFA1);
-   fCdcClus2.CopyByClusters(fWireConfig, fCdcFA2);
-   if (debug) {
-      fCdcSigNoise.PrintHit();
-      fCdcFA1.PrintHit();
-      fCdcFA2.PrintHit();
-      fCdcClus1.PrintHit();
-      fCdcClus2.PrintHit();
-   }
+   fCdcCL1.CopyByLayer(fCdcCL, 1);
+   fCdcCL2.CopyByLayer(fCdcCL, 0);
 
-   fCdcClus1.GetUV(fWireConfig, u1, v1);
-   fCdcClus2.GetUV(fWireConfig, u2, v2);
+   fCdcCL1.GetUV(fWireConfig, u1, v1);
+   fCdcCL2.GetUV(fWireConfig, u2, v2);
 
-   fHough1.FindLine(fCdcClus1.GetNumHits(), u1, v1);
-   fHough2.FindLine(fCdcClus2.GetNumHits(), u2, v2);
-   rotate_by(0, 0, -fHough1.GetT()+TMath::Pi()/2.0, fCdcClus1.GetNumHits(), u1, v1, u1rot, v1rot);
-   rotate_by(0, 0, -fHough2.GetT()+TMath::Pi()/2.0, fCdcClus2.GetNumHits(), u2, v2, u2rot, v2rot);
+   fHough1.FindLine(fCdcCL1.GetNumHits(), u1, v1);
+   fHough2.FindLine(fCdcCL2.GetNumHits(), u2, v2);
+   rotate_by(0, 0, -fHough1.GetT()+TMath::Pi()/2.0, fCdcCL1.GetNumHits(), u1, v1, u1rot, v1rot);
+   rotate_by(0, 0, -fHough2.GetT()+TMath::Pi()/2.0, fCdcCL2.GetNumHits(), u2, v2, u2rot, v2rot);
    if (debug) {
       fHough1.PrintHough();
       fHough2.PrintHough();
    }
 
-   fCdcHough1.CopyByHough(fCdcClus1, fHough1.GetR(), u1rot, v1rot, threshold, debug);
-   fCdcHough2.CopyByHough(fCdcClus2, fHough2.GetR(), u2rot, v2rot, threshold, debug);
+   fCdcHO1.CopyByHough(fCdcCL1, fHough1.GetR(), u1rot, v1rot, threshold, debug);
+   fCdcHO2.CopyByHough(fCdcCL2, fHough2.GetR(), u2rot, v2rot, threshold, debug);
+   fCdcHO.Merge(fCdcHO1, fCdcHO2);
 
-   fCdcHough1.GetXYend(fWireConfig, x1end, y1end);
-   fCdcHough2.GetXYend(fWireConfig, x2end, y2end);
+   fCdcHO1.GetXYend(fWireConfig, x1end, y1end);
+   fCdcHO2.GetXYend(fWireConfig, x2end, y2end);
 
-   fCirc1.FitCircle(fCdcHough1.GetNumHits(), x1end, y1end);
-   fCirc2.FitCircle(fCdcHough2.GetNumHits(), x2end, y2end);
+   fCirc1.FitCircle(fCdcHO1.GetNumHits(), x1end, y1end);
+   fCirc2.FitCircle(fCdcHO2.GetNumHits(), x2end, y2end);
    if (debug) {
       fCirc1.PrintCircle();
       fCirc2.PrintCircle();
@@ -215,14 +197,13 @@ void Run::ClearEvent()
    fCdcNoise.Clear();
    fCdcSig.Clear();
    fCdcSigNoise.Clear();
-   fCdcSigNoise1.Clear();
-   fCdcSigNoise2.Clear();
-   fCdcFA1.Clear();
-   fCdcFA2.Clear();
-   fCdcClus1.Clear();
-   fCdcClus2.Clear();
-   fCdcHough1.Clear();
-   fCdcHough2.Clear();
+   fCdcFA.Clear();
+   fCdcCL.Clear();
+   fCdcCL1.Clear();
+   fCdcCL2.Clear();
+   fCdcHO.Clear();
+   fCdcHO1.Clear();
+   fCdcHO2.Clear();
 }
 
 void Run::ClearRun()
@@ -252,23 +233,22 @@ void Run::ShowEventCanvas()
    }
    fEvtCan1.SetTitle(Form("iev %d (%s)",fEventNumber, fRunName));
    fEvtCan1.Divide(2,3);
-   fEvtCan1.cd(1); draw_frame("uv1;u;v", 100, -0.05, 0.05, 100, -0.05, 0.05); fCdcClus1.DrawAny(u1, v1, 5); draw_line_TR(fHough1.GetT(), fHough1.GetR(), -0.05, 0.05, kRed, 1);
-   fEvtCan1.cd(2); draw_frame("uv2;u;v", 100, -0.05, 0.05, 100, -0.05, 0.05); fCdcClus2.DrawAny(u2, v2, 5); draw_line_TR(fHough2.GetT(), fHough2.GetR(), -0.05, 0.05, kRed, 1);
-   fEvtCan1.cd(3); draw_frame("uv1rot;urot;vrot", 100, -0.05, 0.05, 100, -0.05, 0.05); fCdcClus1.DrawAny(u1rot, v1rot, 5); draw_line_AB2(0, fHough1.GetR(), -0.05, 0.05, kRed, fHoughThreshold);
-   fEvtCan1.cd(4); draw_frame("uv2rot;urot;vrot", 100, -0.05, 0.05, 100, -0.05, 0.05); fCdcClus2.DrawAny(u2rot, v2rot, 5); draw_line_AB2(0, fHough2.GetR(), -0.05, 0.05, kRed, fHoughThreshold);
+   fEvtCan1.cd(1); draw_frame("uv1;u;v", 100, -0.05, 0.05, 100, -0.05, 0.05); fCdcCL1.DrawAny(u1, v1, 5); draw_line_TR(fHough1.GetT(), fHough1.GetR(), -0.05, 0.05, kRed, 1);
+   fEvtCan1.cd(2); draw_frame("uv2;u;v", 100, -0.05, 0.05, 100, -0.05, 0.05); fCdcCL2.DrawAny(u2, v2, 5); draw_line_TR(fHough2.GetT(), fHough2.GetR(), -0.05, 0.05, kRed, 1);
+   fEvtCan1.cd(3); draw_frame("uv1rot;urot;vrot", 100, -0.05, 0.05, 100, -0.05, 0.05); fCdcCL1.DrawAny(u1rot, v1rot, 5); draw_line_AB2(0, fHough1.GetR(), -0.05, 0.05, kRed, fHoughThreshold);
+   fEvtCan1.cd(4); draw_frame("uv2rot;urot;vrot", 100, -0.05, 0.05, 100, -0.05, 0.05); fCdcCL2.DrawAny(u2rot, v2rot, 5); draw_line_AB2(0, fHough2.GetR(), -0.05, 0.05, kRed, fHoughThreshold);
    fEvtCan1.cd(5); fHough1.GetH2D_TR()->Draw("colz"); draw_marker(fHough1.GetT(), fHough1.GetR(), kRed, 24);
    fEvtCan1.cd(6); fHough2.GetH2D_TR()->Draw("colz"); draw_marker(fHough2.GetT(), fHough2.GetR(), kRed, 24);
 
    fEvtCan2.SetTitle(Form("iev %d (%s)",fEventNumber, fRunName));
    fEvtCan2.Divide(4,2);
-   fEvtCan2.cd(1); fWireConfig.DrawEndPlate("c1"); fCdcSigNoise1.DrawDriftCircles(fWireConfig, "endplate", 0, 0);
-   fEvtCan2.cd(2); fWireConfig.DrawEndPlate("c2"); fCdcFA1.DrawDriftCircles(fWireConfig, "endplate", 0, 0);
-   fEvtCan2.cd(3); fWireConfig.DrawEndPlate("c3"); fCdcClus1.DrawDriftCircles(fWireConfig, "endplate", 0, 0);
-   fEvtCan2.cd(4); fWireConfig.DrawEndPlate("c4"); fCdcHough1.DrawDriftCircles(fWireConfig, "endplate", 0, 0); draw_circle(fCirc1.GetX0Fit(), fCirc1.GetY0Fit(), fCirc1.GetRFit(), kBlue, 0, 0);
-   fEvtCan2.cd(5); fWireConfig.DrawEndPlate("c5"); fCdcSigNoise2.DrawDriftCircles(fWireConfig, "endplate", 0, 0);
-   fEvtCan2.cd(6); fWireConfig.DrawEndPlate("c6"); fCdcFA2.DrawDriftCircles(fWireConfig, "endplate", 0, 0);
-   fEvtCan2.cd(7); fWireConfig.DrawEndPlate("c7"); fCdcClus2.DrawDriftCircles(fWireConfig, "endplate", 0, 0);
-   fEvtCan2.cd(8); fWireConfig.DrawEndPlate("c8"); fCdcHough2.DrawDriftCircles(fWireConfig, "endplate", 0, 0); draw_circle(fCirc2.GetX0Fit(), fCirc2.GetY0Fit(), fCirc2.GetRFit(), kBlue, 0, 0);
+   int n=1;
+   fEvtCan2.cd(n++); fWireConfig.DrawEndPlate("c2"); fCdcFA.DrawDriftCircles(1, fWireConfig, "endplate", 0, 0);
+   fEvtCan2.cd(n++); fWireConfig.DrawEndPlate("c3"); fCdcCL.DrawDriftCircles(1, fWireConfig, "endplate", 0, 0);
+   fEvtCan2.cd(n++); fWireConfig.DrawEndPlate("c4"); fCdcHO.DrawDriftCircles(1, fWireConfig, "endplate", 0, 0); draw_circle(fCirc1.GetX0Fit(), fCirc1.GetY0Fit(), fCirc1.GetRFit(), kBlue, 0, 0);
+   fEvtCan2.cd(n++); fWireConfig.DrawEndPlate("c6"); fCdcFA.DrawDriftCircles(0, fWireConfig, "endplate", 0, 0);
+   fEvtCan2.cd(n++); fWireConfig.DrawEndPlate("c7"); fCdcCL.DrawDriftCircles(0, fWireConfig, "endplate", 0, 0);
+   fEvtCan2.cd(n++); fWireConfig.DrawEndPlate("c8"); fCdcHO.DrawDriftCircles(0, fWireConfig, "endplate", 0, 0); draw_circle(fCirc2.GetX0Fit(), fCirc2.GetY0Fit(), fCirc2.GetRFit(), kBlue, 0, 0);
 
    fEvtCan1.Update();
    fEvtCan2.Update();
@@ -278,18 +258,21 @@ void Run::ShowEventCanvas()
 
 void Run::FillHist()
 {
-   int NA1 = fCdcFA1.GetNumHits()   + fCdcFA2.GetNumHits();
-   int NS1 = fCdcFA1.GetNumSignal() + fCdcFA2.GetNumSignal();
-   int NN1 = fCdcFA1.GetNumNoise()  + fCdcFA2.GetNumNoise();
-   int NA2 = fCdcClus1.GetNumHits()   + fCdcClus2.GetNumHits();
-   int NS2 = fCdcClus1.GetNumSignal() + fCdcClus2.GetNumSignal();
-   int NN2 = fCdcClus1.GetNumNoise()  + fCdcClus2.GetNumNoise();
-   int NA3 = fCdcHough1.GetNumHits()   + fCdcHough2.GetNumHits();
-   int NS3 = fCdcHough1.GetNumSignal() + fCdcHough2.GetNumSignal();
-   int NN3 = fCdcHough1.GetNumNoise()  + fCdcHough2.GetNumNoise();
-   printf("iev %4d NA1 %3d NS1 %3d NN1 %3d\n", fEventNumber, NA1, NS1, NN1);
-   printf("iev %4d NA2 %3d NS2 %3d NN2 %3d\n", fEventNumber, NA2, NS2, NN2);
-   printf("iev %4d NA3 %3d NS3 %3d NN3 %3d\n", fEventNumber, NA3, NS3, NN3);
+   int NA1 = fCdcFA.GetNumHits();
+   int NS1 = fCdcFA.GetNumSignal();
+   int NN1 = fCdcFA.GetNumNoise();
+
+   int NA2 = fCdcCL.GetNumHits();
+   int NS2 = fCdcCL.GetNumSignal();
+   int NN2 = fCdcCL.GetNumNoise();
+
+   int NA3 = fCdcHO.GetNumHits();
+   int NS3 = fCdcHO.GetNumSignal();
+   int NN3 = fCdcHO.GetNumNoise();
+
+   printf("FirstArrived:  iev %4d All %3d Signal %3d Noise %3d\n", fEventNumber, NA1, NS1, NN1);
+   printf("Clusters:      iev %4d All %3d Signal %3d Noise %3d\n", fEventNumber, NA2, NS2, NN2);
+   printf("HoughTrans.:   iev %4d All %3d Signal %3d Noise %3d\n", fEventNumber, NA3, NS3, NN3);
 
    fNumAll1->Fill(NA1);
    fNumSig1->Fill(NS1);
@@ -323,19 +306,20 @@ void Run::ShowRunCanvas()
       fRunCanOpened=true;
    }
    fRunCan1.SetTitle(fRunName);
-   fRunCan1.Divide(4,3);
-   fRunCan1.cd(1); fNumAll1->Draw();
-   fRunCan1.cd(2); fNumSig1->Draw();
-   fRunCan1.cd(3); fNumNoi1->Draw();
-   fRunCan1.cd(4); fNumRem1->Draw();
-   fRunCan1.cd(5); fNumAll2->Draw();
-   fRunCan1.cd(6); fNumSig2->Draw();
-   fRunCan1.cd(7); fNumNoi2->Draw();
-   fRunCan1.cd(8); fNumRem2->Draw();
-   fRunCan1.cd(9); fNumAll3->Draw();
-   fRunCan1.cd(10);fNumSig3->Draw();
-   fRunCan1.cd(11);fNumNoi3->Draw();
-   fRunCan1.cd(12);fNumRem3->Draw();
+   fRunCan1.Divide(4,5);
+   int n=1;
+   fRunCan1.cd(n++); fNumAll1->Draw();
+   fRunCan1.cd(n++); fNumSig1->Draw();
+   fRunCan1.cd(n++); fNumNoi1->Draw();
+   fRunCan1.cd(n++); fNumRem1->Draw();
+   fRunCan1.cd(n++); fNumAll2->Draw();
+   fRunCan1.cd(n++); fNumSig2->Draw();
+   fRunCan1.cd(n++); fNumNoi2->Draw();
+   fRunCan1.cd(n++); fNumRem2->Draw();
+   fRunCan1.cd(n++); fNumAll3->Draw();
+   fRunCan1.cd(n++); fNumSig3->Draw();
+   fRunCan1.cd(n++); fNumNoi3->Draw();
+   fRunCan1.cd(n++); fNumRem3->Draw();
 
    gStyle->SetOptFit(1);
    fRunCan2.SetTitle(fRunName);

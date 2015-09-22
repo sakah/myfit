@@ -48,17 +48,16 @@ class Run
       CdcHit fCdcNoise;
       CdcHit fCdcSig;
       CdcHit fCdcSigNoise;
-      CdcHit fCdcSigNoise1;
-      CdcHit fCdcSigNoise2;
-      CdcHit fCdcFA1;
-      CdcHit fCdcFA2;
-      CdcHit fCdcClus1;
-      CdcHit fCdcClus2;
+      CdcHit fCdcFA;
+      CdcHit fCdcCL;
+      CdcHit fCdcCL1;
+      CdcHit fCdcCL2;
       double fHoughThreshold;
       Hough  fHough1;
       Hough  fHough2;
-      CdcHit fCdcHough1;
-      CdcHit fCdcHough2;
+      CdcHit fCdcHO;
+      CdcHit fCdcHO1;
+      CdcHit fCdcHO2;
       Circle fCirc1;
       Circle fCirc2;
 
