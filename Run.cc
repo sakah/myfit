@@ -241,14 +241,14 @@ void Run::ShowEventCanvas()
    fEvtCan1.cd(6); fHough2.GetH2D_TR()->Draw("colz"); draw_marker(fHough2.GetT(), fHough2.GetR(), kRed, 24);
 
    fEvtCan2.SetTitle(Form("iev %d (%s)",fEventNumber, fRunName));
-   fEvtCan2.Divide(4,2);
+   fEvtCan2.Divide(3,2);
    int n=1;
-   fEvtCan2.cd(n++); fWireConfig.DrawEndPlate("c2"); fCdcFA.DrawDriftCircles(1, fWireConfig, "endplate", 0, 0);
-   fEvtCan2.cd(n++); fWireConfig.DrawEndPlate("c3"); fCdcCL.DrawDriftCircles(1, fWireConfig, "endplate", 0, 0);
-   fEvtCan2.cd(n++); fWireConfig.DrawEndPlate("c4"); fCdcHO.DrawDriftCircles(1, fWireConfig, "endplate", 0, 0); draw_circle(fCirc1.GetX0Fit(), fCirc1.GetY0Fit(), fCirc1.GetRFit(), kBlue, 0, 0);
-   fEvtCan2.cd(n++); fWireConfig.DrawEndPlate("c6"); fCdcFA.DrawDriftCircles(0, fWireConfig, "endplate", 0, 0);
-   fEvtCan2.cd(n++); fWireConfig.DrawEndPlate("c7"); fCdcCL.DrawDriftCircles(0, fWireConfig, "endplate", 0, 0);
-   fEvtCan2.cd(n++); fWireConfig.DrawEndPlate("c8"); fCdcHO.DrawDriftCircles(0, fWireConfig, "endplate", 0, 0); draw_circle(fCirc2.GetX0Fit(), fCirc2.GetY0Fit(), fCirc2.GetRFit(), kBlue, 0, 0);
+   fEvtCan2.cd(n++); fWireConfig.DrawEndPlate("c1"); fCdcFA.DrawDriftCircles(1, fWireConfig, "endplate", 0, 0);
+   fEvtCan2.cd(n++); fWireConfig.DrawEndPlate("c2"); fCdcCL.DrawDriftCircles(1, fWireConfig, "endplate", 0, 0);
+   fEvtCan2.cd(n++); fWireConfig.DrawEndPlate("c3"); fCdcHO.DrawDriftCircles(1, fWireConfig, "endplate", 0, 0); draw_circle(fCirc1.GetX0Fit(), fCirc1.GetY0Fit(), fCirc1.GetRFit(), kBlue, 0, 0);
+   fEvtCan2.cd(n++); fWireConfig.DrawEndPlate("c4"); fCdcFA.DrawDriftCircles(0, fWireConfig, "endplate", 0, 0);
+   fEvtCan2.cd(n++); fWireConfig.DrawEndPlate("c5"); fCdcCL.DrawDriftCircles(0, fWireConfig, "endplate", 0, 0);
+   fEvtCan2.cd(n++); fWireConfig.DrawEndPlate("c6"); fCdcHO.DrawDriftCircles(0, fWireConfig, "endplate", 0, 0); draw_circle(fCirc2.GetX0Fit(), fCirc2.GetY0Fit(), fCirc2.GetRFit(), kBlue, 0, 0);
 
    fEvtCan1.Update();
    fEvtCan2.Update();

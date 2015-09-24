@@ -57,6 +57,10 @@ void CdcHit::AddHit(CdcHit& src, int ihit)
    fIcell[i]  = src.fIcell[ihit];
    fIturn[i]  = src.fIturn[ihit];
    fDist[i]   = src.fDist[ihit];
+   fRsmear[i] = src.fRsmear[ihit];
+   fCellDistSame[i]  = src.fCellDistSame[ihit];
+   fCellDistOuter[i] = src.fCellDistOuter[ihit];
+   fCellDistInner[i] = src.fCellDistInner[ihit];
    fNumHits++;
 }
 void CdcHit::MakeNoise(WireConfig& wireConfig, double noise_occupancy)
@@ -90,59 +94,23 @@ void CdcHit::CopyByMaxLayer(CdcHit& src)
 }
 void CdcHit::CopyByClusters(WireConfig& wireConfig, CdcHit& src)
 {
-   fNumHits = 0;
+   //SetCellDistance(wireConfig, src , 0, src.fCellDistSame);
+   SetCellDistance(wireConfig, src,  1, src.fCellDistOuter);
+   //exit(1);
+   SetCellDistance(wireConfig, src, -1, src.fCellDistInner);
 
-   int nhits[20];
-   int hitIdx[20][500];
-   int icells[20][500];
-   bool single[20][500];
-   for (int ilayer=0; ilayer<20; ilayer++) {
-      nhits[ilayer] = 0;
-      for (int icell=0; icell<500; icell++) {
-         single[ilayer][icell] = false;
-      }
-   }
-   for (int ihit=0; ihit<src.GetNumHits(); ihit++) {
-      int ilayer = src.fIlayer[ihit];
-      int icell = src.fIcell[ihit];
-      int n = nhits[ilayer];
-      icells[ilayer][n] = icell;
-      hitIdx[ilayer][n] = ihit;
-      nhits[ilayer]++;
-   }
-   for (int ilayer=0; ilayer<20; ilayer++) {
-      int numCells = wireConfig.GetCellSize(ilayer);
-      for (int ihit=0; ihit<nhits[ilayer]; ihit++) {
-         int icell = icells[ilayer][ihit];
-         bool leftHit = false;
-         bool rightHit = false;
-         int icellL = icell - 1;
-         int icellR = icell + 1;
-         if (icellL<0) icellL = numCells-1;
-         if (icellR>=numCells) icellR = 0;
-         // check that left/right cell is empty or not
-         // If empty, skip it
-         for (int jhit=0; jhit<nhits[ilayer]; jhit++) {
-            int jcell = icells[ilayer][jhit];
-            if (jcell == icellL)  leftHit = true;
-            if (jcell == icellR)  rightHit = true;
-            //printf("ilayer %d icell %d jcell %d (icellL %d icellR %d)\n", ilayer, icell, jcell, icellL, icellR);
-         }
-         //printf("ilayer %d icell %d leftHit %d rightHit %d\n", ilayer, icell, leftHit, rightHit);
-         if (!leftHit && !rightHit) {
-            single[ilayer][ihit]=true;
-         } else {
-            single[ilayer][ihit]=false;
-         }
-      }
-      for (int ihit=0; ihit<nhits[ilayer]; ihit++) {
-         //printf("CopyByClusters: ilayer %d icell %d single %d\n", ilayer, icells[ilayer][ihit], single[ilayer][ihit]);
-         if (!single[ilayer][ihit]) {
-            AddHit(src, hitIdx[ilayer][ihit]);
-         }
-      }
+   fNumHits = 0;
+   for (int ihit=0; ihit<src.fNumHits; ihit++) {
+      int dist1 = fCellDistSame[ihit];
+      int dist2 = fCellDistOuter[ihit];
+      int dist3 = fCellDistInner[ihit];
+      if (TMath::Abs(dist1)>=2) continue;
+      if (TMath::Abs(dist2)>=2) continue;
+      if (TMath::Abs(dist3)>=2) continue;
+      AddHit(src, ihit);
    }
 }
+
 void CdcHit::CopyByFirstArrivedHit(CdcHit& src, double trig_time)
 {
    fNumHits = 0;
@@ -321,7 +289,7 @@ void CdcHit::DrawDriftCircles(int odd_or_even_layer, WireConfig& wireConfig, con
    for (int ihit=0; ihit<fNumHits; ihit++) {
       int ilayer = GetIlayer(ihit);
       if (odd_or_even_layer!=-1 && odd_or_even_layer==1 && ilayer%2==0) continue;
-      if (odd_or_even_layer!=-1 && odd_or_even_layer==0 && ilayer%2==2) continue;
+      if (odd_or_even_layer!=-1 && odd_or_even_layer==0 && ilayer%2==1) continue;
 
       double wx, wy;
       if (strcmp(z_origin,"hitz")==0) {
@@ -363,4 +331,90 @@ int CdcHit::FindMaxLayer()
       }
    }
    return max_ilayer;
+}
+
+void CdcHit::SetCellDistance(WireConfig& wireConfig, CdcHit& src, int same_or_inner_or_outer_layer, int* cell_dist)
+{
+   //bool debug = false;
+   bool debug = true;
+
+   int nhits[20];
+   int hitIdx[20][500];
+   int icells[20][500];
+   for (int ilayer=0; ilayer<20; ilayer++) {
+      nhits[ilayer] = 0;
+   }
+   for (int ihit=0; ihit<src.GetNumHits(); ihit++) {
+      int ilayer = src.fIlayer[ihit];
+      int icell = src.fIcell[ihit];
+      int n = nhits[ilayer];
+      icells[ilayer][n] = icell;
+      hitIdx[ilayer][n] = ihit;
+      nhits[ilayer]++;
+   }
+
+   for (int ilayer=0; ilayer<20; ilayer++) {
+      int num_cells = wireConfig.GetCellSize(ilayer);
+      int num_half_cells = num_cells/2;
+      for (int ihit=0; ihit<nhits[ilayer]; ihit++) {
+         int min_abs_dist=100000;
+         int min_dist=10000;
+         int min_jhit=0;
+         int icell = icells[ilayer][ihit];
+
+         int jlayer = ilayer;
+         if (same_or_inner_or_outer_layer== 0) jlayer = ilayer;
+         if (same_or_inner_or_outer_layer== 1) jlayer = ilayer+2; // ilayer=1 -> jlayer=3
+         if (same_or_inner_or_outer_layer==-1) jlayer = ilayer-2; // ilayer=1 -> jlayer=-1
+         if (jlayer<0 || jlayer>=20) continue;
+
+         for (int jhit=0; jhit<nhits[jlayer]; jhit++) {
+            int jcell = icells[jlayer][jhit];
+            if (ilayer==jlayer && ihit==jhit) continue;
+
+            // Consider clockwise (icell>jcell) and anticlosewise (icell<jcell) and choose minimum one
+
+            int d1;
+            int d2;
+            if (same_or_inner_or_outer_layer==0) {
+               if (icell < jcell) {
+                  d1 = icell - jcell;
+                  d2 = icell + num_cells - jcell;
+               } else {
+                  d1 = num_cells - jcell + icell;
+                  d2 = icell - jcell;
+               }
+            } else {
+               double drad = wireConfig.GetCellWidthRad(jlayer, LAYER_TYPE_SENSE);
+               double irad = wireConfig.GetWireTheta(ilayer, icell, WIRE_TYPE_SENSE, 0.0);
+               double jrad = wireConfig.GetWireTheta(jlayer, jcell, WIRE_TYPE_SENSE, 0.0);
+               if (icell < jcell) {
+                  d1 = (irad - jrad)/drad;
+                  d2 = (irad + TMath::Pi()*2.0 - jrad)/drad;
+               } else {
+                  d1 = (TMath::Pi()*2.0 - jrad + irad)/drad;
+                  d2 = (irad - jrad)/drad;
+               }
+            }
+            int abs_d1 = d1>0?d1:-d1;
+            int abs_d2 = d2>0?d2:-d2;
+            if (abs_d1<=abs_d2) {
+               if (abs_d1 < min_abs_dist) {
+                  min_abs_dist = abs_d1;
+                  min_dist = d1;
+                  min_jhit = jhit;
+               }
+            } else {
+               if (abs_d2 < min_abs_dist) {
+                  min_abs_dist = abs_d2;
+                  min_dist = d2;
+                  min_jhit = jhit;
+               }
+            }
+         }
+         printf("== ihit %d ilayer %d icell %d iturn %d min_abs_dist %d min_dist %d\n", ihit, ilayer, icell, src.GetIturn(hitIdx[ilayer][min_jhit]), min_abs_dist, min_dist);
+         int idx = hitIdx[ilayer][min_jhit];
+         cell_dist[idx] = min_dist; 
+      }
+   }
 }

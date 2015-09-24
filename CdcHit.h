@@ -93,6 +93,15 @@ class CdcHit
       double fDist[MAX_CDC_HIT];
 
       double fRsmear[MAX_CDC_HIT];
+
+      // cell distance used for making clusters
+      // 1) Positive or negaitve value
+      // 2) Outer/Inner are considered in odd/even layers separately
+      int fCellDistSame[MAX_CDC_HIT];
+      int fCellDistOuter[MAX_CDC_HIT];
+      int fCellDistInner[MAX_CDC_HIT];
+
+      void SetCellDistance(WireConfig& wireConfig, CdcHit& src, int same_or_inner_or_outer_layer, int* cell_dist);
 };
 
 #endif
