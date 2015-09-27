@@ -7,6 +7,7 @@
 #include "TGraph.h"
 #include "TF1.h"
 #include "TLine.h"
+#include "TPaveText.h"
 
 double pow2(double a, double b) { return a*a + b*b; }
 double sqrt2(double a, double b) { return TMath::Sqrt(a*a+b*b); }
@@ -68,4 +69,13 @@ void draw_line_TR(double theta, double rho, double xmin, double xmax, int col, i
    double a = -1.0/TMath::Tan(theta);
    double b = rho/TMath::Sin(theta);
    draw_line_AB(a, b, xmin, xmax, col, style);
+}
+void draw_text(double x1, double y1, double x2, double y2, char* text, double size)
+{
+   TPaveText* pt = new TPaveText(x1,y1,x2,y2);
+   pt->SetFillColor(0);
+   pt->SetBorderSize(0);
+   pt->SetTextSize(size);
+   pt->AddText(text);
+   pt->Draw();
 }

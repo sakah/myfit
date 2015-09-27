@@ -28,6 +28,7 @@ class CdcHit
       void CopyByClusters(WireConfig& wireConfig, CdcHit& src);
       void CopyByMaxLayer(CdcHit& src);
       void CopyByHough(CdcHit& src, double rho, double* uhits, double* vhits, double threshold, bool debug);
+      void CopyByCircle(CdcHit& src, double* xhits, double* yhits, double x0, double y0, double r, double threshold, bool debug);
 
       void SetBranchAddressNum(TTree* t, const char* name);
       void SetBranchAddressTime(TTree* t, const char* name);
@@ -71,7 +72,7 @@ class CdcHit
 
       int GetColorByTurn(int iturn);
       void DrawAny(double* u, double* v, int style);
-      void DrawDriftCircles(int odd_or_even_layer, WireConfig& wireConfig, const char* z_origin, int fill_style, int fill_color);
+      void DrawDriftCircles(int odd_or_even_layer, WireConfig& wireConfig, const char* z_origin, int fill_style, int fill_color, const char* opt_txt);
 
       int FindMaxLayer();
       
@@ -96,10 +97,7 @@ class CdcHit
 
       // cell distance used for making clusters
       // 1) Positive or negaitve value
-      // 2) Outer/Inner are considered in odd/even layers separately
       int fCellDistSame[MAX_CDC_HIT];
-      int fCellDistOuter[MAX_CDC_HIT];
-      int fCellDistInner[MAX_CDC_HIT];
 
       void SetCellDistance(WireConfig& wireConfig, CdcHit& src, int same_or_inner_or_outer_layer, int* cell_dist);
 };

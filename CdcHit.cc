@@ -10,7 +10,7 @@ void CdcHit::PrintHit()
    printf("%d\n", fNumHits);
    printf("FindMaxLayer %d\n", FindMaxLayer());
    for (int ihit=0; ihit<fNumHits; ihit++) {
-      printf("iturn %2d ilayer %2d icell %3d Pt %7.3f Pz %7.3f Pa %7.3f\n", fIturn[ihit], fIlayer[ihit], fIcell[ihit], GetPt(ihit), GetPz(ihit), GetPa(ihit));
+      printf("iturn %2d ilayer %2d icell %3d Pt %7.3f Pz %7.3f Pa %7.3f | DistCell %d\n", fIturn[ihit], fIlayer[ihit], fIcell[ihit], GetPt(ihit), GetPz(ihit), GetPa(ihit), fCellDistSame[ihit]);
    }
 }
 void CdcHit::PrintHit(CdcHit& other)
@@ -59,8 +59,6 @@ void CdcHit::AddHit(CdcHit& src, int ihit)
    fDist[i]   = src.fDist[ihit];
    fRsmear[i] = src.fRsmear[ihit];
    fCellDistSame[i]  = src.fCellDistSame[ihit];
-   fCellDistOuter[i] = src.fCellDistOuter[ihit];
-   fCellDistInner[i] = src.fCellDistInner[ihit];
    fNumHits++;
 }
 void CdcHit::MakeNoise(WireConfig& wireConfig, double noise_occupancy)
@@ -94,20 +92,32 @@ void CdcHit::CopyByMaxLayer(CdcHit& src)
 }
 void CdcHit::CopyByClusters(WireConfig& wireConfig, CdcHit& src)
 {
-   //SetCellDistance(wireConfig, src , 0, src.fCellDistSame);
-   SetCellDistance(wireConfig, src,  1, src.fCellDistOuter);
-   //exit(1);
-   SetCellDistance(wireConfig, src, -1, src.fCellDistInner);
+   SetCellDistance(wireConfig, src , 0, src.fCellDistSame);
 
    fNumHits = 0;
    for (int ihit=0; ihit<src.fNumHits; ihit++) {
-      int dist1 = fCellDistSame[ihit];
-      int dist2 = fCellDistOuter[ihit];
-      int dist3 = fCellDistInner[ihit];
+      int dist1 = src.fCellDistSame[ihit];
       if (TMath::Abs(dist1)>=2) continue;
-      if (TMath::Abs(dist2)>=2) continue;
-      if (TMath::Abs(dist3)>=2) continue;
       AddHit(src, ihit);
+   }
+}
+
+void CdcHit::CopyByCircle(CdcHit& src, double* xhits, double* yhits, double x0, double y0, double r, double threshold, bool debug)
+{
+   fNumHits = 0;
+   for (int ihit=0; ihit<src.fNumHits; ihit++) {
+      double dx = (xhits[ihit] - x0);
+      double dy = (yhits[ihit] - y0);
+      double rad = TMath::ATan2(dy,dx);
+      double xfit = x0 + r*TMath::Cos(rad);
+      double yfit = y0 + r*TMath::Sin(rad);
+      double ddx = xfit-xhits[ihit];
+      double ddy = yfit-yhits[ihit];
+      double ddd = sqrt2(ddx,ddy);
+      if (debug) printf("CopyByCircle: ihit %d xhits %f yhits %f dx %f dy %f rad %f x1 %f y1 %f ddx %f ddy %f ddd %f\n", ihit, xhits[ihit], yhits[ihit], dx, dy, rad, xfit, yfit, ddx, ddy, ddd);
+      if (ddd<threshold) {
+         AddHit(src, ihit);
+      }
    }
 }
 
@@ -284,7 +294,7 @@ int CdcHit::GetColorByTurn(int iturn)
    if (iturn>=4) col = kGray;
    return col;
 }
-void CdcHit::DrawDriftCircles(int odd_or_even_layer, WireConfig& wireConfig, const char* z_origin, int fill_style, int fill_color)
+void CdcHit::DrawDriftCircles(int odd_or_even_layer, WireConfig& wireConfig, const char* z_origin, int fill_style, int fill_color, const char* opt_txt)
 {
    for (int ihit=0; ihit<fNumHits; ihit++) {
       int ilayer = GetIlayer(ihit);
@@ -303,6 +313,15 @@ void CdcHit::DrawDriftCircles(int odd_or_even_layer, WireConfig& wireConfig, con
       double r = GetDist(ihit);
       int col = GetColorByTurn(fIturn[ihit]);
       draw_circle(wx, wy, r, col, fill_style, fill_color);
+
+      char text[128];
+      sprintf(text,"");
+      if (strstr(opt_txt, "layer")) sprintf(text, "%s L%d", text, fIlayer[ihit]);
+      if (strstr(opt_txt, "cell")) sprintf(text, "%s C%d", text, fIcell[ihit]);
+      if (strstr(opt_txt, "turn")) sprintf(text, "%s T%d", text, fIturn[ihit]);
+      if (strstr(opt_txt, "dist")) sprintf(text, "%s R%5.2f", text, fDist[ihit]);
+      if (strstr(opt_txt, "cell_dist")) sprintf(text, "%s D%d", text, fCellDistSame[ihit]);
+      draw_text(wx, wy, wx+0.010, wy+0.010, text, 0.005);
    }
 }
 void CdcHit::DrawAny(double* u, double* v, int style)
@@ -335,8 +354,8 @@ int CdcHit::FindMaxLayer()
 
 void CdcHit::SetCellDistance(WireConfig& wireConfig, CdcHit& src, int same_or_inner_or_outer_layer, int* cell_dist)
 {
-   //bool debug = false;
-   bool debug = true;
+   bool debug = false;
+   //bool debug = true;
 
    int nhits[20];
    int hitIdx[20][500];
@@ -412,9 +431,15 @@ void CdcHit::SetCellDistance(WireConfig& wireConfig, CdcHit& src, int same_or_in
                }
             }
          }
-         printf("== ihit %d ilayer %d icell %d iturn %d min_abs_dist %d min_dist %d\n", ihit, ilayer, icell, src.GetIturn(hitIdx[ilayer][min_jhit]), min_abs_dist, min_dist);
-         int idx = hitIdx[ilayer][min_jhit];
+         int idx = hitIdx[ilayer][ihit];
          cell_dist[idx] = min_dist; 
+
+         if (debug) printf("== hitIdx %d ihit %d ilayer %d icell %d iturn %d min_abs_dist %d min_dist %d\n", idx, ihit, ilayer, icell, src.GetIturn(hitIdx[ilayer][min_jhit]), min_abs_dist, min_dist);
+      }
+   }
+   if (debug) {
+      for (int ihit=0; ihit<src.fNumHits; ihit++) {
+         printf("==# ihit %d cell_dist %d\n", ihit, cell_dist[ihit]);
       }
    }
 }

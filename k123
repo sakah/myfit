@@ -1,0 +1,1486 @@
+iev 1968 nhits  70 nturns  1 nscinti 1 nchren 2
+===Initial===
+Time   0.000 X   6.265 Y   2.170 R   6.630 Z -30.008 Px  14.910 Py -102.473 Pt 103.552 Pz -17.215 Pa 104.973
+Scinti
+Time   5.549 X    0.00 Y    0.00 R    0.00 Z  -59.48 Px   0.000 Py   0.000 Pz   0.000 Pa   0.000
+Cherenkov
+Time   5.570 X    0.00 Y    0.00 R    0.00 Z  -59.61 Px   0.000 Py   0.000 Pz   0.000 Pa   0.000
+Time   8.102 X    0.00 Y    0.00 R    0.00 Z  -74.79 Px   0.000 Py   0.000 Pz   0.000 Pa   0.000
+== hitIdx 0 ihit 0 ilayer 0 icell 6 iturn -1 min_abs_dist 6 min_dist -6
+== hitIdx 1 ihit 1 ilayer 0 icell 12 iturn -1 min_abs_dist 6 min_dist 6
+== hitIdx 2 ihit 2 ilayer 0 icell 28 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 3 ihit 3 ilayer 0 icell 31 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 4 ihit 4 ilayer 0 icell 36 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 5 ihit 5 ilayer 0 icell 38 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 6 ihit 6 ilayer 0 icell 61 iturn -1 min_abs_dist 14 min_dist -14
+== hitIdx 7 ihit 7 ilayer 0 icell 75 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 8 ihit 8 ilayer 0 icell 79 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 9 ihit 9 ilayer 0 icell 80 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 10 ihit 10 ilayer 0 icell 85 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 11 ihit 11 ilayer 0 icell 104 iturn -1 min_abs_dist 17 min_dist -17
+== hitIdx 12 ihit 12 ilayer 0 icell 121 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 13 ihit 13 ilayer 0 icell 124 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 14 ihit 14 ilayer 0 icell 125 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 15 ihit 15 ilayer 0 icell 130 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 16 ihit 16 ilayer 0 icell 133 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 17 ihit 17 ilayer 0 icell 154 iturn -1 min_abs_dist 21 min_dist 21
+== hitIdx 18 ihit 18 ilayer 0 icell 177 iturn -1 min_abs_dist 10 min_dist -10
+== hitIdx 19 ihit 19 ilayer 0 icell 187 iturn -1 min_abs_dist 10 min_dist 10
+== hitIdx 20 ihit 0 ilayer 1 icell 27 iturn -1 min_abs_dist 13 min_dist -13
+== hitIdx 21 ihit 1 ilayer 1 icell 40 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 22 ihit 2 ilayer 1 icell 41 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 23 ihit 3 ilayer 1 icell 46 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 24 ihit 4 ilayer 1 icell 57 iturn -1 min_abs_dist 8 min_dist -8
+== hitIdx 25 ihit 5 ilayer 1 icell 65 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 26 ihit 6 ilayer 1 icell 67 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 27 ihit 7 ilayer 1 icell 77 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 28 ihit 8 ilayer 1 icell 80 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 29 ihit 9 ilayer 1 icell 84 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 30 ihit 10 ilayer 1 icell 85 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 31 ihit 11 ilayer 1 icell 86 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 32 ihit 12 ilayer 1 icell 89 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 33 ihit 13 ilayer 1 icell 95 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 34 ihit 14 ilayer 1 icell 97 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 35 ihit 15 ilayer 1 icell 98 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 36 ihit 16 ilayer 1 icell 99 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 37 ihit 17 ilayer 1 icell 121 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 38 ihit 18 ilayer 1 icell 123 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 39 ihit 19 ilayer 1 icell 124 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 40 ihit 20 ilayer 1 icell 128 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 41 ihit 21 ilayer 1 icell 131 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 42 ihit 22 ilayer 1 icell 133 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 43 ihit 23 ilayer 1 icell 158 iturn -1 min_abs_dist 9 min_dist -9
+== hitIdx 44 ihit 24 ilayer 1 icell 167 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 45 ihit 25 ilayer 1 icell 169 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 46 ihit 26 ilayer 1 icell 172 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 47 ihit 27 ilayer 1 icell 182 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 48 ihit 28 ilayer 1 icell 183 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 49 ihit 29 ilayer 1 icell 184 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 50 ihit 30 ilayer 1 icell 188 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 51 ihit 0 ilayer 2 icell 3 iturn -1 min_abs_dist 7 min_dist -7
+== hitIdx 52 ihit 1 ilayer 2 icell 10 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 53 ihit 2 ilayer 2 icell 13 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 54 ihit 3 ilayer 2 icell 26 iturn -1 min_abs_dist 6 min_dist -6
+== hitIdx 55 ihit 4 ilayer 2 icell 32 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 56 ihit 5 ilayer 2 icell 33 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 57 ihit 6 ilayer 2 icell 47 iturn -1 min_abs_dist 14 min_dist 14
+== hitIdx 58 ihit 7 ilayer 2 icell 63 iturn -1 min_abs_dist 11 min_dist -11
+== hitIdx 59 ihit 8 ilayer 2 icell 74 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 60 ihit 9 ilayer 2 icell 76 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 61 ihit 10 ilayer 2 icell 97 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 62 ihit 11 ilayer 2 icell 100 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 63 ihit 12 ilayer 2 icell 108 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 64 ihit 13 ilayer 2 icell 111 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 65 ihit 14 ilayer 2 icell 122 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 66 ihit 15 ilayer 2 icell 124 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 67 ihit 16 ilayer 2 icell 128 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 68 ihit 17 ilayer 2 icell 141 iturn -1 min_abs_dist 8 min_dist -8
+== hitIdx 69 ihit 18 ilayer 2 icell 149 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 70 ihit 19 ilayer 2 icell 153 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 71 ihit 20 ilayer 2 icell 158 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 72 ihit 21 ilayer 2 icell 167 iturn -1 min_abs_dist 9 min_dist 9
+== hitIdx 73 ihit 22 ilayer 2 icell 181 iturn 0 min_abs_dist 5 min_dist -5
+== hitIdx 74 ihit 23 ilayer 2 icell 186 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 75 ihit 24 ilayer 2 icell 191 iturn 0 min_abs_dist 5 min_dist 5
+== hitIdx 76 ihit 25 ilayer 2 icell 199 iturn -1 min_abs_dist 8 min_dist 8
+== hitIdx 77 ihit 0 ilayer 3 icell 1 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 78 ihit 1 ilayer 3 icell 18 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 79 ihit 2 ilayer 3 icell 20 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 80 ihit 3 ilayer 3 icell 27 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 81 ihit 4 ilayer 3 icell 28 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 82 ihit 5 ilayer 3 icell 30 iturn 0 min_abs_dist 2 min_dist 2
+== hitIdx 83 ihit 6 ilayer 3 icell 66 iturn -1 min_abs_dist 11 min_dist -11
+== hitIdx 84 ihit 7 ilayer 3 icell 77 iturn -1 min_abs_dist 10 min_dist -10
+== hitIdx 85 ihit 8 ilayer 3 icell 87 iturn -1 min_abs_dist 7 min_dist -7
+== hitIdx 86 ihit 9 ilayer 3 icell 94 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 87 ihit 10 ilayer 3 icell 95 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 88 ihit 11 ilayer 3 icell 101 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 89 ihit 12 ilayer 3 icell 106 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 90 ihit 13 ilayer 3 icell 109 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 91 ihit 14 ilayer 3 icell 113 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 92 ihit 15 ilayer 3 icell 130 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 93 ihit 16 ilayer 3 icell 134 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 94 ihit 17 ilayer 3 icell 143 iturn -1 min_abs_dist 9 min_dist 9
+== hitIdx 95 ihit 18 ilayer 3 icell 183 iturn 0 min_abs_dist 12 min_dist -12
+== hitIdx 96 ihit 19 ilayer 3 icell 195 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 97 ihit 20 ilayer 3 icell 196 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 98 ihit 21 ilayer 3 icell 199 iturn 0 min_abs_dist 3 min_dist 3
+== hitIdx 99 ihit 22 ilayer 3 icell 206 iturn -1 min_abs_dist 7 min_dist 7
+== hitIdx 100 ihit 0 ilayer 4 icell 18 iturn 0 min_abs_dist 7 min_dist -7
+== hitIdx 101 ihit 1 ilayer 4 icell 25 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 102 ihit 2 ilayer 4 icell 26 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 103 ihit 3 ilayer 4 icell 30 iturn 0 min_abs_dist 4 min_dist 4
+== hitIdx 104 ihit 4 ilayer 4 icell 42 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 105 ihit 5 ilayer 4 icell 45 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 106 ihit 6 ilayer 4 icell 69 iturn -1 min_abs_dist 18 min_dist -18
+== hitIdx 107 ihit 7 ilayer 4 icell 87 iturn -1 min_abs_dist 12 min_dist -12
+== hitIdx 108 ihit 8 ilayer 4 icell 99 iturn -1 min_abs_dist 12 min_dist 12
+== hitIdx 109 ihit 9 ilayer 4 icell 117 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 110 ihit 10 ilayer 4 icell 119 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 111 ihit 11 ilayer 4 icell 147 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 112 ihit 12 ilayer 4 icell 148 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 113 ihit 13 ilayer 4 icell 174 iturn -1 min_abs_dist 19 min_dist -19
+== hitIdx 114 ihit 14 ilayer 4 icell 193 iturn 0 min_abs_dist 6 min_dist -6
+== hitIdx 115 ihit 15 ilayer 4 icell 199 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 116 ihit 16 ilayer 4 icell 202 iturn 0 min_abs_dist 3 min_dist 3
+== hitIdx 117 ihit 17 ilayer 4 icell 206 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 118 ihit 18 ilayer 4 icell 209 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 119 ihit 19 ilayer 4 icell 214 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 120 ihit 0 ilayer 5 icell 15 iturn 0 min_abs_dist 12 min_dist -12
+== hitIdx 121 ihit 1 ilayer 5 icell 27 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 122 ihit 2 ilayer 5 icell 28 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 123 ihit 3 ilayer 5 icell 36 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 124 ihit 4 ilayer 5 icell 41 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 125 ihit 5 ilayer 5 icell 63 iturn -1 min_abs_dist 7 min_dist -7
+== hitIdx 126 ihit 6 ilayer 5 icell 70 iturn -1 min_abs_dist 7 min_dist 7
+== hitIdx 127 ihit 7 ilayer 5 icell 82 iturn -1 min_abs_dist 12 min_dist 12
+== hitIdx 128 ihit 8 ilayer 5 icell 95 iturn -1 min_abs_dist 13 min_dist 13
+== hitIdx 129 ihit 9 ilayer 5 icell 109 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 130 ihit 10 ilayer 5 icell 111 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 131 ihit 11 ilayer 5 icell 113 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 132 ihit 12 ilayer 5 icell 120 iturn -1 min_abs_dist 7 min_dist 7
+== hitIdx 133 ihit 13 ilayer 5 icell 129 iturn -1 min_abs_dist 9 min_dist 9
+== hitIdx 134 ihit 14 ilayer 5 icell 148 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 135 ihit 15 ilayer 5 icell 149 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 136 ihit 16 ilayer 5 icell 150 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 137 ihit 17 ilayer 5 icell 153 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 138 ihit 18 ilayer 5 icell 165 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 139 ihit 19 ilayer 5 icell 169 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 140 ihit 20 ilayer 5 icell 171 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 141 ihit 21 ilayer 5 icell 173 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 142 ihit 22 ilayer 5 icell 183 iturn -1 min_abs_dist 10 min_dist 10
+== hitIdx 143 ihit 23 ilayer 5 icell 208 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 144 ihit 24 ilayer 5 icell 209 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 145 ihit 25 ilayer 5 icell 211 iturn 0 min_abs_dist 2 min_dist 2
+== hitIdx 146 ihit 0 ilayer 6 icell 8 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 147 ihit 1 ilayer 6 icell 9 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 148 ihit 2 ilayer 6 icell 10 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 149 ihit 3 ilayer 6 icell 13 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 150 ihit 4 ilayer 6 icell 25 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 151 ihit 5 ilayer 6 icell 26 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 152 ihit 6 ilayer 6 icell 35 iturn 0 min_abs_dist 9 min_dist 9
+== hitIdx 153 ihit 7 ilayer 6 icell 44 iturn -1 min_abs_dist 9 min_dist 9
+== hitIdx 154 ihit 8 ilayer 6 icell 68 iturn -1 min_abs_dist 15 min_dist -15
+== hitIdx 155 ihit 9 ilayer 6 icell 83 iturn -1 min_abs_dist 7 min_dist -7
+== hitIdx 156 ihit 10 ilayer 6 icell 90 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 157 ihit 11 ilayer 6 icell 95 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 158 ihit 12 ilayer 6 icell 96 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 159 ihit 13 ilayer 6 icell 98 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 160 ihit 14 ilayer 6 icell 117 iturn -1 min_abs_dist 19 min_dist 19
+== hitIdx 161 ihit 15 ilayer 6 icell 167 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 162 ihit 16 ilayer 6 icell 169 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 163 ihit 17 ilayer 6 icell 172 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 164 ihit 18 ilayer 6 icell 181 iturn -1 min_abs_dist 6 min_dist -6
+== hitIdx 165 ihit 19 ilayer 6 icell 187 iturn -1 min_abs_dist 6 min_dist 6
+== hitIdx 166 ihit 20 ilayer 6 icell 208 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 167 ihit 21 ilayer 6 icell 211 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 168 ihit 22 ilayer 6 icell 212 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 169 ihit 23 ilayer 6 icell 213 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 170 ihit 24 ilayer 6 icell 219 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 171 ihit 25 ilayer 6 icell 224 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 172 ihit 26 ilayer 6 icell 226 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 173 ihit 0 ilayer 7 icell 1 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 174 ihit 1 ilayer 7 icell 6 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 175 ihit 2 ilayer 7 icell 15 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 176 ihit 3 ilayer 7 icell 17 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 177 ihit 4 ilayer 7 icell 25 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 178 ihit 5 ilayer 7 icell 26 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 179 ihit 6 ilayer 7 icell 38 iturn 0 min_abs_dist 12 min_dist 12
+== hitIdx 180 ihit 7 ilayer 7 icell 55 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 181 ihit 8 ilayer 7 icell 57 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 182 ihit 9 ilayer 7 icell 58 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 183 ihit 10 ilayer 7 icell 71 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 184 ihit 11 ilayer 7 icell 76 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 185 ihit 12 ilayer 7 icell 100 iturn -1 min_abs_dist 10 min_dist -10
+== hitIdx 186 ihit 13 ilayer 7 icell 110 iturn -1 min_abs_dist 10 min_dist 10
+== hitIdx 187 ihit 14 ilayer 7 icell 125 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 188 ihit 15 ilayer 7 icell 126 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 189 ihit 16 ilayer 7 icell 137 iturn -1 min_abs_dist 10 min_dist -10
+== hitIdx 190 ihit 17 ilayer 7 icell 147 iturn -1 min_abs_dist 10 min_dist 10
+== hitIdx 191 ihit 18 ilayer 7 icell 178 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 192 ihit 19 ilayer 7 icell 183 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 193 ihit 20 ilayer 7 icell 185 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 194 ihit 21 ilayer 7 icell 193 iturn -1 min_abs_dist 8 min_dist 8
+== hitIdx 195 ihit 22 ilayer 7 icell 211 iturn -1 min_abs_dist 8 min_dist -8
+== hitIdx 196 ihit 23 ilayer 7 icell 219 iturn 0 min_abs_dist 2 min_dist -2
+== hitIdx 197 ihit 24 ilayer 7 icell 221 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 198 ihit 25 ilayer 7 icell 222 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 199 ihit 0 ilayer 8 icell 2 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 200 ihit 1 ilayer 8 icell 9 iturn -1 min_abs_dist 7 min_dist 7
+== hitIdx 201 ihit 2 ilayer 8 icell 23 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 202 ihit 3 ilayer 8 icell 24 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 203 ihit 4 ilayer 8 icell 34 iturn 0 min_abs_dist 10 min_dist 10
+== hitIdx 204 ihit 5 ilayer 8 icell 45 iturn -1 min_abs_dist 10 min_dist -10
+== hitIdx 205 ihit 6 ilayer 8 icell 55 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 206 ihit 7 ilayer 8 icell 56 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 207 ihit 8 ilayer 8 icell 66 iturn -1 min_abs_dist 10 min_dist 10
+== hitIdx 208 ihit 9 ilayer 8 icell 85 iturn -1 min_abs_dist 13 min_dist -13
+== hitIdx 209 ihit 10 ilayer 8 icell 98 iturn -1 min_abs_dist 13 min_dist 13
+== hitIdx 210 ihit 11 ilayer 8 icell 133 iturn -1 min_abs_dist 11 min_dist -11
+== hitIdx 211 ihit 12 ilayer 8 icell 144 iturn -1 min_abs_dist 11 min_dist 11
+== hitIdx 212 ihit 13 ilayer 8 icell 165 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 213 ihit 14 ilayer 8 icell 166 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 214 ihit 15 ilayer 8 icell 167 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 215 ihit 16 ilayer 8 icell 169 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 216 ihit 17 ilayer 8 icell 185 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 217 ihit 18 ilayer 8 icell 189 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 218 ihit 19 ilayer 8 icell 224 iturn 0 min_abs_dist 2 min_dist -2
+== hitIdx 219 ihit 20 ilayer 8 icell 226 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 220 ihit 21 ilayer 8 icell 227 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 221 ihit 22 ilayer 8 icell 232 iturn 0 min_abs_dist 5 min_dist 5
+== hitIdx 222 ihit 23 ilayer 8 icell 239 iturn -1 min_abs_dist 7 min_dist 7
+== hitIdx 223 ihit 0 ilayer 9 icell 15 iturn 0 min_abs_dist 9 min_dist -9
+== hitIdx 224 ihit 1 ilayer 9 icell 24 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 225 ihit 2 ilayer 9 icell 25 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 226 ihit 3 ilayer 9 icell 48 iturn -1 min_abs_dist 16 min_dist -16
+== hitIdx 227 ihit 4 ilayer 9 icell 64 iturn -1 min_abs_dist 6 min_dist -6
+== hitIdx 228 ihit 5 ilayer 9 icell 70 iturn -1 min_abs_dist 6 min_dist 6
+== hitIdx 229 ihit 6 ilayer 9 icell 88 iturn -1 min_abs_dist 7 min_dist -7
+== hitIdx 230 ihit 7 ilayer 9 icell 95 iturn -1 min_abs_dist 7 min_dist 7
+== hitIdx 231 ihit 8 ilayer 9 icell 109 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 232 ihit 9 ilayer 9 icell 114 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 233 ihit 10 ilayer 9 icell 122 iturn -1 min_abs_dist 8 min_dist 8
+== hitIdx 234 ihit 11 ilayer 9 icell 131 iturn -1 min_abs_dist 9 min_dist 9
+== hitIdx 235 ihit 12 ilayer 9 icell 177 iturn -1 min_abs_dist 7 min_dist -7
+== hitIdx 236 ihit 13 ilayer 9 icell 184 iturn -1 min_abs_dist 7 min_dist 7
+== hitIdx 237 ihit 14 ilayer 9 icell 213 iturn -1 min_abs_dist 7 min_dist -7
+== hitIdx 238 ihit 15 ilayer 9 icell 220 iturn -1 min_abs_dist 7 min_dist 7
+== hitIdx 239 ihit 16 ilayer 9 icell 228 iturn -1 min_abs_dist 8 min_dist 8
+== hitIdx 240 ihit 17 ilayer 9 icell 236 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 241 ihit 18 ilayer 9 icell 237 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 242 ihit 19 ilayer 9 icell 238 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 243 ihit 0 ilayer 10 icell 16 iturn 0 min_abs_dist 5 min_dist -5
+== hitIdx 244 ihit 1 ilayer 10 icell 21 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 245 ihit 2 ilayer 10 icell 22 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 246 ihit 3 ilayer 10 icell 52 iturn -1 min_abs_dist 7 min_dist -7
+== hitIdx 247 ihit 4 ilayer 10 icell 59 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 248 ihit 5 ilayer 10 icell 64 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 249 ihit 6 ilayer 10 icell 76 iturn -1 min_abs_dist 11 min_dist -11
+== hitIdx 250 ihit 7 ilayer 10 icell 87 iturn -1 min_abs_dist 11 min_dist 11
+== hitIdx 251 ihit 8 ilayer 10 icell 105 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 252 ihit 9 ilayer 10 icell 110 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 253 ihit 10 ilayer 10 icell 113 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 254 ihit 11 ilayer 10 icell 127 iturn -1 min_abs_dist 14 min_dist 14
+== hitIdx 255 ihit 12 ilayer 10 icell 141 iturn -1 min_abs_dist 14 min_dist 14
+== hitIdx 256 ihit 13 ilayer 10 icell 157 iturn -1 min_abs_dist 16 min_dist 16
+== hitIdx 257 ihit 14 ilayer 10 icell 179 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 258 ihit 15 ilayer 10 icell 180 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 259 ihit 16 ilayer 10 icell 202 iturn -1 min_abs_dist 11 min_dist -11
+== hitIdx 260 ihit 17 ilayer 10 icell 213 iturn -1 min_abs_dist 11 min_dist 11
+== hitIdx 261 ihit 18 ilayer 10 icell 227 iturn -1 min_abs_dist 14 min_dist 14
+== hitIdx 262 ihit 19 ilayer 10 icell 241 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 263 ihit 20 ilayer 10 icell 242 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 264 ihit 21 ilayer 10 icell 243 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 265 ihit 0 ilayer 11 icell 0 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 266 ihit 1 ilayer 11 icell 20 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 267 ihit 2 ilayer 11 icell 21 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 268 ihit 3 ilayer 11 icell 22 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 269 ihit 4 ilayer 11 icell 32 iturn 0 min_abs_dist 10 min_dist 10
+== hitIdx 270 ihit 5 ilayer 11 icell 43 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 271 ihit 6 ilayer 11 icell 48 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 272 ihit 7 ilayer 11 icell 73 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 273 ihit 8 ilayer 11 icell 76 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 274 ihit 9 ilayer 11 icell 97 iturn -1 min_abs_dist 21 min_dist 21
+== hitIdx 275 ihit 10 ilayer 11 icell 125 iturn -1 min_abs_dist 7 min_dist -7
+== hitIdx 276 ihit 11 ilayer 11 icell 132 iturn -1 min_abs_dist 7 min_dist 7
+== hitIdx 277 ihit 12 ilayer 11 icell 151 iturn -1 min_abs_dist 8 min_dist -8
+== hitIdx 278 ihit 13 ilayer 11 icell 159 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 279 ihit 14 ilayer 11 icell 162 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 280 ihit 15 ilayer 11 icell 168 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 281 ihit 16 ilayer 11 icell 172 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 282 ihit 17 ilayer 11 icell 176 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 283 ihit 18 ilayer 11 icell 205 iturn -1 min_abs_dist 18 min_dist -18
+== hitIdx 284 ihit 19 ilayer 11 icell 223 iturn -1 min_abs_dist 12 min_dist -12
+== hitIdx 285 ihit 20 ilayer 11 icell 235 iturn -1 min_abs_dist 6 min_dist -6
+== hitIdx 286 ihit 21 ilayer 11 icell 241 iturn -1 min_abs_dist 6 min_dist 6
+== hitIdx 287 ihit 22 ilayer 11 icell 251 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 288 ihit 23 ilayer 11 icell 252 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 289 ihit 24 ilayer 11 icell 254 iturn 0 min_abs_dist 2 min_dist 2
+== hitIdx 290 ihit 0 ilayer 12 icell 17 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 291 ihit 1 ilayer 12 icell 18 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 292 ihit 2 ilayer 12 icell 19 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 293 ihit 3 ilayer 12 icell 24 iturn 0 min_abs_dist 5 min_dist 5
+== hitIdx 294 ihit 4 ilayer 12 icell 39 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 295 ihit 5 ilayer 12 icell 44 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 296 ihit 6 ilayer 12 icell 71 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 297 ihit 7 ilayer 12 icell 75 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 298 ihit 8 ilayer 12 icell 82 iturn -1 min_abs_dist 7 min_dist 7
+== hitIdx 299 ihit 9 ilayer 12 icell 89 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 300 ihit 10 ilayer 12 icell 90 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 301 ihit 11 ilayer 12 icell 95 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 302 ihit 12 ilayer 12 icell 119 iturn -1 min_abs_dist 16 min_dist -16
+== hitIdx 303 ihit 13 ilayer 12 icell 135 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 304 ihit 14 ilayer 12 icell 136 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 305 ihit 15 ilayer 12 icell 141 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 306 ihit 16 ilayer 12 icell 148 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 307 ihit 17 ilayer 12 icell 152 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 308 ihit 18 ilayer 12 icell 160 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 309 ihit 19 ilayer 12 icell 164 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 310 ihit 20 ilayer 12 icell 168 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 311 ihit 21 ilayer 12 icell 211 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 312 ihit 22 ilayer 12 icell 213 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 313 ihit 23 ilayer 12 icell 224 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 314 ihit 24 ilayer 12 icell 227 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 315 ihit 25 ilayer 12 icell 245 iturn -1 min_abs_dist 11 min_dist -11
+== hitIdx 316 ihit 26 ilayer 12 icell 256 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 317 ihit 27 ilayer 12 icell 257 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 318 ihit 28 ilayer 12 icell 258 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 319 ihit 29 ilayer 12 icell 259 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 320 ihit 0 ilayer 13 icell 0 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 321 ihit 1 ilayer 13 icell 14 iturn 0 min_abs_dist 2 min_dist -2
+== hitIdx 322 ihit 2 ilayer 13 icell 16 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 323 ihit 3 ilayer 13 icell 17 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 324 ihit 4 ilayer 13 icell 18 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 325 ihit 5 ilayer 13 icell 19 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 326 ihit 6 ilayer 13 icell 28 iturn 0 min_abs_dist 9 min_dist 9
+== hitIdx 327 ihit 7 ilayer 13 icell 40 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 328 ihit 8 ilayer 13 icell 45 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 329 ihit 9 ilayer 13 icell 48 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 330 ihit 10 ilayer 13 icell 57 iturn -1 min_abs_dist 7 min_dist -7
+== hitIdx 331 ihit 11 ilayer 13 icell 64 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 332 ihit 12 ilayer 13 icell 66 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 333 ihit 13 ilayer 13 icell 82 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 334 ihit 14 ilayer 13 icell 85 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 335 ihit 15 ilayer 13 icell 86 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 336 ihit 16 ilayer 13 icell 87 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 337 ihit 17 ilayer 13 icell 94 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 338 ihit 18 ilayer 13 icell 98 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 339 ihit 19 ilayer 13 icell 107 iturn -1 min_abs_dist 9 min_dist 9
+== hitIdx 340 ihit 20 ilayer 13 icell 118 iturn -1 min_abs_dist 7 min_dist -7
+== hitIdx 341 ihit 21 ilayer 13 icell 125 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 342 ihit 22 ilayer 13 icell 127 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 343 ihit 23 ilayer 13 icell 136 iturn -1 min_abs_dist 8 min_dist -8
+== hitIdx 344 ihit 24 ilayer 13 icell 144 iturn -1 min_abs_dist 8 min_dist 8
+== hitIdx 345 ihit 25 ilayer 13 icell 162 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 346 ihit 26 ilayer 13 icell 163 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 347 ihit 27 ilayer 13 icell 165 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 348 ihit 28 ilayer 13 icell 172 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 349 ihit 29 ilayer 13 icell 173 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 350 ihit 30 ilayer 13 icell 190 iturn -1 min_abs_dist 7 min_dist -7
+== hitIdx 351 ihit 31 ilayer 13 icell 197 iturn -1 min_abs_dist 7 min_dist 7
+== hitIdx 352 ihit 32 ilayer 13 icell 207 iturn -1 min_abs_dist 10 min_dist 10
+== hitIdx 353 ihit 33 ilayer 13 icell 223 iturn -1 min_abs_dist 7 min_dist -7
+== hitIdx 354 ihit 34 ilayer 13 icell 230 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 355 ihit 35 ilayer 13 icell 232 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 356 ihit 36 ilayer 13 icell 238 iturn -1 min_abs_dist 6 min_dist 6
+== hitIdx 357 ihit 37 ilayer 13 icell 246 iturn -1 min_abs_dist 8 min_dist 8
+== hitIdx 358 ihit 38 ilayer 13 icell 264 iturn 0 min_abs_dist 3 min_dist -3
+== hitIdx 359 ihit 39 ilayer 13 icell 267 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 360 ihit 40 ilayer 13 icell 268 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 361 ihit 41 ilayer 13 icell 269 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 362 ihit 0 ilayer 14 icell 0 iturn 0 min_abs_dist 1 min_dist -1
+== hitIdx 363 ihit 1 ilayer 14 icell 1 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 364 ihit 2 ilayer 14 icell 2 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 365 ihit 3 ilayer 14 icell 3 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 366 ihit 4 ilayer 14 icell 4 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 367 ihit 5 ilayer 14 icell 5 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 368 ihit 6 ilayer 14 icell 6 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 369 ihit 7 ilayer 14 icell 7 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 370 ihit 8 ilayer 14 icell 8 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 371 ihit 9 ilayer 14 icell 9 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 372 ihit 10 ilayer 14 icell 10 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 373 ihit 11 ilayer 14 icell 11 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 374 ihit 12 ilayer 14 icell 12 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 375 ihit 13 ilayer 14 icell 13 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 376 ihit 14 ilayer 14 icell 14 iturn 0 min_abs_dist 1 min_dist 1
+== hitIdx 377 ihit 15 ilayer 14 icell 17 iturn 0 min_abs_dist 3 min_dist 3
+== hitIdx 378 ihit 16 ilayer 14 icell 31 iturn -1 min_abs_dist 14 min_dist 14
+== hitIdx 379 ihit 17 ilayer 14 icell 58 iturn -1 min_abs_dist 15 min_dist -15
+== hitIdx 380 ihit 18 ilayer 14 icell 73 iturn -1 min_abs_dist 15 min_dist 15
+== hitIdx 381 ihit 19 ilayer 14 icell 88 iturn -1 min_abs_dist 7 min_dist -7
+== hitIdx 382 ihit 20 ilayer 14 icell 95 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 383 ihit 21 ilayer 14 icell 99 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 384 ihit 22 ilayer 14 icell 121 iturn -1 min_abs_dist 9 min_dist -9
+== hitIdx 385 ihit 23 ilayer 14 icell 130 iturn -1 min_abs_dist 9 min_dist 9
+== hitIdx 386 ihit 24 ilayer 14 icell 143 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 387 ihit 25 ilayer 14 icell 144 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 388 ihit 26 ilayer 14 icell 163 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 389 ihit 27 ilayer 14 icell 164 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 390 ihit 28 ilayer 14 icell 176 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 391 ihit 29 ilayer 14 icell 177 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 392 ihit 30 ilayer 14 icell 181 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 393 ihit 31 ilayer 14 icell 188 iturn -1 min_abs_dist 7 min_dist 7
+== hitIdx 394 ihit 32 ilayer 14 icell 196 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 395 ihit 33 ilayer 14 icell 199 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 396 ihit 34 ilayer 14 icell 216 iturn -1 min_abs_dist 13 min_dist -13
+== hitIdx 397 ihit 35 ilayer 14 icell 229 iturn -1 min_abs_dist 13 min_dist 13
+== hitIdx 398 ihit 36 ilayer 14 icell 248 iturn -1 min_abs_dist 13 min_dist -13
+== hitIdx 399 ihit 37 ilayer 14 icell 261 iturn -1 min_abs_dist 13 min_dist 13
+== hitIdx 400 ihit 38 ilayer 14 icell 275 iturn -1 min_abs_dist 14 min_dist 14
+== hitIdx 401 ihit 0 ilayer 15 icell 34 iturn -1 min_abs_dist 13 min_dist -13
+== hitIdx 402 ihit 1 ilayer 15 icell 47 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 403 ihit 2 ilayer 15 icell 51 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 404 ihit 3 ilayer 15 icell 58 iturn -1 min_abs_dist 7 min_dist 7
+== hitIdx 405 ihit 4 ilayer 15 icell 67 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 406 ihit 5 ilayer 15 icell 69 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 407 ihit 6 ilayer 15 icell 141 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 408 ihit 7 ilayer 15 icell 143 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 409 ihit 8 ilayer 15 icell 145 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 410 ihit 9 ilayer 15 icell 149 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 411 ihit 10 ilayer 15 icell 153 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 412 ihit 11 ilayer 15 icell 170 iturn -1 min_abs_dist 13 min_dist -13
+== hitIdx 413 ihit 12 ilayer 15 icell 183 iturn -1 min_abs_dist 13 min_dist 13
+== hitIdx 414 ihit 13 ilayer 15 icell 198 iturn -1 min_abs_dist 15 min_dist 15
+== hitIdx 415 ihit 14 ilayer 15 icell 223 iturn -1 min_abs_dist 16 min_dist -16
+== hitIdx 416 ihit 15 ilayer 15 icell 239 iturn -1 min_abs_dist 6 min_dist -6
+== hitIdx 417 ihit 16 ilayer 15 icell 245 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 418 ihit 17 ilayer 15 icell 247 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 419 ihit 18 ilayer 15 icell 252 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 420 ihit 19 ilayer 15 icell 259 iturn -1 min_abs_dist 6 min_dist -6
+== hitIdx 421 ihit 20 ilayer 15 icell 265 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 422 ihit 21 ilayer 15 icell 270 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 423 ihit 22 ilayer 15 icell 277 iturn -1 min_abs_dist 7 min_dist 7
+== hitIdx 424 ihit 0 ilayer 16 icell 8 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 425 ihit 1 ilayer 16 icell 11 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 426 ihit 2 ilayer 16 icell 17 iturn -1 min_abs_dist 6 min_dist 6
+== hitIdx 427 ihit 3 ilayer 16 icell 39 iturn -1 min_abs_dist 22 min_dist 22
+== hitIdx 428 ihit 4 ilayer 16 icell 82 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 429 ihit 5 ilayer 16 icell 85 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 430 ihit 6 ilayer 16 icell 94 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 431 ihit 7 ilayer 16 icell 97 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 432 ihit 8 ilayer 16 icell 99 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 433 ihit 9 ilayer 16 icell 102 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 434 ihit 10 ilayer 16 icell 109 iturn -1 min_abs_dist 7 min_dist 7
+== hitIdx 435 ihit 11 ilayer 16 icell 123 iturn -1 min_abs_dist 14 min_dist 14
+== hitIdx 436 ihit 12 ilayer 16 icell 147 iturn -1 min_abs_dist 12 min_dist -12
+== hitIdx 437 ihit 13 ilayer 16 icell 159 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 438 ihit 14 ilayer 16 icell 164 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 439 ihit 15 ilayer 16 icell 170 iturn -1 min_abs_dist 6 min_dist 6
+== hitIdx 440 ihit 16 ilayer 16 icell 176 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 441 ihit 17 ilayer 16 icell 181 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 442 ihit 18 ilayer 16 icell 185 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 443 ihit 19 ilayer 16 icell 191 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 444 ihit 20 ilayer 16 icell 195 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 445 ihit 21 ilayer 16 icell 214 iturn -1 min_abs_dist 13 min_dist -13
+== hitIdx 446 ihit 22 ilayer 16 icell 227 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 447 ihit 23 ilayer 16 icell 230 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 448 ihit 24 ilayer 16 icell 238 iturn -1 min_abs_dist 8 min_dist 8
+== hitIdx 449 ihit 25 ilayer 16 icell 251 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 450 ihit 26 ilayer 16 icell 256 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 451 ihit 27 ilayer 16 icell 264 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 452 ihit 28 ilayer 16 icell 265 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 453 ihit 29 ilayer 16 icell 271 iturn -1 min_abs_dist 6 min_dist 6
+== hitIdx 454 ihit 30 ilayer 16 icell 280 iturn -1 min_abs_dist 6 min_dist -6
+== hitIdx 455 ihit 31 ilayer 16 icell 286 iturn -1 min_abs_dist 6 min_dist 6
+== hitIdx 456 ihit 0 ilayer 17 icell 7 iturn -1 min_abs_dist 7 min_dist -7
+== hitIdx 457 ihit 1 ilayer 17 icell 14 iturn -1 min_abs_dist 7 min_dist 7
+== hitIdx 458 ihit 2 ilayer 17 icell 23 iturn -1 min_abs_dist 9 min_dist 9
+== hitIdx 459 ihit 3 ilayer 17 icell 32 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 460 ihit 4 ilayer 17 icell 37 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 461 ihit 5 ilayer 17 icell 42 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 462 ihit 6 ilayer 17 icell 70 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 463 ihit 7 ilayer 17 icell 74 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 464 ihit 8 ilayer 17 icell 88 iturn -1 min_abs_dist 10 min_dist -10
+== hitIdx 465 ihit 9 ilayer 17 icell 98 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 466 ihit 10 ilayer 17 icell 100 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 467 ihit 11 ilayer 17 icell 103 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 468 ihit 12 ilayer 17 icell 149 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 469 ihit 13 ilayer 17 icell 153 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 470 ihit 14 ilayer 17 icell 158 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 471 ihit 15 ilayer 17 icell 199 iturn -1 min_abs_dist 41 min_dist 41
+== hitIdx 472 ihit 16 ilayer 17 icell 240 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 473 ihit 17 ilayer 17 icell 242 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 474 ihit 18 ilayer 17 icell 243 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 475 ihit 19 ilayer 17 icell 244 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 476 ihit 20 ilayer 17 icell 257 iturn -1 min_abs_dist 13 min_dist 13
+== hitIdx 477 ihit 21 ilayer 17 icell 280 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 478 ihit 22 ilayer 17 icell 281 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 479 ihit 0 ilayer 18 icell 7 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 480 ihit 1 ilayer 18 icell 11 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 481 ihit 2 ilayer 18 icell 19 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 482 ihit 3 ilayer 18 icell 20 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 483 ihit 4 ilayer 18 icell 24 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 484 ihit 5 ilayer 18 icell 47 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 485 ihit 6 ilayer 18 icell 48 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 486 ihit 7 ilayer 18 icell 60 iturn -1 min_abs_dist 7 min_dist -7
+== hitIdx 487 ihit 8 ilayer 18 icell 67 iturn -1 min_abs_dist 7 min_dist 7
+== hitIdx 488 ihit 9 ilayer 18 icell 78 iturn -1 min_abs_dist 11 min_dist 11
+== hitIdx 489 ihit 10 ilayer 18 icell 109 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 490 ihit 11 ilayer 18 icell 111 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 491 ihit 12 ilayer 18 icell 118 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 492 ihit 13 ilayer 18 icell 122 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 493 ihit 14 ilayer 18 icell 125 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 494 ihit 15 ilayer 18 icell 133 iturn -1 min_abs_dist 8 min_dist 8
+== hitIdx 495 ihit 16 ilayer 18 icell 142 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 496 ihit 17 ilayer 18 icell 146 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 497 ihit 18 ilayer 18 icell 150 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 498 ihit 19 ilayer 18 icell 172 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 499 ihit 20 ilayer 18 icell 175 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 500 ihit 21 ilayer 18 icell 194 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 501 ihit 22 ilayer 18 icell 197 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 502 ihit 23 ilayer 18 icell 205 iturn -1 min_abs_dist 8 min_dist 8
+== hitIdx 503 ihit 24 ilayer 18 icell 218 iturn -1 min_abs_dist 13 min_dist 13
+== hitIdx 504 ihit 25 ilayer 18 icell 274 iturn -1 min_abs_dist 5 min_dist -5
+== hitIdx 505 ihit 26 ilayer 18 icell 279 iturn -1 min_abs_dist 5 min_dist 5
+== hitIdx 506 ihit 27 ilayer 18 icell 284 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 507 ihit 28 ilayer 18 icell 288 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 508 ihit 29 ilayer 18 icell 290 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 509 ihit 0 ilayer 19 icell 6 iturn -1 min_abs_dist 19 min_dist -19
+== hitIdx 510 ihit 1 ilayer 19 icell 25 iturn -1 min_abs_dist 8 min_dist -8
+== hitIdx 511 ihit 2 ilayer 19 icell 33 iturn -1 min_abs_dist 8 min_dist 8
+== hitIdx 512 ihit 3 ilayer 19 icell 41 iturn -1 min_abs_dist 7 min_dist -7
+== hitIdx 513 ihit 4 ilayer 19 icell 48 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 514 ihit 5 ilayer 19 icell 49 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 515 ihit 6 ilayer 19 icell 53 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 516 ihit 7 ilayer 19 icell 60 iturn -1 min_abs_dist 7 min_dist 7
+== hitIdx 517 ihit 8 ilayer 19 icell 70 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 518 ihit 9 ilayer 19 icell 71 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 519 ihit 10 ilayer 19 icell 93 iturn -1 min_abs_dist 22 min_dist 22
+== hitIdx 520 ihit 11 ilayer 19 icell 121 iturn -1 min_abs_dist 16 min_dist -16
+== hitIdx 521 ihit 12 ilayer 19 icell 137 iturn -1 min_abs_dist 11 min_dist -11
+== hitIdx 522 ihit 13 ilayer 19 icell 148 iturn -1 min_abs_dist 4 min_dist -4
+== hitIdx 523 ihit 14 ilayer 19 icell 152 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 524 ihit 15 ilayer 19 icell 154 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 525 ihit 16 ilayer 19 icell 155 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 526 ihit 17 ilayer 19 icell 174 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 527 ihit 18 ilayer 19 icell 175 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 528 ihit 19 ilayer 19 icell 185 iturn -1 min_abs_dist 2 min_dist -2
+== hitIdx 529 ihit 20 ilayer 19 icell 187 iturn -1 min_abs_dist 2 min_dist 2
+== hitIdx 530 ihit 21 ilayer 19 icell 191 iturn -1 min_abs_dist 4 min_dist 4
+== hitIdx 531 ihit 22 ilayer 19 icell 207 iturn -1 min_abs_dist 14 min_dist -14
+== hitIdx 532 ihit 23 ilayer 19 icell 221 iturn -1 min_abs_dist 1 min_dist -1
+== hitIdx 533 ihit 24 ilayer 19 icell 222 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 534 ihit 25 ilayer 19 icell 223 iturn -1 min_abs_dist 1 min_dist 1
+== hitIdx 535 ihit 26 ilayer 19 icell 237 iturn -1 min_abs_dist 10 min_dist -10
+== hitIdx 536 ihit 27 ilayer 19 icell 247 iturn -1 min_abs_dist 10 min_dist 10
+== hitIdx 537 ihit 28 ilayer 19 icell 274 iturn -1 min_abs_dist 11 min_dist -11
+== hitIdx 538 ihit 29 ilayer 19 icell 285 iturn -1 min_abs_dist 3 min_dist -3
+== hitIdx 539 ihit 30 ilayer 19 icell 288 iturn -1 min_abs_dist 3 min_dist 3
+== hitIdx 540 ihit 31 ilayer 19 icell 293 iturn -1 min_abs_dist 5 min_dist 5
+==# ihit 0 cell_dist -6
+==# ihit 1 cell_dist 6
+==# ihit 2 cell_dist -3
+==# ihit 3 cell_dist 3
+==# ihit 4 cell_dist -2
+==# ihit 5 cell_dist 2
+==# ihit 6 cell_dist -14
+==# ihit 7 cell_dist -4
+==# ihit 8 cell_dist -1
+==# ihit 9 cell_dist 1
+==# ihit 10 cell_dist 5
+==# ihit 11 cell_dist -17
+==# ihit 12 cell_dist -3
+==# ihit 13 cell_dist -1
+==# ihit 14 cell_dist 1
+==# ihit 15 cell_dist -3
+==# ihit 16 cell_dist 3
+==# ihit 17 cell_dist 21
+==# ihit 18 cell_dist -10
+==# ihit 19 cell_dist 10
+==# ihit 20 cell_dist -13
+==# ihit 21 cell_dist -1
+==# ihit 22 cell_dist 1
+==# ihit 23 cell_dist 5
+==# ihit 24 cell_dist -8
+==# ihit 25 cell_dist -2
+==# ihit 26 cell_dist 2
+==# ihit 27 cell_dist -3
+==# ihit 28 cell_dist 3
+==# ihit 29 cell_dist -1
+==# ihit 30 cell_dist 1
+==# ihit 31 cell_dist 1
+==# ihit 32 cell_dist 3
+==# ihit 33 cell_dist -2
+==# ihit 34 cell_dist -1
+==# ihit 35 cell_dist 1
+==# ihit 36 cell_dist 1
+==# ihit 37 cell_dist -2
+==# ihit 38 cell_dist -1
+==# ihit 39 cell_dist 1
+==# ihit 40 cell_dist -3
+==# ihit 41 cell_dist -2
+==# ihit 42 cell_dist 2
+==# ihit 43 cell_dist -9
+==# ihit 44 cell_dist -2
+==# ihit 45 cell_dist 2
+==# ihit 46 cell_dist 3
+==# ihit 47 cell_dist -1
+==# ihit 48 cell_dist 1
+==# ihit 49 cell_dist 1
+==# ihit 50 cell_dist 4
+==# ihit 51 cell_dist -7
+==# ihit 52 cell_dist -3
+==# ihit 53 cell_dist 3
+==# ihit 54 cell_dist -6
+==# ihit 55 cell_dist -1
+==# ihit 56 cell_dist 1
+==# ihit 57 cell_dist 14
+==# ihit 58 cell_dist -11
+==# ihit 59 cell_dist -2
+==# ihit 60 cell_dist 2
+==# ihit 61 cell_dist -3
+==# ihit 62 cell_dist 3
+==# ihit 63 cell_dist -3
+==# ihit 64 cell_dist 3
+==# ihit 65 cell_dist -2
+==# ihit 66 cell_dist 2
+==# ihit 67 cell_dist 4
+==# ihit 68 cell_dist -8
+==# ihit 69 cell_dist -4
+==# ihit 70 cell_dist 4
+==# ihit 71 cell_dist 5
+==# ihit 72 cell_dist 9
+==# ihit 73 cell_dist -5
+==# ihit 74 cell_dist 5
+==# ihit 75 cell_dist 5
+==# ihit 76 cell_dist 8
+==# ihit 77 cell_dist 5
+==# ihit 78 cell_dist -2
+==# ihit 79 cell_dist 2
+==# ihit 80 cell_dist -1
+==# ihit 81 cell_dist 1
+==# ihit 82 cell_dist 2
+==# ihit 83 cell_dist -11
+==# ihit 84 cell_dist -10
+==# ihit 85 cell_dist -7
+==# ihit 86 cell_dist -1
+==# ihit 87 cell_dist 1
+==# ihit 88 cell_dist -5
+==# ihit 89 cell_dist -3
+==# ihit 90 cell_dist 3
+==# ihit 91 cell_dist 4
+==# ihit 92 cell_dist -4
+==# ihit 93 cell_dist 4
+==# ihit 94 cell_dist 9
+==# ihit 95 cell_dist -12
+==# ihit 96 cell_dist -1
+==# ihit 97 cell_dist 1
+==# ihit 98 cell_dist 3
+==# ihit 99 cell_dist 7
+==# ihit 100 cell_dist -7
+==# ihit 101 cell_dist -1
+==# ihit 102 cell_dist 1
+==# ihit 103 cell_dist 4
+==# ihit 104 cell_dist -3
+==# ihit 105 cell_dist 3
+==# ihit 106 cell_dist -18
+==# ihit 107 cell_dist -12
+==# ihit 108 cell_dist 12
+==# ihit 109 cell_dist -2
+==# ihit 110 cell_dist 2
+==# ihit 111 cell_dist -1
+==# ihit 112 cell_dist 1
+==# ihit 113 cell_dist -19
+==# ihit 114 cell_dist -6
+==# ihit 115 cell_dist -3
+==# ihit 116 cell_dist 3
+==# ihit 117 cell_dist -3
+==# ihit 118 cell_dist 3
+==# ihit 119 cell_dist 5
+==# ihit 120 cell_dist -12
+==# ihit 121 cell_dist -1
+==# ihit 122 cell_dist 1
+==# ihit 123 cell_dist -5
+==# ihit 124 cell_dist 5
+==# ihit 125 cell_dist -7
+==# ihit 126 cell_dist 7
+==# ihit 127 cell_dist 12
+==# ihit 128 cell_dist 13
+==# ihit 129 cell_dist -2
+==# ihit 130 cell_dist 2
+==# ihit 131 cell_dist 2
+==# ihit 132 cell_dist 7
+==# ihit 133 cell_dist 9
+==# ihit 134 cell_dist -1
+==# ihit 135 cell_dist 1
+==# ihit 136 cell_dist 1
+==# ihit 137 cell_dist 3
+==# ihit 138 cell_dist -4
+==# ihit 139 cell_dist -2
+==# ihit 140 cell_dist 2
+==# ihit 141 cell_dist 2
+==# ihit 142 cell_dist 10
+==# ihit 143 cell_dist -1
+==# ihit 144 cell_dist 1
+==# ihit 145 cell_dist 2
+==# ihit 146 cell_dist -1
+==# ihit 147 cell_dist 1
+==# ihit 148 cell_dist 1
+==# ihit 149 cell_dist 3
+==# ihit 150 cell_dist -1
+==# ihit 151 cell_dist 1
+==# ihit 152 cell_dist 9
+==# ihit 153 cell_dist 9
+==# ihit 154 cell_dist -15
+==# ihit 155 cell_dist -7
+==# ihit 156 cell_dist -5
+==# ihit 157 cell_dist -1
+==# ihit 158 cell_dist 1
+==# ihit 159 cell_dist 2
+==# ihit 160 cell_dist 19
+==# ihit 161 cell_dist -2
+==# ihit 162 cell_dist 2
+==# ihit 163 cell_dist 3
+==# ihit 164 cell_dist -6
+==# ihit 165 cell_dist 6
+==# ihit 166 cell_dist -3
+==# ihit 167 cell_dist -1
+==# ihit 168 cell_dist 1
+==# ihit 169 cell_dist 1
+==# ihit 170 cell_dist -5
+==# ihit 171 cell_dist -2
+==# ihit 172 cell_dist 2
+==# ihit 173 cell_dist -5
+==# ihit 174 cell_dist 5
+==# ihit 175 cell_dist -2
+==# ihit 176 cell_dist 2
+==# ihit 177 cell_dist -1
+==# ihit 178 cell_dist 1
+==# ihit 179 cell_dist 12
+==# ihit 180 cell_dist -2
+==# ihit 181 cell_dist -1
+==# ihit 182 cell_dist 1
+==# ihit 183 cell_dist -5
+==# ihit 184 cell_dist 5
+==# ihit 185 cell_dist -10
+==# ihit 186 cell_dist 10
+==# ihit 187 cell_dist -1
+==# ihit 188 cell_dist 1
+==# ihit 189 cell_dist -10
+==# ihit 190 cell_dist 10
+==# ihit 191 cell_dist -5
+==# ihit 192 cell_dist -2
+==# ihit 193 cell_dist 2
+==# ihit 194 cell_dist 8
+==# ihit 195 cell_dist -8
+==# ihit 196 cell_dist -2
+==# ihit 197 cell_dist -1
+==# ihit 198 cell_dist 1
+==# ihit 199 cell_dist 3
+==# ihit 200 cell_dist 7
+==# ihit 201 cell_dist -1
+==# ihit 202 cell_dist 1
+==# ihit 203 cell_dist 10
+==# ihit 204 cell_dist -10
+==# ihit 205 cell_dist -1
+==# ihit 206 cell_dist 1
+==# ihit 207 cell_dist 10
+==# ihit 208 cell_dist -13
+==# ihit 209 cell_dist 13
+==# ihit 210 cell_dist -11
+==# ihit 211 cell_dist 11
+==# ihit 212 cell_dist -1
+==# ihit 213 cell_dist 1
+==# ihit 214 cell_dist 1
+==# ihit 215 cell_dist 2
+==# ihit 216 cell_dist -4
+==# ihit 217 cell_dist 4
+==# ihit 218 cell_dist -2
+==# ihit 219 cell_dist -1
+==# ihit 220 cell_dist 1
+==# ihit 221 cell_dist 5
+==# ihit 222 cell_dist 7
+==# ihit 223 cell_dist -9
+==# ihit 224 cell_dist -1
+==# ihit 225 cell_dist 1
+==# ihit 226 cell_dist -16
+==# ihit 227 cell_dist -6
+==# ihit 228 cell_dist 6
+==# ihit 229 cell_dist -7
+==# ihit 230 cell_dist 7
+==# ihit 231 cell_dist -5
+==# ihit 232 cell_dist 5
+==# ihit 233 cell_dist 8
+==# ihit 234 cell_dist 9
+==# ihit 235 cell_dist -7
+==# ihit 236 cell_dist 7
+==# ihit 237 cell_dist -7
+==# ihit 238 cell_dist 7
+==# ihit 239 cell_dist 8
+==# ihit 240 cell_dist -1
+==# ihit 241 cell_dist 1
+==# ihit 242 cell_dist 1
+==# ihit 243 cell_dist -5
+==# ihit 244 cell_dist -1
+==# ihit 245 cell_dist 1
+==# ihit 246 cell_dist -7
+==# ihit 247 cell_dist -5
+==# ihit 248 cell_dist 5
+==# ihit 249 cell_dist -11
+==# ihit 250 cell_dist 11
+==# ihit 251 cell_dist -5
+==# ihit 252 cell_dist -3
+==# ihit 253 cell_dist 3
+==# ihit 254 cell_dist 14
+==# ihit 255 cell_dist 14
+==# ihit 256 cell_dist 16
+==# ihit 257 cell_dist -1
+==# ihit 258 cell_dist 1
+==# ihit 259 cell_dist -11
+==# ihit 260 cell_dist 11
+==# ihit 261 cell_dist 14
+==# ihit 262 cell_dist -1
+==# ihit 263 cell_dist 1
+==# ihit 264 cell_dist 1
+==# ihit 265 cell_dist 4
+==# ihit 266 cell_dist -1
+==# ihit 267 cell_dist 1
+==# ihit 268 cell_dist 1
+==# ihit 269 cell_dist 10
+==# ihit 270 cell_dist -5
+==# ihit 271 cell_dist 5
+==# ihit 272 cell_dist -3
+==# ihit 273 cell_dist 3
+==# ihit 274 cell_dist 21
+==# ihit 275 cell_dist -7
+==# ihit 276 cell_dist 7
+==# ihit 277 cell_dist -8
+==# ihit 278 cell_dist -3
+==# ihit 279 cell_dist 3
+==# ihit 280 cell_dist -4
+==# ihit 281 cell_dist 4
+==# ihit 282 cell_dist 4
+==# ihit 283 cell_dist -18
+==# ihit 284 cell_dist -12
+==# ihit 285 cell_dist -6
+==# ihit 286 cell_dist 6
+==# ihit 287 cell_dist -1
+==# ihit 288 cell_dist 1
+==# ihit 289 cell_dist 2
+==# ihit 290 cell_dist -1
+==# ihit 291 cell_dist 1
+==# ihit 292 cell_dist 1
+==# ihit 293 cell_dist 5
+==# ihit 294 cell_dist -5
+==# ihit 295 cell_dist 5
+==# ihit 296 cell_dist -4
+==# ihit 297 cell_dist 4
+==# ihit 298 cell_dist 7
+==# ihit 299 cell_dist -1
+==# ihit 300 cell_dist 1
+==# ihit 301 cell_dist 5
+==# ihit 302 cell_dist -16
+==# ihit 303 cell_dist -1
+==# ihit 304 cell_dist 1
+==# ihit 305 cell_dist 5
+==# ihit 306 cell_dist -4
+==# ihit 307 cell_dist 4
+==# ihit 308 cell_dist -4
+==# ihit 309 cell_dist 4
+==# ihit 310 cell_dist 4
+==# ihit 311 cell_dist -2
+==# ihit 312 cell_dist 2
+==# ihit 313 cell_dist -3
+==# ihit 314 cell_dist 3
+==# ihit 315 cell_dist -11
+==# ihit 316 cell_dist -1
+==# ihit 317 cell_dist 1
+==# ihit 318 cell_dist 1
+==# ihit 319 cell_dist 1
+==# ihit 320 cell_dist 1
+==# ihit 321 cell_dist -2
+==# ihit 322 cell_dist -1
+==# ihit 323 cell_dist 1
+==# ihit 324 cell_dist 1
+==# ihit 325 cell_dist 1
+==# ihit 326 cell_dist 9
+==# ihit 327 cell_dist -5
+==# ihit 328 cell_dist -3
+==# ihit 329 cell_dist 3
+==# ihit 330 cell_dist -7
+==# ihit 331 cell_dist -2
+==# ihit 332 cell_dist 2
+==# ihit 333 cell_dist -3
+==# ihit 334 cell_dist -1
+==# ihit 335 cell_dist 1
+==# ihit 336 cell_dist 1
+==# ihit 337 cell_dist -4
+==# ihit 338 cell_dist 4
+==# ihit 339 cell_dist 9
+==# ihit 340 cell_dist -7
+==# ihit 341 cell_dist -2
+==# ihit 342 cell_dist 2
+==# ihit 343 cell_dist -8
+==# ihit 344 cell_dist 8
+==# ihit 345 cell_dist -1
+==# ihit 346 cell_dist 1
+==# ihit 347 cell_dist 2
+==# ihit 348 cell_dist -1
+==# ihit 349 cell_dist 1
+==# ihit 350 cell_dist -7
+==# ihit 351 cell_dist 7
+==# ihit 352 cell_dist 10
+==# ihit 353 cell_dist -7
+==# ihit 354 cell_dist -2
+==# ihit 355 cell_dist 2
+==# ihit 356 cell_dist 6
+==# ihit 357 cell_dist 8
+==# ihit 358 cell_dist -3
+==# ihit 359 cell_dist -1
+==# ihit 360 cell_dist 1
+==# ihit 361 cell_dist 1
+==# ihit 362 cell_dist -1
+==# ihit 363 cell_dist 1
+==# ihit 364 cell_dist 1
+==# ihit 365 cell_dist 1
+==# ihit 366 cell_dist 1
+==# ihit 367 cell_dist 1
+==# ihit 368 cell_dist 1
+==# ihit 369 cell_dist 1
+==# ihit 370 cell_dist 1
+==# ihit 371 cell_dist 1
+==# ihit 372 cell_dist 1
+==# ihit 373 cell_dist 1
+==# ihit 374 cell_dist 1
+==# ihit 375 cell_dist 1
+==# ihit 376 cell_dist 1
+==# ihit 377 cell_dist 3
+==# ihit 378 cell_dist 14
+==# ihit 379 cell_dist -15
+==# ihit 380 cell_dist 15
+==# ihit 381 cell_dist -7
+==# ihit 382 cell_dist -4
+==# ihit 383 cell_dist 4
+==# ihit 384 cell_dist -9
+==# ihit 385 cell_dist 9
+==# ihit 386 cell_dist -1
+==# ihit 387 cell_dist 1
+==# ihit 388 cell_dist -1
+==# ihit 389 cell_dist 1
+==# ihit 390 cell_dist -1
+==# ihit 391 cell_dist 1
+==# ihit 392 cell_dist 4
+==# ihit 393 cell_dist 7
+==# ihit 394 cell_dist -3
+==# ihit 395 cell_dist 3
+==# ihit 396 cell_dist -13
+==# ihit 397 cell_dist 13
+==# ihit 398 cell_dist -13
+==# ihit 399 cell_dist 13
+==# ihit 400 cell_dist 14
+==# ihit 401 cell_dist -13
+==# ihit 402 cell_dist -4
+==# ihit 403 cell_dist 4
+==# ihit 404 cell_dist 7
+==# ihit 405 cell_dist -2
+==# ihit 406 cell_dist 2
+==# ihit 407 cell_dist -2
+==# ihit 408 cell_dist 2
+==# ihit 409 cell_dist 2
+==# ihit 410 cell_dist 4
+==# ihit 411 cell_dist 4
+==# ihit 412 cell_dist -13
+==# ihit 413 cell_dist 13
+==# ihit 414 cell_dist 15
+==# ihit 415 cell_dist -16
+==# ihit 416 cell_dist -6
+==# ihit 417 cell_dist -2
+==# ihit 418 cell_dist 2
+==# ihit 419 cell_dist 5
+==# ihit 420 cell_dist -6
+==# ihit 421 cell_dist -5
+==# ihit 422 cell_dist 5
+==# ihit 423 cell_dist 7
+==# ihit 424 cell_dist -3
+==# ihit 425 cell_dist 3
+==# ihit 426 cell_dist 6
+==# ihit 427 cell_dist 22
+==# ihit 428 cell_dist -3
+==# ihit 429 cell_dist 3
+==# ihit 430 cell_dist -3
+==# ihit 431 cell_dist -2
+==# ihit 432 cell_dist 2
+==# ihit 433 cell_dist 3
+==# ihit 434 cell_dist 7
+==# ihit 435 cell_dist 14
+==# ihit 436 cell_dist -12
+==# ihit 437 cell_dist -5
+==# ihit 438 cell_dist 5
+==# ihit 439 cell_dist 6
+==# ihit 440 cell_dist -5
+==# ihit 441 cell_dist -4
+==# ihit 442 cell_dist 4
+==# ihit 443 cell_dist -4
+==# ihit 444 cell_dist 4
+==# ihit 445 cell_dist -13
+==# ihit 446 cell_dist -3
+==# ihit 447 cell_dist 3
+==# ihit 448 cell_dist 8
+==# ihit 449 cell_dist -5
+==# ihit 450 cell_dist 5
+==# ihit 451 cell_dist -1
+==# ihit 452 cell_dist 1
+==# ihit 453 cell_dist 6
+==# ihit 454 cell_dist -6
+==# ihit 455 cell_dist 6
+==# ihit 456 cell_dist -7
+==# ihit 457 cell_dist 7
+==# ihit 458 cell_dist 9
+==# ihit 459 cell_dist -5
+==# ihit 460 cell_dist 5
+==# ihit 461 cell_dist 5
+==# ihit 462 cell_dist -4
+==# ihit 463 cell_dist 4
+==# ihit 464 cell_dist -10
+==# ihit 465 cell_dist -2
+==# ihit 466 cell_dist 2
+==# ihit 467 cell_dist 3
+==# ihit 468 cell_dist -4
+==# ihit 469 cell_dist 4
+==# ihit 470 cell_dist 5
+==# ihit 471 cell_dist 41
+==# ihit 472 cell_dist -2
+==# ihit 473 cell_dist -1
+==# ihit 474 cell_dist 1
+==# ihit 475 cell_dist 1
+==# ihit 476 cell_dist 13
+==# ihit 477 cell_dist -1
+==# ihit 478 cell_dist 1
+==# ihit 479 cell_dist -4
+==# ihit 480 cell_dist 4
+==# ihit 481 cell_dist -1
+==# ihit 482 cell_dist 1
+==# ihit 483 cell_dist 4
+==# ihit 484 cell_dist -1
+==# ihit 485 cell_dist 1
+==# ihit 486 cell_dist -7
+==# ihit 487 cell_dist 7
+==# ihit 488 cell_dist 11
+==# ihit 489 cell_dist -2
+==# ihit 490 cell_dist 2
+==# ihit 491 cell_dist -4
+==# ihit 492 cell_dist -3
+==# ihit 493 cell_dist 3
+==# ihit 494 cell_dist 8
+==# ihit 495 cell_dist -4
+==# ihit 496 cell_dist 4
+==# ihit 497 cell_dist 4
+==# ihit 498 cell_dist -3
+==# ihit 499 cell_dist 3
+==# ihit 500 cell_dist -3
+==# ihit 501 cell_dist 3
+==# ihit 502 cell_dist 8
+==# ihit 503 cell_dist 13
+==# ihit 504 cell_dist -5
+==# ihit 505 cell_dist 5
+==# ihit 506 cell_dist -4
+==# ihit 507 cell_dist -2
+==# ihit 508 cell_dist 2
+==# ihit 509 cell_dist -19
+==# ihit 510 cell_dist -8
+==# ihit 511 cell_dist 8
+==# ihit 512 cell_dist -7
+==# ihit 513 cell_dist -1
+==# ihit 514 cell_dist 1
+==# ihit 515 cell_dist 4
+==# ihit 516 cell_dist 7
+==# ihit 517 cell_dist -1
+==# ihit 518 cell_dist 1
+==# ihit 519 cell_dist 22
+==# ihit 520 cell_dist -16
+==# ihit 521 cell_dist -11
+==# ihit 522 cell_dist -4
+==# ihit 523 cell_dist -2
+==# ihit 524 cell_dist -1
+==# ihit 525 cell_dist 1
+==# ihit 526 cell_dist -1
+==# ihit 527 cell_dist 1
+==# ihit 528 cell_dist -2
+==# ihit 529 cell_dist 2
+==# ihit 530 cell_dist 4
+==# ihit 531 cell_dist -14
+==# ihit 532 cell_dist -1
+==# ihit 533 cell_dist 1
+==# ihit 534 cell_dist 1
+==# ihit 535 cell_dist -10
+==# ihit 536 cell_dist 10
+==# ihit 537 cell_dist -11
+==# ihit 538 cell_dist -3
+==# ihit 539 cell_dist 3
+==# ihit 540 cell_dist 5
+CDC Hits making clusters
+149
+FindMaxLayer 14
+iturn -1 ilayer  0 icell  79 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer  0 icell  80 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer  0 icell 124 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer  0 icell 125 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer  1 icell  40 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer  1 icell  41 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer  1 icell  84 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer  1 icell  85 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer  1 icell  86 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer  1 icell  97 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer  1 icell  98 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer  1 icell  99 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer  1 icell 123 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer  1 icell 124 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn  0 ilayer  1 icell 182 Pt 103.178 Pz -17.410 Pa 104.637 | DistCell -1
+iturn  0 ilayer  1 icell 183 Pt 103.176 Pz -17.423 Pa 104.637 | DistCell 1
+iturn -1 ilayer  1 icell 184 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer  2 icell  32 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer  2 icell  33 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn  0 ilayer  3 icell  27 Pt 102.438 Pz -20.766 Pa 104.521 | DistCell -1
+iturn  0 ilayer  3 icell  28 Pt 102.438 Pz -20.761 Pa 104.520 | DistCell 1
+iturn -1 ilayer  3 icell  94 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer  3 icell  95 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn  0 ilayer  3 icell 195 Pt 103.180 Pz -17.394 Pa 104.636 | DistCell -1
+iturn  0 ilayer  3 icell 196 Pt 103.177 Pz -17.407 Pa 104.635 | DistCell 1
+iturn  0 ilayer  4 icell  25 Pt 102.445 Pz -20.733 Pa 104.522 | DistCell -1
+iturn  0 ilayer  4 icell  26 Pt 102.439 Pz -20.761 Pa 104.521 | DistCell 1
+iturn -1 ilayer  4 icell 147 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer  4 icell 148 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn  0 ilayer  5 icell  27 Pt 102.447 Pz -20.725 Pa 104.523 | DistCell -1
+iturn  0 ilayer  5 icell  28 Pt 102.446 Pz -20.728 Pa 104.522 | DistCell 1
+iturn -1 ilayer  5 icell 148 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer  5 icell 149 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer  5 icell 150 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn  0 ilayer  5 icell 208 Pt 103.188 Pz -17.336 Pa 104.634 | DistCell -1
+iturn  0 ilayer  5 icell 209 Pt 103.179 Pz -17.340 Pa 104.626 | DistCell 1
+iturn -1 ilayer  6 icell   8 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer  6 icell   9 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer  6 icell  10 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn  0 ilayer  6 icell  25 Pt 102.453 Pz -20.708 Pa 104.524 | DistCell -1
+iturn  0 ilayer  6 icell  26 Pt 102.455 Pz -20.690 Pa 104.524 | DistCell 1
+iturn -1 ilayer  6 icell  95 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer  6 icell  96 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer  6 icell 211 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn  0 ilayer  6 icell 212 Pt 103.183 Pz -17.316 Pa 104.626 | DistCell 1
+iturn  0 ilayer  6 icell 213 Pt 103.179 Pz -17.336 Pa 104.626 | DistCell 1
+iturn  0 ilayer  7 icell  25 Pt 102.463 Pz -20.663 Pa 104.526 | DistCell -1
+iturn  0 ilayer  7 icell  26 Pt 102.463 Pz -20.659 Pa 104.525 | DistCell 1
+iturn -1 ilayer  7 icell  57 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer  7 icell  58 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer  7 icell 125 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer  7 icell 126 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn  0 ilayer  7 icell 221 Pt 103.177 Pz -17.348 Pa 104.625 | DistCell -1
+iturn  0 ilayer  7 icell 222 Pt 103.170 Pz -17.375 Pa 104.622 | DistCell 1
+iturn  0 ilayer  8 icell  23 Pt 102.480 Pz -20.584 Pa 104.527 | DistCell -1
+iturn  0 ilayer  8 icell  24 Pt 102.472 Pz -20.624 Pa 104.527 | DistCell 1
+iturn -1 ilayer  8 icell  55 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer  8 icell  56 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer  8 icell 165 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer  8 icell 166 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer  8 icell 167 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn  0 ilayer  8 icell 226 Pt 103.167 Pz -17.391 Pa 104.622 | DistCell -1
+iturn  0 ilayer  8 icell 227 Pt 103.143 Pz -17.436 Pa 104.606 | DistCell 1
+iturn  0 ilayer  9 icell  24 Pt 102.497 Pz -20.504 Pa 104.527 | DistCell -1
+iturn  0 ilayer  9 icell  25 Pt 102.487 Pz -20.550 Pa 104.527 | DistCell 1
+iturn  0 ilayer  9 icell 236 Pt 103.131 Pz -17.488 Pa 104.603 | DistCell -1
+iturn  0 ilayer  9 icell 237 Pt 103.121 Pz -17.544 Pa 104.602 | DistCell 1
+iturn -1 ilayer  9 icell 238 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn  0 ilayer 10 icell  21 Pt 102.531 Pz -20.336 Pa 104.528 | DistCell -1
+iturn  0 ilayer 10 icell  22 Pt 102.517 Pz -20.405 Pa 104.528 | DistCell 1
+iturn -1 ilayer 10 icell 179 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 10 icell 180 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn  0 ilayer 10 icell 241 Pt 103.124 Pz -17.523 Pa 104.602 | DistCell -1
+iturn  0 ilayer 10 icell 242 Pt 103.118 Pz -17.553 Pa 104.601 | DistCell 1
+iturn -1 ilayer 10 icell 243 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 11 icell  20 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn  0 ilayer 11 icell  21 Pt 102.568 Pz -20.153 Pa 104.529 | DistCell 1
+iturn  0 ilayer 11 icell  22 Pt 102.551 Pz -20.238 Pa 104.528 | DistCell 1
+iturn  0 ilayer 11 icell 251 Pt 103.114 Pz -17.573 Pa 104.600 | DistCell -1
+iturn  0 ilayer 11 icell 252 Pt 103.101 Pz -17.640 Pa 104.599 | DistCell 1
+iturn  0 ilayer 12 icell  17 Pt 102.657 Pz -19.835 Pa 104.556 | DistCell -1
+iturn  0 ilayer 12 icell  18 Pt 102.605 Pz -19.972 Pa 104.531 | DistCell 1
+iturn  0 ilayer 12 icell  19 Pt 102.595 Pz -20.020 Pa 104.530 | DistCell 1
+iturn -1 ilayer 12 icell  89 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 12 icell  90 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 12 icell 135 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 12 icell 136 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 12 icell 256 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn  0 ilayer 12 icell 257 Pt 103.081 Pz -17.748 Pa 104.598 | DistCell 1
+iturn  0 ilayer 12 icell 258 Pt 103.073 Pz -17.795 Pa 104.597 | DistCell 1
+iturn  0 ilayer 12 icell 259 Pt 103.053 Pz -17.906 Pa 104.597 | DistCell 1
+iturn  0 ilayer 13 icell   0 Pt 103.010 Pz -18.139 Pa 104.595 | DistCell 1
+iturn  0 ilayer 13 icell  16 Pt 102.705 Pz -19.606 Pa 104.560 | DistCell -1
+iturn  0 ilayer 13 icell  17 Pt 102.692 Pz -19.673 Pa 104.560 | DistCell 1
+iturn  0 ilayer 13 icell  18 Pt 102.675 Pz -19.751 Pa 104.557 | DistCell 1
+iturn  0 ilayer 13 icell  19 Pt 102.656 Pz -19.840 Pa 104.556 | DistCell 1
+iturn -1 ilayer 13 icell  85 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 13 icell  86 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 13 icell  87 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 13 icell 162 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 13 icell 163 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 13 icell 172 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 13 icell 173 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn  0 ilayer 13 icell 267 Pt 103.052 Pz -17.911 Pa 104.597 | DistCell -1
+iturn  0 ilayer 13 icell 268 Pt 103.038 Pz -17.987 Pa 104.596 | DistCell 1
+iturn  0 ilayer 13 icell 269 Pt 103.025 Pz -18.059 Pa 104.596 | DistCell 1
+iturn  0 ilayer 14 icell   0 Pt 102.993 Pz -18.219 Pa 104.592 | DistCell -1
+iturn  0 ilayer 14 icell   1 Pt 102.978 Pz -18.302 Pa 104.591 | DistCell 1
+iturn  0 ilayer 14 icell   2 Pt 102.965 Pz -18.363 Pa 104.589 | DistCell 1
+iturn  0 ilayer 14 icell   3 Pt 102.953 Pz -18.415 Pa 104.587 | DistCell 1
+iturn  0 ilayer 14 icell   4 Pt 102.939 Pz -18.490 Pa 104.587 | DistCell 1
+iturn  0 ilayer 14 icell   5 Pt 102.924 Pz -18.575 Pa 104.586 | DistCell 1
+iturn  0 ilayer 14 icell   6 Pt 102.915 Pz -18.617 Pa 104.586 | DistCell 1
+iturn  0 ilayer 14 icell   7 Pt 102.896 Pz -18.712 Pa 104.584 | DistCell 1
+iturn  0 ilayer 14 icell   8 Pt 102.857 Pz -18.855 Pa 104.571 | DistCell 1
+iturn  0 ilayer 14 icell   9 Pt 102.839 Pz -18.954 Pa 104.571 | DistCell 1
+iturn  0 ilayer 14 icell  10 Pt 102.821 Pz -19.042 Pa 104.569 | DistCell 1
+iturn  0 ilayer 14 icell  11 Pt 102.786 Pz -19.191 Pa 104.562 | DistCell 1
+iturn  0 ilayer 14 icell  12 Pt 102.765 Pz -19.297 Pa 104.561 | DistCell 1
+iturn  0 ilayer 14 icell  13 Pt 102.734 Pz -19.459 Pa 104.561 | DistCell 1
+iturn  0 ilayer 14 icell  14 Pt 102.723 Pz -19.515 Pa 104.560 | DistCell 1
+iturn -1 ilayer 14 icell 143 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 14 icell 144 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 14 icell 163 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 14 icell 164 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 14 icell 176 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 14 icell 177 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 16 icell 264 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 16 icell 265 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 17 icell 242 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 17 icell 243 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 17 icell 244 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 17 icell 280 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 17 icell 281 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 18 icell  19 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 18 icell  20 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 18 icell  47 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 18 icell  48 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 19 icell  48 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 19 icell  49 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 19 icell  70 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 19 icell  71 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 19 icell 154 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 19 icell 155 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 19 icell 174 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 19 icell 175 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 19 icell 221 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell -1
+iturn -1 ilayer 19 icell 222 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+iturn -1 ilayer 19 icell 223 Pt   0.000 Pz   0.000 Pa   0.000 | DistCell 1
+Hough (odd layers) fT   0.003 fR   0.025
+Hough (even layers) fT   0.128 fR   0.027
+iturn -1 ilayer 1 icell 40 u -0.036181 v 0.010722 rho 0.024597 res -0.013875 --> excluded
+iturn -1 ilayer 1 icell 41 u -0.036503 v 0.009569 rho 0.024597 res -0.015028 --> excluded
+iturn -1 ilayer 1 icell 84 u -0.016842 v -0.033769 rho 0.024597 res -0.058366 --> excluded
+iturn -1 ilayer 1 icell 85 u -0.015762 v -0.034286 rho 0.024597 res -0.058883 --> excluded
+iturn -1 ilayer 1 icell 86 u -0.014666 v -0.034769 rho 0.024597 res -0.059366 --> excluded
+iturn -1 ilayer 1 icell 97 u -0.001890 v -0.037688 rho 0.024597 res -0.062285 --> excluded
+iturn -1 ilayer 1 icell 98 u -0.000693 v -0.037729 rho 0.024597 res -0.062326 --> excluded
+iturn -1 ilayer 1 icell 99 u 0.000504 v -0.037732 rho 0.024597 res -0.062329 --> excluded
+iturn -1 ilayer 1 icell 123 u 0.026403 v -0.026960 rho 0.024597 res -0.051557 --> excluded
+iturn -1 ilayer 1 icell 124 u 0.027246 v -0.026109 rho 0.024597 res -0.050706 --> excluded
+iturn 0 ilayer 1 icell 182 u 0.017905 v 0.033218 rho 0.024597 res 0.008621 --> included
+iturn 0 ilayer 1 icell 183 u 0.016842 v 0.033769 rho 0.024597 res 0.009172 --> included
+iturn -1 ilayer 1 icell 184 u 0.015762 v 0.034286 rho 0.024597 res 0.009690 --> included
+iturn 0 ilayer 3 icell 27 u -0.025661 v 0.024657 rho 0.024597 res 0.000060 --> included
+iturn 0 ilayer 3 icell 28 u -0.026387 v 0.023879 rho 0.024597 res -0.000718 --> included
+iturn -1 ilayer 3 icell 94 u -0.011586 v -0.033648 rho 0.024597 res -0.058245 --> excluded
+iturn -1 ilayer 3 icell 95 u -0.010575 v -0.033980 rho 0.024597 res -0.058577 --> excluded
+iturn 0 ilayer 3 icell 195 u 0.015521 v 0.032024 rho 0.024597 res 0.007427 --> included
+iturn 0 ilayer 3 icell 196 u 0.014556 v 0.032474 rho 0.024597 res 0.007877 --> included
+iturn 0 ilayer 5 icell 27 u -0.023237 v 0.024366 rho 0.024597 res -0.000230 --> included
+iturn 0 ilayer 5 icell 28 u -0.023917 v 0.023699 rho 0.024597 res -0.000898 --> included
+iturn -1 ilayer 5 icell 148 u 0.029117 v -0.016908 rho 0.024597 res -0.041505 --> excluded
+iturn -1 ilayer 5 icell 149 u 0.029584 v -0.016077 rho 0.024597 res -0.040674 --> excluded
+iturn -1 ilayer 5 icell 150 u 0.030027 v -0.015234 rho 0.024597 res -0.039830 --> excluded
+iturn 0 ilayer 5 icell 208 u 0.013073 v 0.031029 rho 0.024597 res 0.006432 --> included
+iturn 0 ilayer 5 icell 209 u 0.012189 v 0.031386 rho 0.024597 res 0.006789 --> included
+iturn 0 ilayer 7 icell 25 u -0.020144 v 0.024798 rho 0.024597 res 0.000201 --> included
+iturn 0 ilayer 7 icell 26 u -0.020802 v 0.024248 rho 0.024597 res -0.000348 --> included
+iturn -1 ilayer 7 icell 57 u -0.031935 v 0.000938 rho 0.024597 res -0.023659 --> excluded
+iturn -1 ilayer 7 icell 58 u -0.031949 v 0.000080 rho 0.024597 res -0.024517 --> excluded
+iturn -1 ilayer 7 icell 125 u 0.007151 v -0.031138 rho 0.024597 res -0.055735 --> excluded
+iturn -1 ilayer 7 icell 126 u 0.007984 v -0.030935 rho 0.024597 res -0.055532 --> excluded
+iturn 0 ilayer 7 icell 221 u 0.010599 v 0.030140 rho 0.024597 res 0.005543 --> included
+iturn 0 ilayer 7 icell 222 u 0.009786 v 0.030413 rho 0.024597 res 0.005817 --> included
+iturn 0 ilayer 9 icell 24 u -0.017741 v 0.024680 rho 0.024597 res 0.000083 --> included
+iturn 0 ilayer 9 icell 25 u -0.018366 v 0.024219 rho 0.024597 res -0.000378 --> included
+iturn 0 ilayer 9 icell 236 u 0.007377 v 0.029486 rho 0.024597 res 0.004890 --> included
+iturn 0 ilayer 9 icell 237 u 0.006621 v 0.029665 rho 0.024597 res 0.005068 --> included
+iturn -1 ilayer 9 icell 238 u 0.005862 v 0.029825 rho 0.024597 res 0.005228 --> included
+iturn -1 ilayer 11 icell 20 u -0.013814 v 0.025482 rho 0.024597 res 0.000886 --> included
+iturn 0 ilayer 11 icell 21 u -0.014430 v 0.025138 rho 0.024597 res 0.000542 --> included
+iturn 0 ilayer 11 icell 22 u -0.015038 v 0.024780 rho 0.024597 res 0.000183 --> included
+iturn 0 ilayer 11 icell 251 u 0.004641 v 0.028612 rho 0.024597 res 0.004015 --> included
+iturn 0 ilayer 11 icell 252 u 0.003943 v 0.028716 rho 0.024597 res 0.004119 --> included
+iturn 0 ilayer 13 icell 0 u -0.000253 v 0.027700 rho 0.024597 res 0.003103 --> included
+iturn 0 ilayer 13 icell 16 u -0.010313 v 0.025710 rho 0.024597 res 0.001113 --> included
+iturn 0 ilayer 13 icell 17 u -0.010908 v 0.025463 rho 0.024597 res 0.000866 --> included
+iturn 0 ilayer 13 icell 18 u -0.011498 v 0.025202 rho 0.024597 res 0.000605 --> included
+iturn 0 ilayer 13 icell 19 u -0.012081 v 0.024928 rho 0.024597 res 0.000331 --> included
+iturn -1 ilayer 13 icell 85 u -0.025334 v -0.011204 rho 0.024597 res -0.035800 --> excluded
+iturn -1 ilayer 13 icell 86 u -0.025067 v -0.011790 rho 0.024597 res -0.036387 --> excluded
+iturn -1 ilayer 13 icell 87 u -0.024785 v -0.012370 rho 0.024597 res -0.036967 --> excluded
+iturn -1 ilayer 13 icell 162 u 0.016486 v -0.022261 rho 0.024597 res -0.046858 --> excluded
+iturn -1 ilayer 13 icell 163 u 0.017000 v -0.021871 rho 0.024597 res -0.046468 --> excluded
+iturn -1 ilayer 13 icell 172 u 0.021175 v -0.017859 rho 0.024597 res -0.042456 --> excluded
+iturn -1 ilayer 13 icell 173 u 0.021585 v -0.017361 rho 0.024597 res -0.041958 --> excluded
+iturn 0 ilayer 13 icell 267 u 0.001680 v 0.027650 rho 0.024597 res 0.003053 --> included
+iturn 0 ilayer 13 icell 268 u 0.001036 v 0.027681 rho 0.024597 res 0.003085 --> included
+iturn 0 ilayer 13 icell 269 u 0.000392 v 0.027698 rho 0.024597 res 0.003101 --> included
+iturn -1 ilayer 17 icell 242 u 0.022713 v 0.011471 rho 0.024597 res -0.013126 --> excluded
+iturn -1 ilayer 17 icell 243 u 0.022463 v 0.011954 rho 0.024597 res -0.012643 --> excluded
+iturn -1 ilayer 17 icell 244 u 0.022202 v 0.012431 rho 0.024597 res -0.012166 --> excluded
+iturn -1 ilayer 17 icell 280 u 0.007301 v 0.024375 rho 0.024597 res -0.000221 --> included
+iturn -1 ilayer 17 icell 281 u 0.006778 v 0.024526 rho 0.024597 res -0.000071 --> included
+iturn -1 ilayer 19 icell 48 u -0.020486 v 0.013347 rho 0.024597 res -0.011250 --> excluded
+iturn -1 ilayer 19 icell 49 u -0.020755 v 0.012923 rho 0.024597 res -0.011674 --> excluded
+iturn -1 ilayer 19 icell 70 u -0.024257 v 0.003065 rho 0.024597 res -0.021531 --> excluded
+iturn -1 ilayer 19 icell 71 u -0.024315 v 0.002567 rho 0.024597 res -0.022030 --> excluded
+iturn -1 ilayer 19 icell 154 u 0.000692 v -0.024440 rho 0.024597 res -0.049037 --> excluded
+iturn -1 ilayer 19 icell 155 u 0.001193 v -0.024421 rho 0.024597 res -0.049018 --> excluded
+iturn -1 ilayer 19 icell 174 u 0.010391 v -0.022132 rho 0.024597 res -0.046729 --> excluded
+iturn -1 ilayer 19 icell 175 u 0.010843 v -0.021914 rho 0.024597 res -0.046511 --> excluded
+iturn -1 ilayer 19 icell 221 u 0.024111 v -0.004059 rho 0.024597 res -0.028655 --> excluded
+iturn -1 ilayer 19 icell 222 u 0.024189 v -0.003563 rho 0.024597 res -0.028159 --> excluded
+iturn -1 ilayer 19 icell 223 u 0.024257 v -0.003065 rho 0.024597 res -0.027662 --> excluded
+iturn -1 ilayer 0 icell 79 u -0.026869 v -0.028144 rho 0.027016 res -0.055160 --> excluded
+iturn -1 ilayer 0 icell 80 u -0.025963 v -0.028982 rho 0.027016 res -0.055998 --> excluded
+iturn -1 ilayer 0 icell 124 u 0.024034 v -0.030601 rho 0.027016 res -0.057617 --> excluded
+iturn -1 ilayer 0 icell 125 u 0.024992 v -0.029823 rho 0.027016 res -0.056839 --> excluded
+iturn -1 ilayer 2 icell 32 u -0.028078 v 0.023524 rho 0.027016 res -0.003492 --> included
+iturn -1 ilayer 2 icell 33 u -0.028789 v 0.022648 rho 0.027016 res -0.004368 --> included
+iturn 0 ilayer 4 icell 25 u -0.019941 v 0.028278 rho 0.027016 res 0.001262 --> included
+iturn 0 ilayer 4 icell 26 u -0.020755 v 0.027686 rho 0.027016 res 0.000670 --> included
+iturn -1 ilayer 4 icell 147 u 0.029511 v -0.018067 rho 0.027016 res -0.045083 --> excluded
+iturn -1 ilayer 4 icell 148 u 0.030024 v -0.017201 rho 0.027016 res -0.044217 --> excluded
+iturn -1 ilayer 6 icell 8 u -0.003041 v 0.032646 rho 0.027016 res 0.005629 --> included
+iturn -1 ilayer 6 icell 9 u -0.003940 v 0.032549 rho 0.027016 res 0.005533 --> included
+iturn -1 ilayer 6 icell 10 u -0.004835 v 0.032428 rho 0.027016 res 0.005412 --> included
+iturn 0 ilayer 6 icell 25 u -0.017454 v 0.027755 rho 0.027016 res 0.000739 --> included
+iturn 0 ilayer 6 icell 26 u -0.018212 v 0.027263 rho 0.027016 res 0.000247 --> included
+iturn -1 ilayer 6 icell 95 u -0.019873 v -0.026078 rho 0.027016 res -0.053094 --> excluded
+iturn -1 ilayer 6 icell 96 u -0.019146 v -0.026616 rho 0.027016 res -0.053632 --> excluded
+iturn -1 ilayer 6 icell 211 u 0.018406 v 0.027133 rho 0.027016 res 0.000117 --> included
+iturn 0 ilayer 6 icell 212 u 0.017651 v 0.027630 rho 0.027016 res 0.000614 --> included
+iturn 0 ilayer 6 icell 213 u 0.016883 v 0.028106 rho 0.027016 res 0.001090 --> included
+iturn 0 ilayer 8 icell 23 u -0.014235 v 0.027710 rho 0.027016 res 0.000694 --> included
+iturn 0 ilayer 8 icell 24 u -0.014956 v 0.027328 rho 0.027016 res 0.000312 --> included
+iturn -1 ilayer 8 icell 55 u -0.030118 v 0.007962 rho 0.027016 res -0.019054 --> excluded
+iturn -1 ilayer 8 icell 56 u -0.030316 v 0.007171 rho 0.027016 res -0.019845 --> excluded
+iturn -1 ilayer 8 icell 165 u 0.027031 v -0.015486 rho 0.027016 res -0.042502 --> excluded
+iturn -1 ilayer 8 icell 166 u 0.027427 v -0.014773 rho 0.027016 res -0.041790 --> excluded
+iturn -1 ilayer 8 icell 167 u 0.027804 v -0.014050 rho 0.027016 res -0.041066 --> excluded
+iturn 0 ilayer 8 icell 226 u 0.014773 v 0.027427 rho 0.027016 res 0.000411 --> included
+iturn 0 ilayer 8 icell 227 u 0.014050 v 0.027804 rho 0.027016 res 0.000788 --> included
+iturn 0 ilayer 10 icell 21 u -0.011447 v 0.027377 rho 0.027016 res 0.000361 --> included
+iturn 0 ilayer 10 icell 22 u -0.012126 v 0.027083 rho 0.027016 res 0.000067 --> included
+iturn -1 ilayer 10 icell 179 u 0.027591 v -0.010921 rho 0.027016 res -0.037937 --> excluded
+iturn -1 ilayer 10 icell 180 u 0.027855 v -0.010230 rho 0.027016 res -0.037246 --> excluded
+iturn 0 ilayer 10 icell 241 u 0.011605 v 0.027310 rho 0.027016 res 0.000294 --> included
+iturn 0 ilayer 10 icell 242 u 0.010921 v 0.027591 rho 0.027016 res 0.000575 --> included
+iturn -1 ilayer 10 icell 243 u 0.010230 v 0.027855 rho 0.027016 res 0.000838 --> included
+iturn 0 ilayer 12 icell 17 u -0.007748 v 0.027248 rho 0.027016 res 0.000232 --> included
+iturn 0 ilayer 12 icell 18 u -0.008394 v 0.027056 rho 0.027016 res 0.000040 --> included
+iturn 0 ilayer 12 icell 19 u -0.009036 v 0.026849 rho 0.027016 res -0.000167 --> included
+iturn -1 ilayer 12 icell 89 u -0.025868 v -0.011547 rho 0.027016 res -0.038563 --> excluded
+iturn -1 ilayer 12 icell 90 u -0.025586 v -0.012159 rho 0.027016 res -0.039175 --> excluded
+iturn -1 ilayer 12 icell 135 u -0.001590 v -0.028284 rho 0.027016 res -0.055300 --> excluded
+iturn -1 ilayer 12 icell 136 u -0.000917 v -0.028314 rho 0.027016 res -0.055330 --> excluded
+iturn -1 ilayer 12 icell 256 u 0.008856 v 0.026909 rho 0.027016 res -0.000108 --> included
+iturn 0 ilayer 12 icell 257 u 0.008214 v 0.027112 rho 0.027016 res 0.000096 --> included
+iturn 0 ilayer 12 icell 258 u 0.007566 v 0.027300 rho 0.027016 res 0.000283 --> included
+iturn 0 ilayer 12 icell 259 u 0.006914 v 0.027472 rho 0.027016 res 0.000456 --> included
+iturn 0 ilayer 14 icell 0 u 0.003448 v 0.026880 rho 0.027016 res -0.000136 --> included
+iturn 0 ilayer 14 icell 1 u 0.002835 v 0.026952 rho 0.027016 res -0.000065 --> included
+iturn 0 ilayer 14 icell 2 u 0.002221 v 0.027009 rho 0.027016 res -0.000007 --> included
+iturn 0 ilayer 14 icell 3 u 0.001605 v 0.027053 rho 0.027016 res 0.000037 --> included
+iturn 0 ilayer 14 icell 4 u 0.000989 v 0.027082 rho 0.027016 res 0.000066 --> included
+iturn 0 ilayer 14 icell 5 u 0.000372 v 0.027098 rho 0.027016 res 0.000082 --> included
+iturn 0 ilayer 14 icell 6 u -0.000245 v 0.027099 rho 0.027016 res 0.000083 --> included
+iturn 0 ilayer 14 icell 7 u -0.000861 v 0.027087 rho 0.027016 res 0.000070 --> included
+iturn 0 ilayer 14 icell 8 u -0.001478 v 0.027060 rho 0.027016 res 0.000044 --> included
+iturn 0 ilayer 14 icell 9 u -0.002093 v 0.027019 rho 0.027016 res 0.000003 --> included
+iturn 0 ilayer 14 icell 10 u -0.002708 v 0.026965 rho 0.027016 res -0.000051 --> included
+iturn 0 ilayer 14 icell 11 u -0.003321 v 0.026896 rho 0.027016 res -0.000120 --> included
+iturn 0 ilayer 14 icell 12 u -0.003932 v 0.026813 rho 0.027016 res -0.000203 --> included
+iturn 0 ilayer 14 icell 13 u -0.004542 v 0.026717 rho 0.027016 res -0.000299 --> included
+iturn 0 ilayer 14 icell 14 u -0.005149 v 0.026607 rho 0.027016 res -0.000409 --> included
+iturn -1 ilayer 14 icell 143 u -0.000372 v -0.027098 rho 0.027016 res -0.054114 --> excluded
+iturn -1 ilayer 14 icell 144 u 0.000245 v -0.027099 rho 0.027016 res -0.054115 --> excluded
+iturn -1 ilayer 14 icell 163 u 0.011581 v -0.024501 rho 0.027016 res -0.051517 --> excluded
+iturn -1 ilayer 14 icell 164 u 0.012136 v -0.024231 rho 0.027016 res -0.051247 --> excluded
+iturn -1 ilayer 14 icell 176 u 0.018224 v -0.020058 rho 0.027016 res -0.047074 --> excluded
+iturn -1 ilayer 14 icell 177 u 0.018675 v -0.019638 rho 0.027016 res -0.046654 --> excluded
+iturn -1 ilayer 16 icell 264 u 0.015743 v 0.020659 rho 0.027016 res -0.006357 --> included
+iturn -1 ilayer 16 icell 265 u 0.015289 v 0.020998 rho 0.027016 res -0.006018 --> included
+iturn -1 ilayer 18 icell 19 u -0.006661 v 0.024032 rho 0.027016 res -0.002984 --> included
+iturn -1 ilayer 18 icell 20 u -0.007162 v 0.023887 rho 0.027016 res -0.003129 --> included
+iturn -1 ilayer 18 icell 47 u -0.018847 v 0.016331 rho 0.027016 res -0.010685 --> excluded
+iturn -1 ilayer 18 icell 48 u -0.019185 v 0.015932 rho 0.027016 res -0.011084 --> excluded
+Circle fit 1st (odd layers)
+X0  41.802 Y0   7.590 R  33.163 Pt  99.490 (MeV/c) chi2/ndf 313.654/32 (  9.802)
+Circle fit 1st (even layers)
+X0  30.457 Y0   2.380 R  42.144 Pt 126.432 (MeV/c) chi2/ndf 1038.463/44 ( 23.601)
+CopyByCircle: ihit 0 xhits 46.717038 yhits -25.030350 dx 4.915231 dy -32.620697 rad -1.421243 x1 46.743047 y1 -25.202968 ddx 0.026010 ddy -0.172618 ddd 0.174567
+CopyByCircle: ihit 1 xhits 47.487679 yhits -23.535513 dx 5.685872 dy -31.125860 rad -1.390115 x1 47.761284 y1 -25.033294 ddx 0.273605 ddy -1.497782 ddd 1.522567
+CopyByCircle: ihit 2 xhits 48.210504 yhits -22.016978 dx 6.408697 dy -29.607325 rad -1.357628 x1 48.817780 y1 -24.822513 ddx 0.607276 ddy -2.805535 ddd 2.870507
+CopyByCircle: ihit 3 xhits 38.837721 yhits 40.621071 dx -2.964086 dy 33.030724 rad 1.660294 x1 38.837717 y1 40.621114 ddx -0.000004 ddy 0.000042 ddd 0.000043
+CopyByCircle: ihit 4 xhits 37.605140 yhits 41.764739 dx -4.196667 dy 34.174392 rad 1.692986 x1 37.759644 y1 40.506579 ddx 0.154504 ddy -1.258161 ddd 1.267612
+CopyByCircle: ihit 5 xhits 50.634450 yhits -24.384266 dx 8.832644 dy -31.974613 rad -1.301278 x1 50.632146 y1 -24.375924 ddx -0.002305 ddy 0.008342 ddd 0.008655
+CopyByCircle: ihit 6 xhits 51.341255 yhits -22.858599 dx 9.539448 dy -30.448947 rad -1.267189 x1 51.716514 y1 -24.056389 ddx 0.375259 ddy -1.197790 ddd 1.255197
+CopyByCircle: ihit 7 xhits 42.884192 yhits 41.101169 dx 1.082385 dy 33.510822 rad 1.538508 x1 42.872415 y1 40.736556 ddx -0.011777 ddy -0.364613 ddd 0.364803
+CopyByCircle: ihit 8 xhits 41.703901 yhits 42.298282 dx -0.097906 dy 34.707934 rad 1.573617 x1 41.708258 y1 40.753710 ddx 0.004357 ddy -1.544572 ddd 1.544578
+CopyByCircle: ihit 9 xhits 54.797681 yhits -22.925404 dx 12.995874 dy -30.515751 rad -1.168185 x1 54.795989 y1 -22.921431 ddx -0.001692 ddy 0.003973 ddd 0.004318
+CopyByCircle: ihit 10 xhits 55.424498 yhits -21.365511 dx 13.622691 dy -28.955858 rad -1.131055 x1 55.919674 y1 -22.418038 ddx 0.495176 ddy -1.052527 ddd 1.163191
+CopyByCircle: ihit 11 xhits 48.490255 yhits 39.591099 dx 6.688448 dy 32.000752 rad 1.364753 x1 48.586665 y1 40.052372 ddx 0.096410 ddy 0.461273 ddd 0.471240
+CopyByCircle: ihit 12 xhits 47.409834 yhits 40.878694 dx 5.608027 dy 33.288347 rad 1.403895 x1 47.311166 y1 40.293013 ddx -0.098669 ddy -0.585681 ddd 0.593934
+CopyByCircle: ihit 13 xhits 59.106905 yhits -20.618774 dx 17.305098 dy -28.209121 rad -1.020540 x1 59.143180 y1 -20.677906 ddx 0.036275 ddy -0.059132 ddd 0.069372
+CopyByCircle: ihit 14 xhits 59.639171 yhits -19.024440 dx 17.837364 dy -26.614787 rad -0.980348 x1 60.265033 y1 -19.958276 ddx 0.625862 ddy -0.933837 ddd 1.124168
+CopyByCircle: ihit 15 xhits 53.331918 yhits 38.540194 dx 11.530111 dy 30.949847 rad 1.214183 x1 53.379284 y1 38.667338 ddx 0.047367 ddy 0.127144 ddd 0.135681
+CopyByCircle: ihit 16 xhits 52.330259 yhits 39.889648 dx 10.528452 dy 32.299300 rad 1.255692 x1 52.079707 y1 39.121001 ddx -0.250552 ddy -0.768646 ddd 0.808451
+CopyByCircle: ihit 17 xhits 63.872476 yhits -15.809705 dx 22.070669 dy -23.400052 rad -0.814626 x1 64.556627 y1 -16.535065 ddx 0.684151 ddy -0.725360 ddd 0.997100
+CopyByCircle: ihit 18 xhits 64.255402 yhits -14.173333 dx 22.453595 dy -21.763681 rad -0.769797 x1 65.614928 y1 -15.491087 ddx 1.359527 ddy -1.317754 ddd 1.893354
+CopyByCircle: ihit 19 xhits 64.596411 yhits -12.527716 dx 22.794604 dy -20.118063 rad -0.723107 x1 66.666249 y1 -14.354513 ddx 2.069838 ddy -1.826797 ddd 2.760691
+CopyByCircle: ihit 20 xhits 60.578134 yhits 33.034673 dx 18.776328 dy 25.444326 rad 0.935060 x1 61.493303 y1 34.274844 ddx 0.915169 ddy 1.240170 ddd 1.541284
+CopyByCircle: ihit 21 xhits 59.755743 yhits 34.500017 dx 17.953936 dy 26.909670 rad 0.982430 x1 60.207650 y1 35.177343 ddx 0.451907 ddy 0.677326 ddd 0.814242
+CopyByCircle: ihit 22 xhits 58.897913 yhits 35.944900 dx 17.096106 dy 28.354553 rad 1.028218 x1 58.925648 y1 35.990900 ddx 0.027735 ddy 0.046000 ddd 0.053715
+CopyByCircle: ihit 23 xhits 68.137305 yhits -10.876936 dx 26.335498 dy -18.467283 rad -0.611552 x1 68.954680 y1 -11.450105 ddx 0.817376 ddy -0.573170 ddd 0.998312
+CopyByCircle: ihit 24 xhits 68.381964 yhits -9.214497 dx 26.580157 dy -16.804844 rad -0.563783 x1 69.832897 y1 -10.131824 ddx 1.450933 ddy -0.917327 ddd 1.716594
+CopyByCircle: ihit 25 xhits 72.195112 yhits 0.840100 dx 30.393305 dy -6.750247 rad -0.218549 x1 74.176443 y1 0.400054 ddx 1.981330 ddy -0.440047 ddd 2.029609
+CopyByCircle: ihit 26 xhits 66.942662 yhits 27.046628 dx 25.140855 dy 19.456280 rad 0.658617 x1 68.028809 y1 27.887187 ddx 1.086148 ddy 0.840560 ddd 1.373411
+CopyByCircle: ihit 27 xhits 66.295189 yhits 28.596990 dx 24.493383 dy 21.006643 rad 0.708916 x1 66.975154 y1 29.180159 ddx 0.679964 ddy 0.583169 ddd 0.895789
+CopyByCircle: ihit 28 xhits 65.611817 yhits 30.131867 dx 23.810010 dy 22.541520 rad 0.758038 x1 65.884676 y1 30.390189 ddx 0.272858 ddy 0.258322 ddd 0.375742
+CopyByCircle: ihit 29 xhits 64.892915 yhits 31.650427 dx 23.091108 dy 24.060080 rad 0.805946 x1 64.765183 y1 31.517335 ddx -0.127733 ddy -0.133093 ddd 0.184470
+CopyByCircle: ihit 30 xhits 72.077851 yhits -4.198023 dx 30.276044 dy -11.788370 rad -0.371303 x1 72.705387 y1 -4.442362 ddx 0.627536 ddy -0.244339 ddd 0.673427
+CopyByCircle: ihit 31 xhits 72.156019 yhits -2.519710 dx 30.354212 dy -10.110057 rad -0.321513 x1 73.265951 y1 -2.889394 ddx 1.109932 ddy -0.369684 ddd 1.169879
+CopyByCircle: ihit 32 xhits 72.195113 yhits -0.840032 dx 30.393306 dy -8.430379 rad -0.270574 x1 73.758735 y1 -1.273744 ddx 1.563622 ddy -0.433712 ddd 1.622658
+CopyByCircle: ihit 33 xhits 75.351300 yhits -22.363845 dx 33.549493 dy -29.954192 rad -0.728843 x1 66.539967 y1 -14.496771 ddx -8.811333 ddy 7.867074 ddd 11.812301
+CopyByCircle: ihit 34 xhits 75.812003 yhits -20.748499 dx 34.010196 dy -28.338847 rad -0.694687 x1 67.279808 y1 -13.639086 ddx -8.532195 ddy 7.109414 ddd 11.105949
+CopyByCircle: ihit 0 xhits 29.454653 yhits 45.973725 dx -1.002799 dy 43.593868 rad 1.593795 x1 29.488258 y1 44.512816 ddx 0.033606 ddy -1.460909 ddd 1.461296
+CopyByCircle: ihit 1 xhits 28.024919 yhits 46.858979 dx -2.432533 dy 44.479121 rad 1.625431 x1 28.156059 y1 44.461078 ddx 0.131140 ddy -2.397901 ddd 2.401484
+CopyByCircle: ihit 2 xhits 42.614646 yhits 39.049097 dx 12.157194 dy 36.669239 rad 1.250664 x1 43.719883 y1 42.382776 ddx 1.105237 ddy 3.333679 ddd 3.512117
+CopyByCircle: ihit 3 xhits 41.460886 yhits 40.272012 dx 11.003434 dy 37.892154 rad 1.288181 x1 42.210107 y1 42.852078 ddx 0.749221 ddy 2.580066 ddd 2.686647
+CopyByCircle: ihit 4 xhits 59.523579 yhits 13.339547 dx 29.066127 dy 10.959689 rad 0.360576 x1 69.891429 y1 17.248853 ddx 10.367849 ddy 3.909307 ddd 11.080387
+CopyByCircle: ihit 5 xhits 59.133416 yhits 14.974615 dx 28.675964 dy 12.594757 rad 0.413844 x1 69.043820 y1 19.327359 ddx 9.910403 ddy 4.352744 ddd 10.824162
+CopyByCircle: ihit 6 xhits 58.698348 yhits 16.598311 dx 28.240896 dy 14.218454 rad 0.466420 x1 68.099887 y1 21.331708 ddx 9.401539 ddy 4.733396 ddd 10.525872
+CopyByCircle: ihit 7 xhits 47.086916 yhits 38.779149 dx 16.629464 dy 36.399291 rad 1.142250 x1 47.970379 y1 40.712910 ddx 0.883463 ddy 1.933762 ddd 2.126015
+CopyByCircle: ihit 8 xhits 46.000503 yhits 40.061873 dx 15.543051 dy 37.682016 rad 1.179578 x1 46.527613 y1 41.339779 ddx 0.527110 ddy 1.277905 ddd 1.382348
+CopyByCircle: ihit 9 xhits 54.427509 yhits -27.543535 dx 23.970057 dy -29.923392 rad -0.895417 x1 56.805668 y1 -30.512347 ddx 2.378159 ddy -2.968812 ddd 3.803878
+CopyByCircle: ihit 10 xhits 55.165787 yhits -26.033363 dx 24.708335 dy -28.413220 rad -0.855029 x1 58.112273 y1 -29.421659 ddx 2.946486 ddy -3.388296 ddd 4.490249
+CopyByCircle: ihit 11 xhits 55.862173 yhits -24.503421 dx 25.404721 dy -26.883278 rad -0.813668 x1 59.403593 y1 -28.250952 ddx 3.541420 ddy -3.747531 ddd 5.156127
+CopyByCircle: ihit 12 xhits 52.908901 yhits 36.363280 dx 22.451449 dy 33.983423 rad 0.986965 x1 53.688339 y1 37.543069 ddx 0.779438 ddy 1.179788 ddd 1.414010
+CopyByCircle: ihit 13 xhits 51.938891 yhits 37.735813 dx 21.481439 dy 35.355956 rad 1.024825 x1 52.340725 y1 38.397185 ddx 0.401834 ddy 0.661372 ddd 0.773876
+CopyByCircle: ihit 14 xhits 59.935863 yhits -23.007222 dx 29.478411 dy -25.387080 rad -0.710966 x1 62.391390 y1 -25.121945 ddx 2.455527 ddy -2.114723 ddd 3.240627
+CopyByCircle: ihit 15 xhits 60.517584 yhits -21.430400 dx 30.060132 dy -23.810258 rad -0.669898 x1 63.493593 y1 -23.787660 ddx 2.976009 ddy -2.357260 ddd 3.796485
+CopyByCircle: ihit 16 xhits 58.370112 yhits 33.700000 dx 27.912660 dy 31.320143 rad 0.842862 x1 58.497151 y1 33.842547 ddx 0.127039 ddy 0.142547 ddd 0.190941
+CopyByCircle: ihit 17 xhits 57.511805 yhits 35.144733 dx 27.054353 dy 32.764875 rad 0.880573 x1 57.291009 y1 34.877331 ddx -0.220797 ddy -0.267402 ddd 0.346778
+CopyByCircle: ihit 18 xhits 64.880874 yhits -18.254648 dx 34.423422 dy -20.634505 rad -0.540002 x1 66.604777 y1 -19.288010 ddx 1.723902 ddy -1.033362 ddd 2.009895
+CopyByCircle: ihit 19 xhits 65.315809 yhits -16.631449 dx 34.858357 dy -19.011306 rad -0.499295 x1 67.456620 y1 -17.799020 ddx 2.140811 ddy -1.167571 ddd 2.438503
+CopyByCircle: ihit 20 xhits 65.710141 yhits -14.997911 dx 35.252689 dy -17.377768 rad -0.457991 x1 68.258300 y1 -16.254022 ddx 2.548158 ddy -1.256111 ddd 2.840938
+CopyByCircle: ihit 21 xhits 64.899777 yhits 27.791705 dx 34.442325 dy 25.411848 rad 0.635653 x1 64.370148 y1 27.400940 ddx -0.529629 ddy -0.390765 ddd 0.658183
+CopyByCircle: ihit 22 xhits 64.220019 yhits 29.328300 dx 33.762567 dy 26.948443 rad 0.673627 x1 63.395769 y1 28.670404 ddx -0.824250 ddy -0.657896 ddd 1.054616
+CopyByCircle: ihit 23 xhits 63.503885 yhits 30.848283 dx 33.046433 dy 28.468425 rad 0.711114 x1 62.387314 y1 29.886393 ddx -1.116572 ddy -0.961890 ddd 1.473759
+CopyByCircle: ihit 24 xhits 69.324166 yhits -13.361138 dx 38.866714 dy -15.740995 rad -0.384809 x1 69.519568 y1 -13.440276 ddx 0.195402 ddy -0.079138 ddd 0.210820
+CopyByCircle: ihit 25 xhits 69.622497 yhits -11.707598 dx 39.165045 dy -14.087456 rad -0.345285 x1 70.114168 y1 -11.884450 ddx 0.491670 ddy -0.176851 ddd 0.522509
+CopyByCircle: ihit 26 xhits 69.881394 yhits -10.047428 dx 39.423942 dy -12.427285 rad -0.305363 x1 70.651887 y1 -10.290304 ddx 0.770493 ddy -0.242876 ddd 0.807866
+CopyByCircle: ihit 27 xhits 70.100709 yhits -8.381566 dx 39.643257 dy -10.761423 rad -0.265069 x1 71.129650 y1 -8.660879 ddx 1.028941 ddy -0.279313 ddd 1.066178
+CopyByCircle: ihit 28 xhits 73.800000 yhits -0.000000 dx 43.342548 dy -2.379857 rad -0.054853 x1 72.538170 y1 0.069285 ddx -1.261830 ddy 0.069285 ddd 1.263731
+CopyByCircle: ihit 29 xhits 73.780877 yhits 1.679924 dx 43.323425 dy -0.699933 rad -0.016155 x1 72.596058 y1 1.699066 ddx -1.184820 ddy 0.019142 ddd 1.184974
+CopyByCircle: ihit 30 xhits 73.723519 yhits 3.358977 dx 43.266067 dy 0.979120 rad 0.022626 x1 72.590769 y1 3.333343 ddx -1.132750 ddy -0.025634 ddd 1.133040
+CopyByCircle: ihit 31 xhits 73.627955 yhits 5.036290 dx 43.170503 dy 2.656433 rad 0.061456 x1 72.521996 y1 4.968237 ddx -1.105959 ddy -0.068054 ddd 1.108051
+CopyByCircle: ihit 32 xhits 73.494235 yhits 6.710993 dx 43.036783 dy 4.331135 rad 0.100300 x1 72.389746 y1 6.599839 ddx -1.104489 ddy -0.111154 ddd 1.110068
+CopyByCircle: ihit 33 xhits 73.322428 yhits 8.382218 dx 42.864976 dy 6.002360 rad 0.139125 x1 72.194349 y1 8.224253 ddx -1.128079 ddy -0.157964 ddd 1.139085
+CopyByCircle: ihit 34 xhits 73.112623 yhits 10.049099 dx 42.655171 dy 7.669241 rad 0.177896 x1 71.936449 y1 9.837627 ddx -1.176173 ddy -0.211472 ddd 1.195033
+CopyByCircle: ihit 35 xhits 72.864929 yhits 11.710772 dx 42.407477 dy 9.330915 rad 0.216579 x1 71.617000 y1 11.436190 ddx -1.247929 ddy -0.274582 ddd 1.277780
+CopyByCircle: ihit 36 xhits 72.579474 yhits 13.366376 dx 42.122022 dy 10.986519 rad 0.255142 x1 71.237249 y1 13.016289 ddx -1.342224 ddy -0.350087 ddd 1.387129
+CopyByCircle: ihit 37 xhits 72.256406 yhits 15.015054 dx 41.798954 dy 12.635196 rad 0.293552 x1 70.798724 y1 14.574419 ddx -1.457682 ddy -0.440635 ddd 1.522825
+CopyByCircle: ihit 38 xhits 71.895892 yhits 16.655950 dx 41.438440 dy 14.276093 rad 0.331779 x1 70.303208 y1 16.107249 ddx -1.592684 ddy -0.548701 ddd 1.684552
+CopyByCircle: ihit 39 xhits 71.498120 yhits 18.288215 dx 41.040668 dy 15.908357 rad 0.369792 x1 69.752718 y1 17.611654 ddx -1.745402 ddy -0.676560 ddd 1.871941
+CopyByCircle: ihit 40 xhits 71.063296 yhits 19.911002 dx 40.605844 dy 17.531144 rad 0.407565 x1 69.149477 y1 19.084730 ddx -1.913819 ddy -0.826271 ddd 2.084569
+CopyByCircle: ihit 41 xhits 70.591644 yhits 21.523470 dx 40.134192 dy 19.143613 rad 0.445071 x1 68.495885 y1 20.523814 ddx -2.095759 ddy -0.999656 ddd 2.321964
+CopyByCircle: ihit 42 xhits 70.083410 yhits 23.124785 dx 39.625958 dy 20.744927 rad 0.482285 x1 67.794492 y1 21.926494 ddx -2.288918 ddy -1.198291 ddd 2.583611
+CopyByCircle: ihit 43 xhits 66.683956 yhits -38.500000 dx 36.226504 dy -40.879857 rad -0.845675 x1 58.408533 y1 -29.161586 ddx -8.275423 ddy 9.338414 ddd 12.477524
+CopyByCircle: ihit 44 xhits 67.507960 yhits -37.036135 dx 37.050508 dy -39.415993 rad -0.816323 x1 59.322154 y1 -28.327707 ddx -8.185806 ddy 8.708428 ddd 11.951742
+CopyByCircle: ihit 45 xhits 73.933425 yhits 31.078750 dx 43.475973 dy 28.698893 rad 0.583449 x1 65.629551 y1 25.597286 ddx -8.303874 ddy -5.481464 ddd 9.949913
+CopyByCircle: ihit 46 xhits 73.266346 yhits 32.620279 dx 42.808894 dy 30.240421 rad 0.615012 x1 64.879351 y1 26.695663 ddx -8.386994 ddy -5.924616 ddd 10.268532
+Circle fit 2nd (odd layers)
+X0  40.286 Y0   8.144 R  33.228 Pt  99.684 (MeV/c) chi2/ndf  17.416/30 (  0.581)
+Circle fit 2nd (even layers)
+X0  35.439 Y0   5.155 R  37.716 Pt 113.149 (MeV/c) chi2/ndf  73.956/36 (  2.054)
+FirstArrived:  iev 1968 All 541 Signal  69 Noise 472
+Clusters:      iev 1968 All 149 Signal  65 Noise  84
+HoughTrans.:   iev 1968 All  82 Signal  65 Noise  17

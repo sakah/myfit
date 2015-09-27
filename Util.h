@@ -12,5 +12,6 @@ void draw_graph(const char* title, double xmin, double xmax, double ymin, double
 void draw_line_AB(double a, double b, double xmin, double xmax, int col, int style);
 void draw_line_AB2(double a, double b, double xmin, double xmax, int col, double threshold);
 void draw_line_TR(double theta, double rho, double xmin, double xmax, int col, int style);
+void draw_text(double x1, double y1, double x2, double y2, char* text, double size);
 
 #endif

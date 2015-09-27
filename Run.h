@@ -25,17 +25,14 @@ class Run
 {
    public:
       Run(const char* name);
-      int  ProcessEvent(int iev, int checking_num_turns=-1, double threshold=0.005, bool show_event_canvas=true, bool debug=false);
-      void ProcessEvents(int checking_num_turns, double threshold=0.005, int start_iev=0, bool stop_every_event=true, bool show_event_canvas=true, bool show_run_canvas=false, bool debug=false);
+      int  ProcessEvent(int iev, int checking_num_turns=-1, double thre_hough=0.005, double thre_circ=0.1);
+      void ShowEvents(int start_iev, int checking_num_turns, double thre_hough=0.005, double thre_circ=0.1);
+      void ProcessEvents(int start_iev, int checking_num_turns, double thre_hough=0.005, double thre_circ=0.1);
 
    private:
       void Open();
       void ClearEvent();
-      void ClearRun();
-      void ShowEventCanvas();
-      void ShowRunCanvas();
-      void BookHist();
-      void FillHist();
+      void DrawEventCanvas();
 
       char fRunName[32];
       int fEventNumber;
@@ -53,42 +50,27 @@ class Run
       CdcHit fCdcCL1;
       CdcHit fCdcCL2;
       double fHoughThreshold;
+      double fCircleThreshold;
       Hough  fHough1;
       Hough  fHough2;
       CdcHit fCdcHO;
       CdcHit fCdcHO1;
       CdcHit fCdcHO2;
-      Circle fCirc1;
-      Circle fCirc2;
+      Circle fCirc11;
+      Circle fCirc12;
+      CdcHit fCdcCF;
+      CdcHit fCdcCF1;
+      CdcHit fCdcCF2;
+      Circle fCirc21;
+      Circle fCirc22;
 
-      CdcHit fCdcFit;
       Fitter fFitter;
 
       bool fEvtCanOpened;
       MyCanvas fEvtCan1;
       MyCanvas fEvtCan2;
 
-      TH1F* fNumAll1;
-      TH1F* fNumSig1;
-      TH1F* fNumNoi1;
-      TH1F* fNumRem1;
-      TH1F* fNumAll2;
-      TH1F* fNumSig2;
-      TH1F* fNumNoi2;
-      TH1F* fNumRem2;
-      TH1F* fNumAll3;
-      TH1F* fNumSig3;
-      TH1F* fNumNoi3;
-      TH1F* fNumRem3;
-
-      TH1F* fPtResid1;
-      TH1F* fPtResid2;
-      TH1F* fPtResol1;
-      TH1F* fPtResol2;
-
-      bool fRunCanOpened;
-      MyCanvas fRunCan1;
-      MyCanvas fRunCan2;
+      bool fShowEventCanvas;
 };
 
 #endif

@@ -52,5 +52,10 @@
 ./Util_cc.so: /usr/local/root_v5.34.18/include/TIterator.h
 ./Util_cc.so: /usr/local/root_v5.34.18/include/Math/ParamFunctor.h
 ./Util_cc.so: /usr/local/root_v5.34.18/include/TLine.h
+./Util_cc.so: /usr/local/root_v5.34.18/include/TPaveText.h
+./Util_cc.so: /usr/local/root_v5.34.18/include/TPave.h
+./Util_cc.so: /usr/local/root_v5.34.18/include/TBox.h
+./Util_cc.so: /usr/local/root_v5.34.18/include/TText.h
+./Util_cc.so: /usr/local/root_v5.34.18/include/TAttText.h
 ./Util_cc.so: /usr/local/root_v5.34.18/include/cintdictversion.h /usr/local/root_v5.34.18/include/RVersion.h
 Util_cc__ROOTBUILDVERSION= 5.34/18
